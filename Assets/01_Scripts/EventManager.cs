@@ -25,9 +25,11 @@ public class EventManager : MonoBehaviour
     [Space]
     [Header("EMPTY COLLIDERS FOR EVENTS")]
     [Space]
-    // Para añadir eventos haga un gameobject que tenga nombre del evento y su numero, a este gameobject añadale un collider trigger y un script del evento en si.
+    // Para añadir eventos haga un gameobject 
+    //que tenga nombre del evento y su numero, 
+    //a este gameobject añadale un collider trigger y un script del evento en si.
 
-    //public Gameobject event1Collider;
+    public GameObject event1Collider;
     //public Gameobject event2Collider;
     //public Gameobject event3Collider;
     //public Gameobject event4Collider;
@@ -40,19 +42,24 @@ public class EventManager : MonoBehaviour
 
 
 
+
+    //Añada los eventos a start y update para que
+    //empiezen escondidos y se vallan triggereando por caso
     private void Start()
     {
        event7Collider.SetActive(false);
+       event8Collider.SetActive(false);
     }
 
     private void Update()
     {
-        switch (currentEvent)
+        switch (currentEvent) 
         {
             case EventsToTrigger.None:
 
                 Debug.Log("Nothing is happening");
 
+                event1Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -62,6 +69,7 @@ public class EventManager : MonoBehaviour
 
                 Debug.Log("Event 1 is triggered");
 
+                event1Collider.SetActive(true);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -72,14 +80,17 @@ public class EventManager : MonoBehaviour
 
                 Debug.Log("Event 2 is triggered");
 
+                event1Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
+
                 break;
 
             case EventsToTrigger.Event3:
 
                 Debug.Log("Event 3 is triggered");
 
+                event1Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -89,6 +100,7 @@ public class EventManager : MonoBehaviour
 
                 Debug.Log("Event 4 is triggered");
 
+                event1Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -98,6 +110,7 @@ public class EventManager : MonoBehaviour
 
                 Debug.Log("Event 5 is triggered");
 
+                event1Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -107,6 +120,7 @@ public class EventManager : MonoBehaviour
 
                 Debug.Log("Event 6 is triggered");
 
+                event1Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -116,6 +130,7 @@ public class EventManager : MonoBehaviour
 
                 Debug.Log("Event 7 is triggered");
 
+                event1Collider.SetActive(false);
                 event7Collider.SetActive(true);
                 event8Collider.SetActive(false);
 
@@ -125,6 +140,7 @@ public class EventManager : MonoBehaviour
 
                 Debug.Log("Event 8 is triggered");
 
+                event1Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(true);
 
@@ -134,6 +150,7 @@ public class EventManager : MonoBehaviour
 
                 Debug.Log("Event 9 is triggered");
 
+                event1Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -143,6 +160,7 @@ public class EventManager : MonoBehaviour
 
                 Debug.Log("Event 10 is triggered");
 
+                event1Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 

@@ -2,36 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Event_8 : MonoBehaviour
+public class Event_1 : MonoBehaviour
 {
     public AudioSource audioSource;
-    public float audioDuration = 20f; // Duración en segundos
+    public float audioDuration; // Duración en segundos
 
-    private BoxCollider event8Collider;
-
+    private BoxCollider event1collider;
 
     private void Awake()
     {
-        event8Collider = GetComponent<BoxCollider>();
+        event1collider = GetComponent<BoxCollider>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             if (audioSource != null)
             {
-                event8Collider.enabled = false;
+                event1collider.enabled = false;
                 audioSource.Play();
-                StartCoroutine(StopAudioAfterDelay(audioDuration));
+                StartCoroutine(StopAudioAfterDelayEvent9(audioDuration));
             }
         }
     }
 
-    private IEnumerator StopAudioAfterDelay(float delay)
+    private IEnumerator StopAudioAfterDelayEvent9(float delay)
     {
         yield return new WaitForSeconds(delay);
         audioSource.Stop();
-
-        event8Collider.enabled = false;
+        
+        event1collider.enabled = false;
     }
 }

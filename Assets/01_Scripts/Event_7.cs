@@ -7,8 +7,13 @@ public class Event_7 : MonoBehaviour
     public GameObject shadowGuy;
     public float cooldown;
 
-    private void Start()
+    private BoxCollider event7collider;
+
+
+    private void Awake()
     {
+        event7collider = GetComponent<BoxCollider>();
+
         shadowGuy.SetActive(false);
     }
 
@@ -16,6 +21,7 @@ public class Event_7 : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            event7collider.enabled = false;
             StartCoroutine(cooldownForGuy());
         }
     }
@@ -25,5 +31,7 @@ public class Event_7 : MonoBehaviour
         shadowGuy.SetActive(true);
         yield return new WaitForSeconds(cooldown);
         shadowGuy.SetActive(false);
+        event7collider.enabled = false;
+
     }
 }
