@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class ClockScript : MonoBehaviour
 {
-    public TextMeshProUGUI clockText; 
+    public TextMeshProUGUI clockText;
+    public bool frezzeTime = false;
 
     public float timeInMinutes = 600; // Empieza en 8:00 AM (8 * 60)
     public float timeScale = 1f; // Escala del tiempo, ajusta para cambiar la velocidad.
 
     void Update()
     {
-        // Avanza el tiempo en base a la escala deseada
-        timeInMinutes += Time.deltaTime * timeScale;
+        if (!frezzeTime) // Avanza el tiempo en base a la escala deseada
+        {
+            timeInMinutes += Time.deltaTime * timeScale;
+        }
+            
+        
 
         // Si el tiempo llega a 1440 minutos (24 horas), resetea a 0
         if (timeInMinutes >= 1440)

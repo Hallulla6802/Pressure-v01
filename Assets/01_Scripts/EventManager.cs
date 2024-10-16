@@ -5,6 +5,7 @@ using TMPro;
 
 public class EventManager : MonoBehaviour
 {
+    public ClockScript clockscript;
     public enum EventsToTrigger
     {
         None,
@@ -60,7 +61,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.None:
 
                 Debug.Log("Nothing is happening");
-
+                clockscript.frezzeTime = false;
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event7Collider.SetActive(false);
@@ -71,7 +72,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.Event1:
 
                 Debug.Log("Event 1 is triggered");
-
+                clockscript.frezzeTime = true;
                 event1Collider.SetActive(true);
                 event2Collider.SetActive(false);
                 event7Collider.SetActive(false);
@@ -83,7 +84,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.Event2:
 
                 Debug.Log("Event 2 is triggered");
-
+                clockscript.frezzeTime = true;
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(true);
                 event7Collider.SetActive(false);
@@ -94,7 +95,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.Event3:
 
                 Debug.Log("Event 3 is triggered");
-
+                clockscript.frezzeTime = true;
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event7Collider.SetActive(false);
@@ -105,7 +106,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.Event4:
 
                 Debug.Log("Event 4 is triggered");
-
+                clockscript.frezzeTime = true;
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event7Collider.SetActive(false);
@@ -116,7 +117,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.Event5:
 
                 Debug.Log("Event 5 is triggered");
-
+                clockscript.frezzeTime = true;
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event7Collider.SetActive(false);
@@ -127,7 +128,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.Event6:
 
                 Debug.Log("Event 6 is triggered");
-
+                clockscript.frezzeTime = true;
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event7Collider.SetActive(false);
@@ -138,7 +139,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.Event7:
 
                 Debug.Log("Event 7 is triggered");
-
+                clockscript.frezzeTime = true;
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event7Collider.SetActive(true);
@@ -149,7 +150,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.Event8:
 
                 Debug.Log("Event 8 is triggered");
-
+                clockscript.frezzeTime = true;
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event7Collider.SetActive(false);
@@ -160,7 +161,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.Event9:
 
                 Debug.Log("Event 9 is triggered");
-
+                clockscript.frezzeTime = true;
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event7Collider.SetActive(false);
@@ -171,7 +172,7 @@ public class EventManager : MonoBehaviour
             case EventsToTrigger.Event10:
 
                 Debug.Log("Event 10 is triggered");
-
+                clockscript.frezzeTime = true;
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event7Collider.SetActive(false);
