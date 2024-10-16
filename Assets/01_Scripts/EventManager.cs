@@ -32,7 +32,7 @@ public class EventManager : MonoBehaviour
 
     public GameObject event1Collider;
     public GameObject event2Collider;
-    //public Gameobject event3Collider;
+    public GameObject event3Collider;
     //public Gameobject event4Collider;
     //public Gameobject event5Collider;
     //public Gameobject event6Collider;
@@ -41,7 +41,10 @@ public class EventManager : MonoBehaviour
     //public Gameobject event9Collider;
     //public Gameobject event10Collider;
 
-
+    private void Awake()
+    {
+        clockscript = FindObjectOfType<ClockScript>();
+    }
 
 
     //Añada los eventos a start y update para que
@@ -50,6 +53,7 @@ public class EventManager : MonoBehaviour
     {
         event1Collider.SetActive(false);
         event2Collider.SetActive(false);
+        event3Collider.SetActive(false);
         event7Collider.SetActive(false);
         event8Collider.SetActive(false);
     }
@@ -60,10 +64,13 @@ public class EventManager : MonoBehaviour
         {
             case EventsToTrigger.None:
 
-                Debug.Log("Nothing is happening");
+               // Debug.Log("Nothing is happening");
+
                 clockscript.frezzeTime = false;
+
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
+                event3Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -71,10 +78,13 @@ public class EventManager : MonoBehaviour
 
             case EventsToTrigger.Event1:
 
-                Debug.Log("Event 1 is triggered");
+                //Debug.Log("Event 1 is triggered");
+
                 clockscript.frezzeTime = true;
+
                 event1Collider.SetActive(true);
                 event2Collider.SetActive(false);
+                event3Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -83,10 +93,13 @@ public class EventManager : MonoBehaviour
             
             case EventsToTrigger.Event2:
 
-                Debug.Log("Event 2 is triggered");
+                //Debug.Log("Event 2 is triggered");
+
                 clockscript.frezzeTime = true;
+
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(true);
+                event3Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -94,10 +107,13 @@ public class EventManager : MonoBehaviour
 
             case EventsToTrigger.Event3:
 
-                Debug.Log("Event 3 is triggered");
+                //Debug.Log("Event 3 is triggered");
+
                 clockscript.frezzeTime = true;
+
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
+                event3Collider.SetActive(true);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -105,10 +121,13 @@ public class EventManager : MonoBehaviour
 
             case EventsToTrigger.Event4:
 
-                Debug.Log("Event 4 is triggered");
+                //Debug.Log("Event 4 is triggered");
+
                 clockscript.frezzeTime = true;
+
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
+                event3Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -116,10 +135,13 @@ public class EventManager : MonoBehaviour
 
             case EventsToTrigger.Event5:
 
-                Debug.Log("Event 5 is triggered");
+                //Debug.Log("Event 5 is triggered");
+
                 clockscript.frezzeTime = true;
+
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
+                event3Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -127,10 +149,13 @@ public class EventManager : MonoBehaviour
 
             case EventsToTrigger.Event6:
 
-                Debug.Log("Event 6 is triggered");
+                //Debug.Log("Event 6 is triggered");
+
                 clockscript.frezzeTime = true;
+
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
+                event3Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -138,10 +163,13 @@ public class EventManager : MonoBehaviour
 
             case EventsToTrigger.Event7:
 
-                Debug.Log("Event 7 is triggered");
+                //Debug.Log("Event 7 is triggered");
+
                 clockscript.frezzeTime = true;
+
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
+                event3Collider.SetActive(false);
                 event7Collider.SetActive(true);
                 event8Collider.SetActive(false);
 
@@ -149,10 +177,13 @@ public class EventManager : MonoBehaviour
 
             case EventsToTrigger.Event8:
 
-                Debug.Log("Event 8 is triggered");
+                //Debug.Log("Event 8 is triggered");
+
                 clockscript.frezzeTime = true;
+
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
+                event3Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(true);
 
@@ -160,10 +191,13 @@ public class EventManager : MonoBehaviour
 
             case EventsToTrigger.Event9:
 
-                Debug.Log("Event 9 is triggered");
+                //Debug.Log("Event 9 is triggered");
+
                 clockscript.frezzeTime = true;
+
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
+                event3Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -171,10 +205,13 @@ public class EventManager : MonoBehaviour
 
             case EventsToTrigger.Event10:
 
-                Debug.Log("Event 10 is triggered");
+                //Debug.Log("Event 10 is triggered");
+
                 clockscript.frezzeTime = true;
+
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
+                event3Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 

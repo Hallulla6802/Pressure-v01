@@ -28,7 +28,7 @@ public class ObjectivesManager : MonoBehaviour
         switch (currentStates)
         {
             case ObjectiveStates.Objective1:
-                Debug.Log("Whatever OBJ one does");
+                //Debug.Log("Whatever OBJ one does");
 
                 UpdateObjectiveUI();
 
@@ -37,7 +37,7 @@ public class ObjectivesManager : MonoBehaviour
                 break;
 
             case ObjectiveStates.Objective2:
-                Debug.Log("Whatever OBJ two does");
+                //Debug.Log("Whatever OBJ two does");
 
                 UpdateObjectiveUI();
 
@@ -46,7 +46,7 @@ public class ObjectivesManager : MonoBehaviour
                 break;
 
             case ObjectiveStates.Objective3:
-                Debug.Log("Whatever OBJ three does");
+                //Debug.Log("Whatever OBJ three does");
 
                 UpdateObjectiveUI();
 
@@ -55,7 +55,7 @@ public class ObjectivesManager : MonoBehaviour
                 break;
 
             case ObjectiveStates.Objective4:
-                Debug.Log("Whatever OBJ four does");
+                //Debug.Log("Whatever OBJ four does");
 
                 UpdateObjectiveUI();
 
@@ -64,7 +64,7 @@ public class ObjectivesManager : MonoBehaviour
                 break;
 
             case ObjectiveStates.Objective5:
-                Debug.Log("Whatever OBJ five does");
+                //Debug.Log("Whatever OBJ five does");
 
                 UpdateObjectiveUI();
 
