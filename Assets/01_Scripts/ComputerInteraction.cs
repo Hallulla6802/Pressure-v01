@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ComputerInteraction : MonoBehaviour
 {
     public Transform player;     // La referencia al jugador
     public float interactionDistance = 2.0f;  // Distancia mínima para interactuar
     public PlayerMovement playerMovement;
+    public CameraScript cameraScript;
     public Camera playerCam;
     public Camera pcFocusCam;
     private bool isInInteraction = false;  // Bandera para saber si el jugador está interactuando
-    public GraphicRaycaster canvasRaycaster;
+    public InputField inputField;
     void Update()
     {
         // Verificar la distancia entre el jugador y la computadora
@@ -27,33 +29,34 @@ public class ComputerInteraction : MonoBehaviour
                 Debug.Log("Entra a Interaccion");
             }
         }
-        else if (isInInteraction && Input.GetKeyDown(KeyCode.E))
-        {
-            // Permitir salir de la interacción con Escape
-            ExitInteraction();
-            Debug.Log("Sale a Interaccion");
-        }
     }
 
     void EnterInteraction()
     {
         isInInteraction = true;
         playerMovement.canMove = false;  // Aquí puedes desactivar los controles del jugador, si fuera necesario
+        cameraScript.canLook = false;
         Cursor.lockState = CursorLockMode.None;  // Liberar el mouse para la UI
         Cursor.visible = true;
         playerCam.enabled = false;
         pcFocusCam.enabled = true;
-        canvasRaycaster.enabled = true;
     }
 
-    void ExitInteraction()
+    public void ExitInteraction()
     {
         isInInteraction = false;
-        playerMovement.canMove = true;// Reactivar los controles del jugador     
+        playerMovement.canMove = true;// Reactivar los controles del jugador   
+        cameraScript.canLook = true;  
         Cursor.lockState = CursorLockMode.Locked;  // Bloquear el mouse de nuevo
         Cursor.visible = false;
         playerCam.enabled = true;
         pcFocusCam.enabled = false;
-        canvasRaycaster.enabled = true;
+        DeselectAndClear();
+    }
+    public void DeselectAndClear()
+    {
+        EventSystem.current.SetSelectedGameObject(null); // Deselecciona el objeto
+        inputField.DeactivateInputField(); // Desactiva el InputField
+        inputField.text = string.Empty; // Limpia el texto
     }
 }

@@ -32,14 +32,6 @@ public class MecanographicScript : MonoBehaviour
         return new string(stringChars);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return)) // Enter Key is called return????????????
-        {
-            CheckText();
-        }
-    }
-
     public void CheckText()
     {
         
