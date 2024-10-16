@@ -33,12 +33,12 @@ public class EventManager : MonoBehaviour
     public GameObject event1Collider;
     public GameObject event2Collider;
     public GameObject event3Collider;
-    //public Gameobject event4Collider;
-    //public Gameobject event5Collider;
+    public GameObject event4Collider;
+    public GameObject event5Collider;
     //public Gameobject event6Collider;
     public GameObject event7Collider;
     public GameObject event8Collider;
-    //public Gameobject event9Collider;
+    public GameObject event9Collider;
     //public Gameobject event10Collider;
 
     private void Awake()
@@ -54,8 +54,11 @@ public class EventManager : MonoBehaviour
         event1Collider.SetActive(false);
         event2Collider.SetActive(false);
         event3Collider.SetActive(false);
+        event4Collider.SetActive(false);
+        event5Collider.SetActive(false);
         event7Collider.SetActive(false);
         event8Collider.SetActive(false);
+        event9Collider.SetActive(false);
     }
 
     private void Update()
@@ -71,8 +74,11 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event3Collider.SetActive(false);
+                event4Collider.SetActive(false);
+                event5Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
+                event9Collider.SetActive(false);
 
                 break;
 
@@ -85,8 +91,11 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(true);
                 event2Collider.SetActive(false);
                 event3Collider.SetActive(false);
+                event4Collider.SetActive(false);
+                event5Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
+                event9Collider.SetActive(false);
 
 
                 break; 
@@ -100,6 +109,8 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(true);
                 event3Collider.SetActive(false);
+                event4Collider.SetActive(false);
+                event5Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
 
@@ -114,8 +125,11 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event3Collider.SetActive(true);
+                event4Collider.SetActive(false);
+                event5Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
+                event9Collider.SetActive(false);
 
                 break;
 
@@ -128,8 +142,11 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event3Collider.SetActive(false);
+                event4Collider.SetActive(true);
+                event5Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
+                event9Collider.SetActive(false);
 
                 break;
 
@@ -142,8 +159,11 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event3Collider.SetActive(false);
+                event4Collider.SetActive(false);
+                event5Collider.SetActive(true);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
+                event9Collider.SetActive(false);
 
                 break;
 
@@ -156,8 +176,11 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event3Collider.SetActive(false);
+                event4Collider.SetActive(false);
+                event5Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
+                event9Collider.SetActive(false);
 
                 break;
 
@@ -170,8 +193,11 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event3Collider.SetActive(false);
+                event4Collider.SetActive(false);
+                event5Collider.SetActive(false);
                 event7Collider.SetActive(true);
                 event8Collider.SetActive(false);
+                event9Collider.SetActive(false);
 
                 break;
 
@@ -184,8 +210,11 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event3Collider.SetActive(false);
+                event4Collider.SetActive(false);
+                event5Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(true);
+                event9Collider.SetActive(false);
 
                 break;
 
@@ -198,8 +227,11 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event3Collider.SetActive(false);
+                event4Collider.SetActive(false);
+                event5Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
+                event9Collider.SetActive(true);
 
                 break;
 
@@ -212,8 +244,11 @@ public class EventManager : MonoBehaviour
                 event1Collider.SetActive(false);
                 event2Collider.SetActive(false);
                 event3Collider.SetActive(false);
+                event4Collider.SetActive(false);
+                event5Collider.SetActive(false);
                 event7Collider.SetActive(false);
                 event8Collider.SetActive(false);
+                event9Collider.SetActive(false);
 
                 break;
         }

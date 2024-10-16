@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Event_3_Object : MonoBehaviour
+public class Event_3_Lights : MonoBehaviour
 {
-    private Event_3 event3script;
-    private BoxCollider objectCollider;
+    public GameObject lightsToTurnOn;
+    public GameObject redDot;
+
+    [SerializeField]private BoxCollider objectCollider;
 
     private void Awake()
     {
-        event3script = FindObjectOfType<Event_3>();
         objectCollider = GetComponent<BoxCollider>();
 
         objectCollider.enabled = true;
@@ -21,14 +22,10 @@ public class Event_3_Object : MonoBehaviour
         {
             Debug.Log("PlayerHasCollided");
 
-            event3script.lightempty.SetActive(true);
-            event3script.redDotForOutside.SetActive(false);
+            lightsToTurnOn.SetActive(true);
+            redDot.SetActive(false);
 
-            event3script.lightsFixed = true;
             objectCollider.enabled = false;
-
-
-
 
         }
     }

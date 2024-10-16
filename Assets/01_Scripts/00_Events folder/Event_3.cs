@@ -6,6 +6,8 @@ public class Event_3 : MonoBehaviour
 {
     public GameObject lightempty;
     public GameObject redDotForOutside;
+    public GameObject transformador;
+
     public bool lightsFixed;
 
     private BoxCollider event3Collider;
@@ -14,6 +16,7 @@ public class Event_3 : MonoBehaviour
     {
         event3Collider = GetComponent<BoxCollider>();
 
+        transformador.SetActive(false);
         lightsFixed = false;
         event3Collider.enabled = true;
     }
@@ -31,6 +34,7 @@ public class Event_3 : MonoBehaviour
         {
             lightempty.SetActive(false);
             redDotForOutside.SetActive(true);
+            transformador.SetActive(true);
 
             lightsFixed = false;
             event3Collider.enabled = false;
