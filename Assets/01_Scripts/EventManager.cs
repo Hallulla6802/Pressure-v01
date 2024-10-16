@@ -13,30 +13,39 @@ public class EventManager : MonoBehaviour
 
     public float timeEvent2;
     public float timeEvent2Limit;
+    public bool eventTrigged2 = false;
 
     public float timeEvent3;
     public float timeEvent3Limit;
+    public bool eventTrigged3 = false;
 
     public float timeEvent4;
     public float timeEvent4Limit;
+    public bool eventTrigged4 = false;
 
     public float timeEvent5;
     public float timeEvent5Limit;
+    public bool eventTrigged5 = false;
 
     public float timeEvent6;
     public float timeEvent6Limit;
+    public bool eventTrigged6 = false;
 
     public float timeEvent7;
     public float timeEvent7Limit;
+    public bool eventTrigged7 = false;
 
     public float timeEvent8;
     public float timeEvent8Limit;
+    public bool eventTrigged8 = false;
 
     public float timeEvent9;
     public float timeEvent9Limit;
+    public bool eventTrigged9 = false;
 
     public float timeEvent10;
     public float timeEvent10Limit;
+    public bool eventTrigged10 = false;
     public enum EventsToTrigger
     {
         None,
@@ -97,8 +106,15 @@ public class EventManager : MonoBehaviour
 
         if (!event1Trigged && clockscript.timeInMinutes >= timeEvent1 && clockscript.timeInMinutes <= timeEvent1Limit)
         {
-            Debug.Log("Se gatilla el evento1");
+            //Debug.Log("Se gatilla el evento1");
             currentEvent = EventsToTrigger.Event1;
+            event1Trigged = true;
+        }
+
+        if (!eventTrigged2 && clockscript.timeInMinutes >= timeEvent2 && clockscript.timeInMinutes <= timeEvent2Limit)
+        {
+            Debug.Log("Se gatilla el evento2");
+            currentEvent = EventsToTrigger.Event2;
             event1Trigged = true;
         }
 

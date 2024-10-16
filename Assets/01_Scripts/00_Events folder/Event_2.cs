@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static EventManager;
 
 public class Event_2 : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class Event_2 : MonoBehaviour
 
     private BoxCollider event2Collider;
 
+    public EventManager eventManager;
+
     private void Awake()
     {
         event2Collider = GetComponent<BoxCollider>();
+        eventManager = FindObjectOfType<EventManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,5 +37,6 @@ public class Event_2 : MonoBehaviour
         audioSource.Stop();
 
         event2Collider.enabled = false;
+        eventManager.currentEvent = EventsToTrigger.None;
     }
 }

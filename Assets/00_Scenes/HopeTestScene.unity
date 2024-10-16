@@ -576,6 +576,34 @@ MonoBehaviour:
   clockscript: {fileID: 0}
   timeEvent1: 1380
   timeEvent1Limit: 1380.9
+  event1Trigged: 0
+  timeEvent2: 0
+  timeEvent2Limit: 0.9
+  eventTrigged2: 0
+  timeEvent3: 0
+  timeEvent3Limit: 0
+  eventTrigged3: 0
+  timeEvent4: 0
+  timeEvent4Limit: 0
+  eventTrigged4: 0
+  timeEvent5: 0
+  timeEvent5Limit: 0
+  eventTrigged5: 0
+  timeEvent6: 0
+  timeEvent6Limit: 0
+  eventTrigged6: 0
+  timeEvent7: 0
+  timeEvent7Limit: 0
+  eventTrigged7: 0
+  timeEvent8: 0
+  timeEvent8Limit: 0
+  eventTrigged8: 0
+  timeEvent9: 0
+  timeEvent9Limit: 0
+  eventTrigged9: 0
+  timeEvent10: 0
+  timeEvent10Limit: 0
+  eventTrigged10: 0
   currentEvent: 0
   event1Collider: {fileID: 1573883649}
   event2Collider: {fileID: 146859156}
@@ -30375,6 +30403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 869503504}
   audioDuration: 5
+  eventManager: {fileID: 0}
 --- !u!65 &1573883652
 BoxCollider:
   m_ObjectHideFlags: 0
