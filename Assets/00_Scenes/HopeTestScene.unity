@@ -574,6 +574,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockscript: {fileID: 0}
+  timeEvent1: 1380
+  timeEvent1Limit: 1380.9
   currentEvent: 0
   event1Collider: {fileID: 1573883649}
   event2Collider: {fileID: 146859156}

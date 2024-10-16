@@ -2,10 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.ProBuilder.Shapes;
 
 public class EventManager : MonoBehaviour
 {
     public ClockScript clockscript;
+    public float timeEvent1;
+    public float timeEvent1Limit;
+    public bool event1Trigged = false;
+
+    public float timeEvent2;
+    public float timeEvent2Limit;
+
+    public float timeEvent3;
+    public float timeEvent3Limit;
+
+    public float timeEvent4;
+    public float timeEvent4Limit;
+
+    public float timeEvent5;
+    public float timeEvent5Limit;
+
+    public float timeEvent6;
+    public float timeEvent6Limit;
+
+    public float timeEvent7;
+    public float timeEvent7Limit;
+
+    public float timeEvent8;
+    public float timeEvent8Limit;
+
+    public float timeEvent9;
+    public float timeEvent9Limit;
+
+    public float timeEvent10;
+    public float timeEvent10Limit;
     public enum EventsToTrigger
     {
         None,
@@ -60,9 +91,20 @@ public class EventManager : MonoBehaviour
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
     }
-
     private void Update()
     {
+
+
+        if (!event1Trigged && clockscript.timeInMinutes >= timeEvent1 && clockscript.timeInMinutes <= timeEvent1Limit)
+        {
+            Debug.Log("Se gatilla el evento1");
+            currentEvent = EventsToTrigger.Event1;
+            event1Trigged = true;
+        }
+
+
+
+
         switch (currentEvent) 
         {
             case EventsToTrigger.None:
