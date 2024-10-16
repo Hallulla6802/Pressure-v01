@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class ComputerInteraction : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class ComputerInteraction : MonoBehaviour
     public Camera playerCam;
     public Camera pcFocusCam;
     private bool isInInteraction = false;  // Bandera para saber si el jugador está interactuando
-    public InputField inputField;
+    public TMP_InputField inputField;
     void Update()
     {
         // Verificar la distancia entre el jugador y la computadora

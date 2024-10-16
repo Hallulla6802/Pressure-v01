@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e00d4d03cda6db42a02e523381d720d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clockscript: {fileID: 0}
   currentEvent: 0
   event1Collider: {fileID: 1573883649}
   event2Collider: {fileID: 146859156}
@@ -20872,6 +20873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockText: {fileID: 676652148}
+  frezzeTime: 0
   timeInMinutes: 1320
   timeScale: 1
 --- !u!4 &707887476
