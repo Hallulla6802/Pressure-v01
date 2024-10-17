@@ -580,8 +580,8 @@ MonoBehaviour:
   timeEvent2: 0
   timeEvent2Limit: 0.9
   eventTrigged2: 0
-  timeEvent3: 0
-  timeEvent3Limit: 0
+  timeEvent3: 60
+  timeEvent3Limit: 60.9
   eventTrigged3: 0
   timeEvent4: 0
   timeEvent4Limit: 0
@@ -27311,6 +27311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightsToTurnOn: {fileID: 2113189619}
   redDot: {fileID: 270681999}
+  eventManager: {fileID: 0}
   objectCollider: {fileID: 605756044}
 --- !u!1 &627006229
 GameObject:
