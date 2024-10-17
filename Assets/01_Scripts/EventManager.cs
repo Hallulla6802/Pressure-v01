@@ -120,9 +120,16 @@ public class EventManager : MonoBehaviour
 
         if (!eventTrigged3 && clockscript.timeInMinutes >= timeEvent3 && clockscript.timeInMinutes <= timeEvent3Limit)
         {
-            Debug.Log("Se gatilla el evento3");
+            //Debug.Log("Se gatilla el evento3");
             currentEvent = EventsToTrigger.Event3;
             eventTrigged3 = true;
+        }
+
+        if (!eventTrigged4 && clockscript.timeInMinutes >= timeEvent4 && clockscript.timeInMinutes <= timeEvent4Limit)
+        {
+            //Debug.Log("Se gatilla el evento3");
+            currentEvent = EventsToTrigger.Event4;
+            eventTrigged4 = true;
         }
 
 
