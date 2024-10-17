@@ -12208,7 +12208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280244534587273094, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3804552657845679767, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
       propertyPath: m_LocalScale.x
@@ -12295,10 +12295,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 781282182204009591, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2723695694053228721, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
       propertyPath: m_Name
       value: PCInteraction
       objectReference: {fileID: 0}
+    - target: {fileID: 2965361327214102363, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 95d763215abb8af4fa0f71cf70400fe0, type: 3}
+    - target: {fileID: 2965361327214102363, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 39706f3062bc9244ca638e4c2dac0436, type: 3}
+    - target: {fileID: 2965361327214102363, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5e315e818f312d341bb0d8e6410c487f, type: 3}
     - target: {fileID: 6392219410383501622, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9293699
