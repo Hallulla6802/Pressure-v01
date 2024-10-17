@@ -681,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 737883469}
   audioDuration: 7
+  eventManager: {fileID: 0}
 --- !u!1 &169072139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,6 +1495,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334807786}
   m_CullTransparentMesh: 1
+--- !u!114 &340115575 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4845077065893377558, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
+  m_PrefabInstance: {fileID: 1936750841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &415577016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,7 +1590,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -29404,8 +29416,8 @@ Transform:
   m_GameObject: {fileID: 1110551667}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.559998, y: 1.19, z: 9.05}
-  m_LocalScale: {x: 0.5, y: 1, z: 1}
+  m_LocalPosition: {x: -16.6458, y: 1.19, z: 9.05}
+  m_LocalScale: {x: 0.3285, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1020717106}
@@ -29916,13 +29928,13 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -29958,7 +29970,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -30942,6 +30954,10 @@ PrefabInstance:
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 1239398482}
+    - target: {fileID: 6631028001889456260, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
+      propertyPath: inputField
+      value: 
+      objectReference: {fileID: 340115575}
     - target: {fileID: 6631028001889456260, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
       propertyPath: cameraScript
       value: 
