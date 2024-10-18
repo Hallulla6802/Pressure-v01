@@ -36,7 +36,7 @@ public class Event_1 : MonoBehaviour
         yield return new WaitForSeconds(delay);
         audioSource.Stop();
         
-        event1collider.enabled = false;
-        eventManager.currentEvent = EventsToTrigger.None;
+       // event1collider.enabled = false;
+       // eventManager.currentEvent = EventsToTrigger.None;
     }
 }
