@@ -7,6 +7,10 @@ using UnityEngine.ProBuilder.Shapes;
 public class EventManager : MonoBehaviour
 {
     public ClockScript clockscript;
+    public MecanographicScript mecanographicscript;
+
+    private EventsToTrigger lastEvent;
+
     public float timeEvent1;
     public float timeEvent1Limit;
     public bool event1Trigged = false;
@@ -84,6 +88,7 @@ public class EventManager : MonoBehaviour
     private void Awake()
     {
         clockscript = FindObjectOfType<ClockScript>();
+        mecanographicscript = FindObjectOfType<MecanographicScript>();
     }
 
 
@@ -91,6 +96,7 @@ public class EventManager : MonoBehaviour
     //empiezen escondidos y se vallan triggereando por caso
     private void Start()
     {
+        lastEvent = EventsToTrigger.None;
         event1Collider.SetActive(false);
         event2Collider.SetActive(false);
         event3Collider.SetActive(false);
@@ -102,228 +108,288 @@ public class EventManager : MonoBehaviour
     }
     private void Update()
     {
-
+        if (mecanographicscript.currentAmount == mecanographicscript.maximumMecanoAmout)
+        {
+            clockscript.timeScale = 10f;
+        }
 
         if (!event1Trigged && clockscript.timeInMinutes >= timeEvent1 && clockscript.timeInMinutes <= timeEvent1Limit)
         {
-            //Debug.Log("Se gatilla el evento1");
-            currentEvent = EventsToTrigger.Event1;
-            event1Trigged = true;
-        }
 
+            if (mecanographicscript.currentAmount < mecanographicscript.minimumMecanoAmount)
+            {
+
+                clockscript.frezzeTime = true;
+
+            }
+            if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
+            {
+                currentEvent = EventsToTrigger.Event1;
+                event1Trigged = true;
+                
+
+            }
+
+        }
         if (!eventTrigged2 && clockscript.timeInMinutes >= timeEvent2 && clockscript.timeInMinutes <= timeEvent2Limit)
         {
-           // Debug.Log("Se gatilla el evento2");
-            currentEvent = EventsToTrigger.Event2;
-            eventTrigged2 = true;
+
+
+            if (mecanographicscript.currentAmount < mecanographicscript.minimumMecanoAmount)
+            {
+
+                clockscript.frezzeTime = true;
+
+            }
+            if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
+            {
+                // Debug.Log("Se gatilla el evento2");
+                currentEvent = EventsToTrigger.Event2;
+                eventTrigged2 = true;
+
+            }
+            
         }
 
         if (!eventTrigged3 && clockscript.timeInMinutes >= timeEvent3 && clockscript.timeInMinutes <= timeEvent3Limit)
         {
-            //Debug.Log("Se gatilla el evento3");
-            currentEvent = EventsToTrigger.Event3;
-            eventTrigged3 = true;
+
+            if (mecanographicscript.currentAmount < mecanographicscript.minimumMecanoAmount)
+            {
+
+                clockscript.frezzeTime = true;
+
+            }
+            if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
+            {
+                //Debug.Log("Se gatilla el evento3");
+                currentEvent = EventsToTrigger.Event3;
+                eventTrigged3 = true;
+            }
+           
         }
 
         if (!eventTrigged4 && clockscript.timeInMinutes >= timeEvent4 && clockscript.timeInMinutes <= timeEvent4Limit)
         {
-            //Debug.Log("Se gatilla el evento3");
-            currentEvent = EventsToTrigger.Event4;
-            eventTrigged4 = true;
+            if (mecanographicscript.currentAmount < mecanographicscript.minimumMecanoAmount)
+            {
+
+                clockscript.frezzeTime = true;
+
+            }
+            if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
+            {
+                //Debug.Log("Se gatilla el evento3");
+                currentEvent = EventsToTrigger.Event4;
+                eventTrigged4 = true;
+            }
+           
         }
 
 
 
-
-        switch (currentEvent) 
+        if (currentEvent != lastEvent)
         {
-            case EventsToTrigger.None:
+            switch (currentEvent)
+            {
+                case EventsToTrigger.None:
 
-               // Debug.Log("Nothing is happening");
+                    // Debug.Log("Nothing is happening");
 
-                clockscript.frezzeTime = false;
+                    clockscript.frezzeTime = false;
 
-                event1Collider.SetActive(false);
-                event2Collider.SetActive(false);
-                event3Collider.SetActive(false);
-                event4Collider.SetActive(false);
-                event5Collider.SetActive(false);
-                event7Collider.SetActive(false);
-                event8Collider.SetActive(false);
-                event9Collider.SetActive(false);
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(false);
+                    event7Collider.SetActive(false);
+                    event8Collider.SetActive(false);
+                    event9Collider.SetActive(false);
 
-                break;
+                    break;
 
-            case EventsToTrigger.Event1:
+                case EventsToTrigger.Event1:
 
-                //Debug.Log("Event 1 is triggered");
+                    //Debug.Log("Event 1 is triggered");
 
-                clockscript.frezzeTime = true;
+                    clockscript.frezzeTime = true;
+                    AumentoMinMaxCurrentyArregloTimeScale();
+                    event1Collider.SetActive(true);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(false);
+                    event7Collider.SetActive(false);
+                    event8Collider.SetActive(false);
+                    event9Collider.SetActive(false);
 
-                event1Collider.SetActive(true);
-                event2Collider.SetActive(false);
-                event3Collider.SetActive(false);
-                event4Collider.SetActive(false);
-                event5Collider.SetActive(false);
-                event7Collider.SetActive(false);
-                event8Collider.SetActive(false);
-                event9Collider.SetActive(false);
 
+                    break;
 
-                break; 
-            
-            case EventsToTrigger.Event2:
+                case EventsToTrigger.Event2:
 
-                //Debug.Log("Event 2 is triggered");
+                    //Debug.Log("Event 2 is triggered");
 
-                clockscript.frezzeTime = true;
+                    clockscript.frezzeTime = true;
+                    AumentoMinMaxCurrentyArregloTimeScale();
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(true);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(false);
+                    event7Collider.SetActive(false);
+                    event8Collider.SetActive(false);
 
-                event1Collider.SetActive(false);
-                event2Collider.SetActive(true);
-                event3Collider.SetActive(false);
-                event4Collider.SetActive(false);
-                event5Collider.SetActive(false);
-                event7Collider.SetActive(false);
-                event8Collider.SetActive(false);
+                    break;
 
-                break;
+                case EventsToTrigger.Event3:
 
-            case EventsToTrigger.Event3:
+                    //Debug.Log("Event 3 is triggered");
 
-                //Debug.Log("Event 3 is triggered");
+                    clockscript.frezzeTime = true;
+                    AumentoMinMaxCurrentyArregloTimeScale();
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(true);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(false);
+                    event7Collider.SetActive(false);
+                    event8Collider.SetActive(false);
+                    event9Collider.SetActive(false);
 
-                clockscript.frezzeTime = true;
+                    break;
 
-                event1Collider.SetActive(false);
-                event2Collider.SetActive(false);
-                event3Collider.SetActive(true);
-                event4Collider.SetActive(false);
-                event5Collider.SetActive(false);
-                event7Collider.SetActive(false);
-                event8Collider.SetActive(false);
-                event9Collider.SetActive(false);
+                case EventsToTrigger.Event4:
 
-                break;
+                    //Debug.Log("Event 4 is triggered");
 
-            case EventsToTrigger.Event4:
+                    clockscript.frezzeTime = true;
+                    AumentoMinMaxCurrentyArregloTimeScale();
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(true);
+                    event5Collider.SetActive(false);
+                    event7Collider.SetActive(false);
+                    event8Collider.SetActive(false);
+                    event9Collider.SetActive(false);
 
-                //Debug.Log("Event 4 is triggered");
+                    break;
 
-                clockscript.frezzeTime = true;
+                case EventsToTrigger.Event5:
 
-                event1Collider.SetActive(false);
-                event2Collider.SetActive(false);
-                event3Collider.SetActive(false);
-                event4Collider.SetActive(true);
-                event5Collider.SetActive(false);
-                event7Collider.SetActive(false);
-                event8Collider.SetActive(false);
-                event9Collider.SetActive(false);
+                    //Debug.Log("Event 5 is triggered");
 
-                break;
+                    clockscript.frezzeTime = true;
 
-            case EventsToTrigger.Event5:
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(true);
+                    event7Collider.SetActive(false);
+                    event8Collider.SetActive(false);
+                    event9Collider.SetActive(false);
 
-                //Debug.Log("Event 5 is triggered");
+                    break;
 
-                clockscript.frezzeTime = true;
+                case EventsToTrigger.Event6:
 
-                event1Collider.SetActive(false);
-                event2Collider.SetActive(false);
-                event3Collider.SetActive(false);
-                event4Collider.SetActive(false);
-                event5Collider.SetActive(true);
-                event7Collider.SetActive(false);
-                event8Collider.SetActive(false);
-                event9Collider.SetActive(false);
+                    //Debug.Log("Event 6 is triggered");
 
-                break;
+                    clockscript.frezzeTime = true;
 
-            case EventsToTrigger.Event6:
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(false);
+                    event7Collider.SetActive(false);
+                    event8Collider.SetActive(false);
+                    event9Collider.SetActive(false);
 
-                //Debug.Log("Event 6 is triggered");
+                    break;
 
-                clockscript.frezzeTime = true;
+                case EventsToTrigger.Event7:
 
-                event1Collider.SetActive(false);
-                event2Collider.SetActive(false);
-                event3Collider.SetActive(false);
-                event4Collider.SetActive(false);
-                event5Collider.SetActive(false);
-                event7Collider.SetActive(false);
-                event8Collider.SetActive(false);
-                event9Collider.SetActive(false);
+                    //Debug.Log("Event 7 is triggered");
 
-                break;
+                    clockscript.frezzeTime = true;
 
-            case EventsToTrigger.Event7:
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(false);
+                    event7Collider.SetActive(true);
+                    event8Collider.SetActive(false);
+                    event9Collider.SetActive(false);
 
-                //Debug.Log("Event 7 is triggered");
+                    break;
 
-                clockscript.frezzeTime = true;
+                case EventsToTrigger.Event8:
 
-                event1Collider.SetActive(false);
-                event2Collider.SetActive(false);
-                event3Collider.SetActive(false);
-                event4Collider.SetActive(false);
-                event5Collider.SetActive(false);
-                event7Collider.SetActive(true);
-                event8Collider.SetActive(false);
-                event9Collider.SetActive(false);
+                    //Debug.Log("Event 8 is triggered");
 
-                break;
+                    clockscript.frezzeTime = true;
 
-            case EventsToTrigger.Event8:
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(false);
+                    event7Collider.SetActive(false);
+                    event8Collider.SetActive(true);
+                    event9Collider.SetActive(false);
 
-                //Debug.Log("Event 8 is triggered");
+                    break;
 
-                clockscript.frezzeTime = true;
+                case EventsToTrigger.Event9:
 
-                event1Collider.SetActive(false);
-                event2Collider.SetActive(false);
-                event3Collider.SetActive(false);
-                event4Collider.SetActive(false);
-                event5Collider.SetActive(false);
-                event7Collider.SetActive(false);
-                event8Collider.SetActive(true);
-                event9Collider.SetActive(false);
+                    //Debug.Log("Event 9 is triggered");
 
-                break;
+                    clockscript.frezzeTime = true;
 
-            case EventsToTrigger.Event9:
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(false);
+                    event7Collider.SetActive(false);
+                    event8Collider.SetActive(false);
+                    event9Collider.SetActive(true);
 
-                //Debug.Log("Event 9 is triggered");
+                    break;
 
-                clockscript.frezzeTime = true;
+                case EventsToTrigger.Event10:
 
-                event1Collider.SetActive(false);
-                event2Collider.SetActive(false);
-                event3Collider.SetActive(false);
-                event4Collider.SetActive(false);
-                event5Collider.SetActive(false);
-                event7Collider.SetActive(false);
-                event8Collider.SetActive(false);
-                event9Collider.SetActive(true);
+                    //Debug.Log("Event 10 is triggered");
 
-                break;
+                    clockscript.frezzeTime = true;
 
-            case EventsToTrigger.Event10:
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(false);
+                    event7Collider.SetActive(false);
+                    event8Collider.SetActive(false);
+                    event9Collider.SetActive(false);
 
-                //Debug.Log("Event 10 is triggered");
+                    break;
+            }
 
-                clockscript.frezzeTime = true;
-
-                event1Collider.SetActive(false);
-                event2Collider.SetActive(false);
-                event3Collider.SetActive(false);
-                event4Collider.SetActive(false);
-                event5Collider.SetActive(false);
-                event7Collider.SetActive(false);
-                event8Collider.SetActive(false);
-                event9Collider.SetActive(false);
-
-                break;
+            lastEvent = currentEvent;
         }
+        
+    }
+
+    void AumentoMinMaxCurrentyArregloTimeScale()
+    {
+        clockscript.timeScale = 1f;
+        mecanographicscript.minimumMecanoAmount += 3;
+        mecanographicscript.maximumMecanoAmout += 5;
     }
 
 }
