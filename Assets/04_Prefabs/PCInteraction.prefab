@@ -317,9 +317,9 @@ MonoBehaviour:
   textToCopy: {fileID: 2568409351456352873}
   playerInputText: {fileID: 4845077065893377558}
   feedbackText: {fileID: 6117911716710806346}
-  minimumMecanoAmount: 6
+  minimumMecanoAmount: 3
   currentAmount: 0
-  maximumMecanoAmout: 8
+  maximumMecanoAmout: 5
 --- !u!1 &225249092703570030
 GameObject:
   m_ObjectHideFlags: 0
