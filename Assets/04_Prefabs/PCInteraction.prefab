@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5754935029747417489}
   - component: {fileID: 2343605327817735084}
   - component: {fileID: 5774131441649112808}
+  - component: {fileID: 4209019413778172847}
   m_Layer: 0
   m_Name: PCScreen
   m_TagString: Untagged
@@ -106,6 +107,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &4209019413778172847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97092501493480732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780f57c4048c0c744aa971e4524fe3b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  interactionDistance: 6
+  playerMovement: {fileID: 0}
+  cameraScript: {fileID: 0}
+  playerCam: {fileID: 0}
+  pcFocusCam: {fileID: 781282182204009591}
+  inputField: {fileID: 4845077065893377558}
 --- !u!1 &107669284746679473
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +855,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6631028001889456260}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ComputerInteraction, Assembly-CSharp
         m_MethodName: ExitInteraction
         m_Mode: 1
@@ -2187,9 +2207,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6662ce1a367a98449855a4c01041877d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2147207798277231755}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6662ce1a367a98449855a4c01041877d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6631028001889456260}
   m_SourcePrefab: {fileID: 100100000, guid: 6662ce1a367a98449855a4c01041877d, type: 3}
 --- !u!1 &3956833675498473217 stripped
 GameObject:
@@ -2218,25 +2235,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1875780437015597444, guid: 6662ce1a367a98449855a4c01041877d, type: 3}
---- !u!114 &6631028001889456260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3956833675498473217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780f57c4048c0c744aa971e4524fe3b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  interactionDistance: 6
-  playerMovement: {fileID: 0}
-  cameraScript: {fileID: 0}
-  playerCam: {fileID: 0}
-  pcFocusCam: {fileID: 781282182204009591}
-  inputField: {fileID: 4845077065893377558}
 --- !u!4 &4441305627428625851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6662ce1a367a98449855a4c01041877d, type: 3}

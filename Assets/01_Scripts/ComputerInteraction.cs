@@ -31,6 +31,10 @@ public class ComputerInteraction : MonoBehaviour
             }
         }
     }
+    void OnDisable()
+    {
+        ExitInteraction();
+    }
 
     void EnterInteraction()
     {

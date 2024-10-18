@@ -9,7 +9,7 @@ public class MecanographicScript : MonoBehaviour
     public TextMeshProUGUI textToCopy;
     public TMP_InputField playerInputText;
     public TextMeshProUGUI feedbackText;
-
+    public int correctAmount;
     private const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
 
     private void Start()
@@ -19,7 +19,7 @@ public class MecanographicScript : MonoBehaviour
 
     private void GenerateRandomText()
     {
-        textToCopy.text = GetRandomString(6);
+        textToCopy.text = GetRandomString(10);
     }
 
     private string GetRandomString(int length)
