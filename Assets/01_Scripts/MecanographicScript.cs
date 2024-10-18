@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
 
 public class MecanographicScript : MonoBehaviour
 {
     public TextMeshProUGUI textToCopy;
     public TMP_InputField playerInputText;
     public TextMeshProUGUI feedbackText;
-    public int correctAmount;
+    [Space]
+
+    public int minimumMecanoAmount;
+    public int currentAmount;
+    public int maximumMecanoAmout;
+
     private const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
 
     private void Start()
@@ -34,11 +40,18 @@ public class MecanographicScript : MonoBehaviour
 
     public void CheckText()
     {
-        
         if (playerInputText.text == textToCopy.text)
         {
+            currentAmount++;
+
             feedbackText.text = "Correct!";
             feedbackText.color = Color.green;
+
+            if(currentAmount >= maximumMecanoAmout)
+            {
+                currentAmount = maximumMecanoAmout;
+            }
+           
         }
         else
         {

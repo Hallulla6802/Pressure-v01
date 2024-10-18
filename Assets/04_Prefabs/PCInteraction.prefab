@@ -317,6 +317,9 @@ MonoBehaviour:
   textToCopy: {fileID: 2568409351456352873}
   playerInputText: {fileID: 4845077065893377558}
   feedbackText: {fileID: 6117911716710806346}
+  minimumMecanoAmount: 6
+  currentAmount: 0
+  maximumMecanoAmout: 8
 --- !u!1 &225249092703570030
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +750,7 @@ GameObject:
   - component: {fileID: 7565648022052956060}
   - component: {fileID: 808555915858769979}
   m_Layer: 6
-  m_Name: Button
+  m_Name: ExitPCbtton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -855,7 +858,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4209019413778172847}
         m_TargetAssemblyTypeName: ComputerInteraction, Assembly-CSharp
         m_MethodName: ExitInteraction
         m_Mode: 1
@@ -1862,7 +1865,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 2048
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
