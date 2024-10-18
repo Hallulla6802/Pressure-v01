@@ -614,6 +614,7 @@ MonoBehaviour:
   event7Collider: {fileID: 1188881430}
   event8Collider: {fileID: 627006229}
   event9Collider: {fileID: 1091305242}
+  colaiderMicrondas: {fileID: 1630770270}
 --- !u!1 &146859156
 GameObject:
   m_ObjectHideFlags: 0

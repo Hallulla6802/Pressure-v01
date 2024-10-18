@@ -83,6 +83,8 @@ public class EventManager : MonoBehaviour
     public GameObject event7Collider;
     public GameObject event8Collider;
     public GameObject event9Collider;
+
+    public GameObject colaiderMicrondas;
     //public Gameobject event10Collider;
 
     private void Awake()
@@ -97,6 +99,7 @@ public class EventManager : MonoBehaviour
     private void Start()
     {
         lastEvent = EventsToTrigger.None;
+        colaiderMicrondas.SetActive(false);
         event1Collider.SetActive(false);
         event2Collider.SetActive(false);
         event3Collider.SetActive(false);
@@ -206,6 +209,7 @@ public class EventManager : MonoBehaviour
                     event7Collider.SetActive(false);
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
+                    colaiderMicrondas.SetActive(false);
 
                     break;
 
@@ -223,6 +227,7 @@ public class EventManager : MonoBehaviour
                     event7Collider.SetActive(false);
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
+                    colaiderMicrondas.SetActive(true);
 
 
                     break;
@@ -240,6 +245,7 @@ public class EventManager : MonoBehaviour
                     event5Collider.SetActive(false);
                     event7Collider.SetActive(false);
                     event8Collider.SetActive(false);
+                    colaiderMicrondas.SetActive(false);
 
                     break;
 
@@ -257,6 +263,7 @@ public class EventManager : MonoBehaviour
                     event7Collider.SetActive(false);
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
+                    colaiderMicrondas.SetActive(false);
 
                     break;
 
@@ -274,6 +281,7 @@ public class EventManager : MonoBehaviour
                     event7Collider.SetActive(false);
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
+                    colaiderMicrondas.SetActive(false);
 
                     break;
 
@@ -291,6 +299,7 @@ public class EventManager : MonoBehaviour
                     event7Collider.SetActive(false);
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
+                    colaiderMicrondas.SetActive(false);
 
                     break;
 
@@ -308,6 +317,7 @@ public class EventManager : MonoBehaviour
                     event7Collider.SetActive(false);
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
+                    colaiderMicrondas.SetActive(false);
 
                     break;
 
@@ -325,6 +335,7 @@ public class EventManager : MonoBehaviour
                     event7Collider.SetActive(true);
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
+                    colaiderMicrondas.SetActive(false);
 
                     break;
 
@@ -342,6 +353,7 @@ public class EventManager : MonoBehaviour
                     event7Collider.SetActive(false);
                     event8Collider.SetActive(true);
                     event9Collider.SetActive(false);
+                    colaiderMicrondas.SetActive(false);
 
                     break;
 
@@ -359,6 +371,7 @@ public class EventManager : MonoBehaviour
                     event7Collider.SetActive(false);
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(true);
+                    colaiderMicrondas.SetActive(false);
 
                     break;
 
@@ -376,6 +389,7 @@ public class EventManager : MonoBehaviour
                     event7Collider.SetActive(false);
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
+                    colaiderMicrondas.SetActive(false);
 
                     break;
             }
