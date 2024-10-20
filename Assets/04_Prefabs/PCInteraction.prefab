@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 4845077065893377558}
   - component: {fileID: 881767288045306604}
   m_Layer: 6
-  m_Name: InputField (TMP)
+  m_Name: InputField_MecanoManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1024,7 +1024,7 @@ Transform:
   m_GameObject: {fileID: 3802433339651503015}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.018, y: -0.357, z: 5.861}
+  m_LocalPosition: {x: 1.0179993, y: -0.35700035, z: -0.13900054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2158,15 +2158,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6662ce1a367a98449855a4c01041877d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.16
+      value: 0.15999916
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6662ce1a367a98449855a4c01041877d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.511
+      value: -0.5110004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6662ce1a367a98449855a4c01041877d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.71
+      value: 1.7099994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6662ce1a367a98449855a4c01041877d, type: 3}
       propertyPath: m_LocalRotation.w
