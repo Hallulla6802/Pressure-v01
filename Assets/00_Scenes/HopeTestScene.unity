@@ -247,6 +247,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &83105616 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7971447828972261805, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
+  m_PrefabInstance: {fileID: 1797740850}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &113570016
 Mesh:
   m_ObjectHideFlags: 0
@@ -2162,7 +2173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &462430375
 Transform:
   m_ObjectHideFlags: 0
@@ -2190,7 +2201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c0aaaabe408454880c7f757b84b2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textForObjectives: {fileID: 1384123894}
+  textForObjectives: {fileID: 83105616}
+  BeeperToHide: {fileID: 690314352}
   currentStates: 0
 --- !u!1 &496353246
 GameObject:
@@ -2640,6 +2652,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676652146}
   m_CullTransparentMesh: 1
+--- !u!1 &690314352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6100538267410533312, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
+  m_PrefabInstance: {fileID: 1797740850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &707887474
 GameObject:
   m_ObjectHideFlags: 0
@@ -4155,7 +4172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1384123893
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5128,6 +5145,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3804552657845679767, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100538267410533312, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6548562934967921615, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
@@ -16526,10 +16547,6 @@ PrefabInstance:
     - target: {fileID: 6990096000377388063, guid: 62a355f09270a064c8c239f9d15e869d, type: 3}
       propertyPath: m_Name
       value: PPVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 6990096000377388063, guid: 62a355f09270a064c8c239f9d15e869d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

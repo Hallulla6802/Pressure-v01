@@ -7,19 +7,21 @@ public class ObjectivesManager : MonoBehaviour
 {
     public enum ObjectiveStates
     {
-        Objective1,
-        Objective2,
-        Objective3,
+        GoToThePC,
+        WorkingOnPC,
+        InvestigateSound,
         Objective4,
         Objective5
     }
 
     public TextMeshProUGUI textForObjectives;
+    public GameObject BeeperToHide;
+    [Space]
     public ObjectiveStates currentStates;
 
     private void Start()
     {
-        currentStates = ObjectiveStates.Objective1;
+        currentStates = ObjectiveStates.GoToThePC;
         UpdateObjectiveUI();
     }
 
@@ -27,7 +29,7 @@ public class ObjectivesManager : MonoBehaviour
     {
         switch (currentStates)
         {
-            case ObjectiveStates.Objective1:
+            case ObjectiveStates.GoToThePC:
                 //Debug.Log("Whatever OBJ one does");
 
                 UpdateObjectiveUI();
@@ -36,7 +38,7 @@ public class ObjectivesManager : MonoBehaviour
 
                 break;
 
-            case ObjectiveStates.Objective2:
+            case ObjectiveStates.WorkingOnPC:
                 //Debug.Log("Whatever OBJ two does");
 
                 UpdateObjectiveUI();
@@ -45,7 +47,7 @@ public class ObjectivesManager : MonoBehaviour
 
                 break;
 
-            case ObjectiveStates.Objective3:
+            case ObjectiveStates.InvestigateSound:
                 //Debug.Log("Whatever OBJ three does");
 
                 UpdateObjectiveUI();
@@ -74,13 +76,13 @@ public class ObjectivesManager : MonoBehaviour
         }
 
 
-        if(Input.GetKeyDown(KeyCode.O) & textForObjectives.enabled == true)
+        if(Input.GetKeyDown(KeyCode.O) & BeeperToHide.activeSelf == true)
         {
-            textForObjectives.enabled = false;
+            BeeperToHide.SetActive(false);
         }
-        else if (Input.GetKeyDown(KeyCode.O) & textForObjectives.enabled == false)
+        else if (Input.GetKeyDown(KeyCode.O) & BeeperToHide.activeSelf == false)
         {
-            textForObjectives.enabled = true;
+            BeeperToHide.SetActive(true);
         }
     }
 
@@ -88,18 +90,18 @@ public class ObjectivesManager : MonoBehaviour
     {
         switch (currentStates)
         {
-            case ObjectiveStates.Objective1:
-                textForObjectives.text = "Objective: Example of obj 1";
+            case ObjectiveStates.GoToThePC:
+                textForObjectives.text = "Ve a tu habitacion para trabajar.";
 
                 break;
 
-            case ObjectiveStates.Objective2:
-                textForObjectives.text = "Objective: Example of obj 2";
+            case ObjectiveStates.WorkingOnPC:
+                textForObjectives.text = "Trabajando en el PC";
 
                 break;
 
-            case ObjectiveStates.Objective3:
-                textForObjectives.text = "Objective: Example of obj 3";
+            case ObjectiveStates.InvestigateSound:
+                textForObjectives.text = "Ve a investigar el ruido, no podemos concentrarnos asi.";
 
                 break;
 
