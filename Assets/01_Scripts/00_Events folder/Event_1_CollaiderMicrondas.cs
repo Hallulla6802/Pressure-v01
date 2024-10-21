@@ -6,7 +6,7 @@ using static EventManager;
 public class Event_1_CollaiderMicrondas : MonoBehaviour
 {
 
-
+    public AudioSource microndasSound;
 
     public EventManager eventManager;
     public BoxCollider objectCollider;
@@ -22,10 +22,10 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("PlayerHasCollided");
+            //Debug.Log("PlayerHasCollided");
 
 
-
+            microndasSound.Stop();
             objectCollider.enabled = false;
             eventManager.currentEvent = EventsToTrigger.None;
           

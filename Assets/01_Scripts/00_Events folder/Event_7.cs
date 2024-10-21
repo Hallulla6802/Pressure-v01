@@ -21,8 +21,12 @@ public class Event_7 : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            event7collider.enabled = false;
-            StartCoroutine(cooldownForGuy());
+            if (Random.Range(0f, 1f) <= 0.5f)
+            {
+                event7collider.enabled = false;
+                StartCoroutine(cooldownForGuy());
+            }
+               
         }
     }
 

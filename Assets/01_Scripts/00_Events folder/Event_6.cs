@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static EventManager;
 
-public class Event_2 : MonoBehaviour
+public class Event_6 : MonoBehaviour
 {
-  
 
-    private BoxCollider event2Collider;
-    public AudioSource knocksound;
+    public AudioSource animalSounds;
     public EventManager eventManager;
+    private BoxCollider event6Collider;
 
     private void Awake()
     {
-        event2Collider = GetComponent<BoxCollider>();
+        event6Collider = GetComponent<BoxCollider>();
         eventManager = FindObjectOfType<EventManager>();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,12 +21,10 @@ public class Event_2 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            knocksound.Play();
-            event2Collider.enabled = false;
-               
-            
+            animalSounds.Play();
+            event6Collider.enabled = false;
+           
         }
     }
-
-  
 }
+

@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using static EventManager;
 
-public class Event_2 : MonoBehaviour
+public class Event_6_RadioTrigger : MonoBehaviour
 {
-  
+    public AudioSource animalSounds;
 
-    private BoxCollider event2Collider;
-    public AudioSource knocksound;
+    private BoxCollider event6Collider;
     public EventManager eventManager;
 
     private void Awake()
     {
-        event2Collider = GetComponent<BoxCollider>();
+        event6Collider = GetComponent<BoxCollider>();
         eventManager = FindObjectOfType<EventManager>();
     }
 
@@ -21,13 +20,9 @@ public class Event_2 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
-            knocksound.Play();
-            event2Collider.enabled = false;
-               
-            
+            animalSounds.Stop();
+            event6Collider.enabled = false;
+            eventManager.currentEvent = EventsToTrigger.None;
         }
     }
-
-  
 }

@@ -35,9 +35,7 @@ public class EventManager : MonoBehaviour
     public float timeEvent6Limit;
     public bool eventTrigged6 = false;
 
-    public float timeEvent7;
-    public float timeEvent7Limit;
-    public bool eventTrigged7 = false;
+ 
 
     public float timeEvent8;
     public float timeEvent8Limit;
@@ -79,8 +77,8 @@ public class EventManager : MonoBehaviour
     public GameObject event3Collider;
     public GameObject event4Collider;
     public GameObject event5Collider;
-    //public Gameobject event6Collider;
-    public GameObject event7Collider;
+    public GameObject event6Collider;
+   
     public GameObject event8Collider;
     public GameObject event9Collider;
 
@@ -105,7 +103,8 @@ public class EventManager : MonoBehaviour
         event3Collider.SetActive(false);
         event4Collider.SetActive(false);
         event5Collider.SetActive(false);
-        event7Collider.SetActive(false);
+        event6Collider.SetActive(false);
+        
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
     }
@@ -189,6 +188,57 @@ public class EventManager : MonoBehaviour
            
         }
 
+        if (!eventTrigged5 && clockscript.timeInMinutes >= timeEvent5 && clockscript.timeInMinutes <= timeEvent5Limit)
+        {
+            if (mecanographicscript.currentAmount < mecanographicscript.minimumMecanoAmount)
+            {
+
+                clockscript.frezzeTime = true;
+
+            }
+            if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
+            {
+                //Debug.Log("Se gatilla el evento3");
+                currentEvent = EventsToTrigger.Event5;
+                eventTrigged5 = true;
+            }
+
+        }
+
+        if (!eventTrigged6 && clockscript.timeInMinutes >= timeEvent6 && clockscript.timeInMinutes <= timeEvent6Limit)
+        {
+            if (mecanographicscript.currentAmount < mecanographicscript.minimumMecanoAmount)
+            {
+
+                clockscript.frezzeTime = true;
+
+            }
+            if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
+            {
+                //Debug.Log("Se gatilla el evento3");
+                currentEvent = EventsToTrigger.Event6;
+                eventTrigged6 = true;
+            }
+
+        }
+
+        if (!eventTrigged8 && clockscript.timeInMinutes >= timeEvent8 && clockscript.timeInMinutes <= timeEvent8Limit)
+        {
+            if (mecanographicscript.currentAmount < mecanographicscript.minimumMecanoAmount)
+            {
+
+                clockscript.frezzeTime = true;
+
+            }
+            if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
+            {
+                //Debug.Log("Se gatilla el evento3");
+                currentEvent = EventsToTrigger.Event8;
+                eventTrigged8 = true;
+            }
+
+        }
+
 
 
         if (currentEvent != lastEvent)
@@ -206,7 +256,8 @@ public class EventManager : MonoBehaviour
                     event3Collider.SetActive(false);
                     event4Collider.SetActive(false);
                     event5Collider.SetActive(false);
-                    event7Collider.SetActive(false);
+                    event6Collider.SetActive(false);
+                    
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
@@ -224,7 +275,8 @@ public class EventManager : MonoBehaviour
                     event3Collider.SetActive(false);
                     event4Collider.SetActive(false);
                     event5Collider.SetActive(false);
-                    event7Collider.SetActive(false);
+                    event6Collider.SetActive(false);
+                    
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(true);
@@ -243,7 +295,8 @@ public class EventManager : MonoBehaviour
                     event3Collider.SetActive(false);
                     event4Collider.SetActive(false);
                     event5Collider.SetActive(false);
-                    event7Collider.SetActive(false);
+                    event6Collider.SetActive(false);
+                    
                     event8Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
 
@@ -260,7 +313,8 @@ public class EventManager : MonoBehaviour
                     event3Collider.SetActive(true);
                     event4Collider.SetActive(false);
                     event5Collider.SetActive(false);
-                    event7Collider.SetActive(false);
+                    event6Collider.SetActive(false);
+                    
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
@@ -278,7 +332,7 @@ public class EventManager : MonoBehaviour
                     event3Collider.SetActive(false);
                     event4Collider.SetActive(true);
                     event5Collider.SetActive(false);
-                    event7Collider.SetActive(false);
+                    
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
@@ -296,7 +350,8 @@ public class EventManager : MonoBehaviour
                     event3Collider.SetActive(false);
                     event4Collider.SetActive(false);
                     event5Collider.SetActive(true);
-                    event7Collider.SetActive(false);
+                    event6Collider.SetActive(false);
+                    
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
@@ -314,30 +369,15 @@ public class EventManager : MonoBehaviour
                     event3Collider.SetActive(false);
                     event4Collider.SetActive(false);
                     event5Collider.SetActive(false);
-                    event7Collider.SetActive(false);
+                    event6Collider.SetActive(true);
+                    
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
 
                     break;
 
-                case EventsToTrigger.Event7:
-
-                    //Debug.Log("Event 7 is triggered");
-
-                    clockscript.frezzeTime = true;
-
-                    event1Collider.SetActive(false);
-                    event2Collider.SetActive(false);
-                    event3Collider.SetActive(false);
-                    event4Collider.SetActive(false);
-                    event5Collider.SetActive(false);
-                    event7Collider.SetActive(true);
-                    event8Collider.SetActive(false);
-                    event9Collider.SetActive(false);
-                    colaiderMicrondas.SetActive(false);
-
-                    break;
+                
 
                 case EventsToTrigger.Event8:
 
@@ -350,7 +390,8 @@ public class EventManager : MonoBehaviour
                     event3Collider.SetActive(false);
                     event4Collider.SetActive(false);
                     event5Collider.SetActive(false);
-                    event7Collider.SetActive(false);
+                    event6Collider.SetActive(false);
+                    
                     event8Collider.SetActive(true);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
@@ -368,7 +409,8 @@ public class EventManager : MonoBehaviour
                     event3Collider.SetActive(false);
                     event4Collider.SetActive(false);
                     event5Collider.SetActive(false);
-                    event7Collider.SetActive(false);
+                    event6Collider.SetActive(false);
+                    
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(true);
                     colaiderMicrondas.SetActive(false);
@@ -386,7 +428,8 @@ public class EventManager : MonoBehaviour
                     event3Collider.SetActive(false);
                     event4Collider.SetActive(false);
                     event5Collider.SetActive(false);
-                    event7Collider.SetActive(false);
+                    event6Collider.SetActive(false);
+                    
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);

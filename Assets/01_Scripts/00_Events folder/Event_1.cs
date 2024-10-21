@@ -5,9 +5,8 @@ using static EventManager;
 
 public class Event_1 : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public float audioDuration; // Duración en segundos
 
+    public AudioSource microndasSound;
     private BoxCollider event1collider;
 
     public EventManager eventManager;
@@ -22,21 +21,13 @@ public class Event_1 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (audioSource != null)
-            {
-                event1collider.enabled = false;
-                audioSource.Play();
-                StartCoroutine(StopAudioAfterDelayEvent9(audioDuration));
-            }
+
+            microndasSound.Play();
+            event1collider.enabled = false;
+                
+            
         }
     }
 
-    private IEnumerator StopAudioAfterDelayEvent9(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        audioSource.Stop();
-        
-       // event1collider.enabled = false;
-       // eventManager.currentEvent = EventsToTrigger.None;
-    }
+   
 }
