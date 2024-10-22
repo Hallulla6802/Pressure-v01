@@ -22,7 +22,7 @@ public class Event_3_Object : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("PlayerHasCollided");
+           
 
             lightsToTurnOn.SetActive(true);
             redDot.SetActive(false);

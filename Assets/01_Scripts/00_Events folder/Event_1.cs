@@ -14,6 +14,7 @@ public class Event_1 : MonoBehaviour
     private void Awake()
     {
         event1collider = GetComponent<BoxCollider>();
+        
         eventManager = FindObjectOfType<EventManager>();
     }
 
