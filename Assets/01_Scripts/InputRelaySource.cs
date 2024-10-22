@@ -7,6 +7,7 @@ public class InputRelaySource : MonoBehaviour
 {
     [SerializeField] LayerMask RaycastMask = ~0;
     [SerializeField] float RaycastDistance = 15f;
+    [SerializeField] Camera interactionCamera;
     [SerializeField] UnityEvent<Vector2> OnCursorInput = new UnityEvent<Vector2>();
 
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class InputRelaySource : MonoBehaviour
     void Update()
     {
         // retrieve a ray based on the mouse location
-        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray mouseRay = interactionCamera.ScreenPointToRay(Input.mousePosition);
 
         // raycast to find what we have hit
         RaycastHit hitResult;

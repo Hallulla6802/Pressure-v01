@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2343605327817735084}
   - component: {fileID: 5774131441649112808}
   - component: {fileID: 4209019413778172847}
+  - component: {fileID: 6331983915003100652}
   m_Layer: 0
   m_Name: PCScreen
   m_TagString: Untagged
@@ -126,6 +127,38 @@ MonoBehaviour:
   playerCam: {fileID: 0}
   pcFocusCam: {fileID: 781282182204009591}
   inputField: {fileID: 4845077065893377558}
+--- !u!114 &6331983915003100652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97092501493480732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a420ff3c4fc4614a9701e6f029e1a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RaycastMask:
+    serializedVersion: 2
+    m_Bits: 1
+  RaycastDistance: 6
+  interactionCamera: {fileID: 781282182204009591}
+  OnCursorInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4558036581586487424}
+        m_TargetAssemblyTypeName: InputRelaySink, Assembly-CSharp
+        m_MethodName: OnCursorInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &107669284746679473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4432575222497407200}
   - component: {fileID: 781282182204009591}
+  - component: {fileID: 2705191990843377127}
   m_Layer: 0
   m_Name: PCCam
   m_TagString: Untagged
@@ -1292,13 +1326,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3802433339651503015}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.2320007, y: -0.35700035, z: -0.13900054}
+  m_LocalRotation: {x: -0, y: 0.99886626, z: -0.047605332, w: 0}
+  m_LocalPosition: {x: -1.2320004, y: -0.10700035, z: -0.13899994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6392219410383501622}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.457, y: 180, z: 0}
 --- !u!20 &781282182204009591
 Camera:
   m_ObjectHideFlags: 0
@@ -1334,7 +1368,7 @@ Camera:
   far clip plane: 50
   field of view: 60
   orthographic: 0
-  orthographic size: 2.15
+  orthographic size: 1.19
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1350,6 +1384,66 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2705191990843377127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3802433339651503015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 4432575222497407200}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &4045997054266971946
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class ObjectivesManager : MonoBehaviour
         Objective5
     }
 
-    public TextMeshProUGUI textForObjectives;
+    public TextMeshPro textForObjectives;
     public GameObject BeeperToHide;
     [Space]
     public ObjectiveStates currentStates;
