@@ -282,6 +282,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1683893161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1683893163}
+  - component: {fileID: 1683893162}
+  m_Layer: 0
+  m_Name: ChangeScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1683893162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683893161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2ef9dd275b6a84da37f2dfe23844f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1683893163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683893161}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1716226301
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,8 +483,8 @@ MonoBehaviour:
   - "No puedo dormir, la gente me necesita. \xBFQuien sabe cuando va a ocurrir algo
     parecido de hace dos a\xF1os atras? "
   - Quiza yo pueda ser el segundo John Titor que la gente espera.. Salvar el mundo..
-  - 'Necesito terminar esta maquina.. Aun que estoy seguro que el gobierno no quiere
-    eso. Me estan persiguiendo, me observan, yo lo se. '
+  - 'Necesito terminar esta maquina.. Aun que estoy seguro que el gobierno me esta
+    persiguiendo, me observa, yo lo se. '
   - Necesito andar con cuidado, evitar toda distraccion posible.
   typingSpeed: 0.07
 --- !u!1 &2121729827
@@ -502,8 +546,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Text 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 108f7e5f1d079b243abe01707490da02, type: 2}
+  m_sharedMaterial: {fileID: -3858914531322329581, guid: 108f7e5f1d079b243abe01707490da02, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -584,3 +628,4 @@ SceneRoots:
   - {fileID: 95822531}
   - {fileID: 1716226305}
   - {fileID: 995717515}
+  - {fileID: 1683893163}
