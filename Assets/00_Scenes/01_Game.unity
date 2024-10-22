@@ -1039,6 +1039,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f27dd0500c02a47b9451611424c47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTrigger: 0
+  textoInteractuarScript: {fileID: 0}
+  eventManager: {fileID: 0}
 --- !u!1 &239886757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,6 +1512,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterSound: {fileID: 2022155253}
   eventManager: {fileID: 0}
+  isTrigger: 0
+  textoInteractuarScript: {fileID: 0}
 --- !u!1 &462430374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,7 +1712,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalSounds: {fileID: 604336368}
+  isTrigger: 0
   eventManager: {fileID: 116198547}
+  textoInteractuarScript: {fileID: 0}
 --- !u!65 &495475057
 BoxCollider:
   m_ObjectHideFlags: 0

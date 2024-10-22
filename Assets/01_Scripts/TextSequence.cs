@@ -5,34 +5,27 @@ using UnityEngine;
 
 public class TextSequence : MonoBehaviour
 {
-    public List<TMP_Text> textElements;         
-    public List<string> fullTextStrings;        
-    public float typingSpeed = 0.05f;           
-
-    private int currentTextIndex = 0;           
-    private bool isTyping = false;              
+    public TMP_Text textElement;         
+    public List<string> fullTextStrings; 
+    public float typingSpeed = 0.05f;    
+    private int currentTextIndex = 0;    
+    private bool isTyping = false;       
 
     private void Start()
     {
         
-        if (textElements.Count != fullTextStrings.Count)
+        if (fullTextStrings.Count == 0)
         {
-            Debug.LogError("Mismatch between text elements and full text strings! Please ensure both lists are the same size.");
+            Debug.LogError("No text strings to display");
             return;
         }
 
         
-        foreach (var text in textElements)
-        {
-            text.text = "";  
-            text.gameObject.SetActive(false);  
-        }
+        textElement.text = "";
+        textElement.gameObject.SetActive(false);
 
-       
-        if (textElements.Count > 0)
-        {
-            StartCoroutine(ShowText(textElements[currentTextIndex], fullTextStrings[currentTextIndex]));
-        }
+        
+        StartCoroutine(ShowText(fullTextStrings[currentTextIndex]));
     }
 
     private void Update()
@@ -44,18 +37,18 @@ public class TextSequence : MonoBehaviour
         }
     }
 
-    IEnumerator ShowText(TMP_Text text, string fullText)
+    IEnumerator ShowText(string fullText)
     {
         isTyping = true;  
-        text.gameObject.SetActive(true);  
-        text.text = "";  
+        textElement.gameObject.SetActive(true);  
+        textElement.text = "";  
 
         Debug.Log("Starting to type text: " + fullText);
 
         
         for (int i = 0; i < fullText.Length; i++)
         {
-            text.text += fullText[i];  
+            textElement.text += fullText[i];  
             yield return new WaitForSeconds(typingSpeed);  
         }
 
@@ -68,13 +61,10 @@ public class TextSequence : MonoBehaviour
         Debug.Log("Mouse clicked, advancing to next text.");
 
         
-        textElements[currentTextIndex].gameObject.SetActive(false);
-
-        
-        if (currentTextIndex + 1 < textElements.Count)
+        if (currentTextIndex + 1 < fullTextStrings.Count)
         {
             currentTextIndex++;
-            StartCoroutine(ShowText(textElements[currentTextIndex], fullTextStrings[currentTextIndex]));
+            StartCoroutine(ShowText(fullTextStrings[currentTextIndex]));
         }
         else
         {
