@@ -41,11 +41,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 0c1d509dfc6f0f34f8c4046de8ed4392, type: 3}
+        m_Texture: {fileID: 8400000, guid: af234ce6f4badc641b0dcda49e7c244e, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0c1d509dfc6f0f34f8c4046de8ed4392, type: 3}
+        m_Texture: {fileID: 8400000, guid: af234ce6f4badc641b0dcda49e7c244e, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -67,9 +67,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.668
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.473
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -80,5 +80,5 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 0.9685863, b: 0.9685863, a: 1}
+    - _EmissionColor: {r: 1.2311443, g: 1.1830527, b: 1.1830527, a: 1}
   m_BuildTextureStacks: []
