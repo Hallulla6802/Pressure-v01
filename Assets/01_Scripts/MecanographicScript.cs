@@ -25,7 +25,7 @@ public class MecanographicScript : MonoBehaviour
 
     private void GenerateRandomText()
     {
-        textToCopy.text = GetRandomString(10);
+        textToCopy.text = GetRandomString(8);
     }
 
     private string GetRandomString(int length)
