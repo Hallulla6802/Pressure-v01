@@ -9,9 +9,13 @@ public class ObjectivesManager : MonoBehaviour
     {
         GoToThePC,
         WorkingOnPC,
-        InvestigateSound,
-        Objective4,
-        Objective5
+        InvestigateMicrowave,
+        InvestigateDoorKnocking,
+        FixTheLights,
+        TurnOffTheWater,
+        TurnOffTheTV,
+        FixTheRadio,
+        CloseTheDoor
     }
 
     public TextMeshPro textForObjectives;
@@ -22,7 +26,7 @@ public class ObjectivesManager : MonoBehaviour
     private void Start()
     {
         currentStates = ObjectiveStates.GoToThePC;
-        UpdateObjectiveUI();
+        
     }
 
     private void Update()
@@ -30,53 +34,62 @@ public class ObjectivesManager : MonoBehaviour
         switch (currentStates)
         {
             case ObjectiveStates.GoToThePC:
-                //Debug.Log("Whatever OBJ one does");
 
-                UpdateObjectiveUI();
-
-                //Trigger a function that sets obj 1
+                textForObjectives.text = "Ve a tu habitacion para trabajar.";
 
                 break;
 
             case ObjectiveStates.WorkingOnPC:
-                //Debug.Log("Whatever OBJ two does");
 
-                UpdateObjectiveUI();
-
-                //Trigger a function that sets obj 2
+                textForObjectives.text = "Sigue trabajando en el computador.";
 
                 break;
 
-            case ObjectiveStates.InvestigateSound:
-                //Debug.Log("Whatever OBJ three does");
+            case ObjectiveStates.InvestigateMicrowave:
 
-                UpdateObjectiveUI();
-
-                //Trigger a function that sets obj 3
+                textForObjectives.text = "Apaga el microondas en la cocina.";
 
                 break;
 
-            case ObjectiveStates.Objective4:
-                //Debug.Log("Whatever OBJ four does");
+            case ObjectiveStates.InvestigateDoorKnocking:
 
-                UpdateObjectiveUI();
-
-                //Trigger a function that sets obj 4
+                textForObjectives.text = "Revisa quien esta tocando la puerta en la entrada.";
 
                 break;
 
-            case ObjectiveStates.Objective5:
-                //Debug.Log("Whatever OBJ five does");
+            case ObjectiveStates.FixTheLights:
 
-                UpdateObjectiveUI();
+                textForObjectives.text = "Arregla las luces afuera de el hogar.";
 
-                //Trigger a funciton that sets obj 5
+                break;
+
+            case ObjectiveStates.TurnOffTheWater:
+
+                textForObjectives.text = "Cierra el grifo de agua en el baño.";
+
+                break;
+
+            case ObjectiveStates.TurnOffTheTV:
+
+                textForObjectives.text = "Apaga el Televisor en la sala de estar.";
+
+                break;
+
+            case ObjectiveStates.FixTheRadio:
+
+                textForObjectives.text = "Arregla la radio, nos concentraremos mejor.";
+
+                break;
+
+            case ObjectiveStates.CloseTheDoor:
+
+                textForObjectives.text = "Investiga quien abrio la puerta.";
 
                 break;
         }
 
 
-        if(Input.GetKeyDown(KeyCode.O) & BeeperToHide.activeSelf == true)
+        if (Input.GetKeyDown(KeyCode.O) & BeeperToHide.activeSelf == true)
         {
             BeeperToHide.SetActive(false);
         }
@@ -84,40 +97,6 @@ public class ObjectivesManager : MonoBehaviour
         {
             BeeperToHide.SetActive(true);
         }
-    }
-
-    public void UpdateObjectiveUI()
-    {
-        switch (currentStates)
-        {
-            case ObjectiveStates.GoToThePC:
-                textForObjectives.text = "Ve a tu habitacion para trabajar.";
-
-                break;
-
-            case ObjectiveStates.WorkingOnPC:
-                textForObjectives.text = "Trabajando en el PC";
-
-                break;
-
-            case ObjectiveStates.InvestigateSound:
-                textForObjectives.text = "Ve a investigar el ruido, no podemos concentrarnos asi.";
-
-                break;
-
-            case ObjectiveStates.Objective4:
-                textForObjectives.text = "Objective: Example of obj 4";
-
-                break;
-
-            case ObjectiveStates.Objective5:
-                textForObjectives.text = "Objective: Example of obj 5";
-
-                break;
-        }
-
-
-
     }
 
 }
