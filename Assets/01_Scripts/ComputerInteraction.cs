@@ -4,30 +4,50 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using static EventManager;
 
 public class ComputerInteraction : MonoBehaviour
 {
+    public Button Butonllamado;
+    public EventManager eventManager;
     public Transform player;     // La referencia al jugador
     public float interactionDistance = 2.0f;  // Distancia mínima para interactuar
     public PlayerMovement playerMovement;
     public CameraScript cameraScript;
     public Camera playerCam;
     public Camera pcFocusCam;
-    private bool isInInteraction = false;  // Bandera para saber si el jugador está interactuando
+    public bool isInInteraction = false;  // Bandera para saber si el jugador está interactuando
     public TMP_InputField inputField;
+    public TextoInteractuarScript textoInteractuarScript;
+
+    private void Awake()
+    {
+        eventManager = FindObjectOfType<EventManager>();
+        textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
+    }
     void Update()
     {
+       
         // Verificar la distancia entre el jugador y la computadora
         float distance = Vector3.Distance(player.position, transform.position);
 
         if (distance < interactionDistance && !isInInteraction)
         {
-            Debug.Log("Esta en Distancia");
+            //textoInteractuarScript.AbrirTextoInteractuar();
+           
+           
+
             // Si el jugador está lo suficientemente cerca y no está interactuando
             if (Input.GetKeyDown(KeyCode.E))  // Usamos la tecla E para interactuar
             {
+                if (eventManager.currentEvent == EventsToTrigger.None)
                 EnterInteraction();
-                Debug.Log("Entra a Interaccion");
+                //Debug.Log("Entra a Interaccion");
+
+                else
+                {
+
+                }
             }
         }
     }

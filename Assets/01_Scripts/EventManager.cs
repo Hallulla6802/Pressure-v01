@@ -8,6 +8,7 @@ public class EventManager : MonoBehaviour
 {
     public ClockScript clockscript;
     public MecanographicScript mecanographicscript;
+    public ComputerInteraction computerInteraction;
 
     private EventsToTrigger lastEvent;
 
@@ -89,6 +90,7 @@ public class EventManager : MonoBehaviour
     {
         clockscript = FindObjectOfType<ClockScript>();
         mecanographicscript = FindObjectOfType<MecanographicScript>();
+        computerInteraction = FindObjectOfType<ComputerInteraction>();
     }
 
 
@@ -267,7 +269,7 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event1:
 
                     //Debug.Log("Event 1 is triggered");
-
+                    computerInteraction.ExitInteraction();
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
                     event1Collider.SetActive(true);
@@ -287,7 +289,7 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event2:
 
                     //Debug.Log("Event 2 is triggered");
-
+                    computerInteraction.ExitInteraction();
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
                     event1Collider.SetActive(false);
@@ -305,7 +307,7 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event3:
 
                     //Debug.Log("Event 3 is triggered");
-
+                    computerInteraction.ExitInteraction();
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
                     event1Collider.SetActive(false);
@@ -324,7 +326,7 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event4:
 
                     //Debug.Log("Event 4 is triggered");
-
+                    computerInteraction.ExitInteraction();
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
                     event1Collider.SetActive(false);
@@ -344,7 +346,7 @@ public class EventManager : MonoBehaviour
                     //Debug.Log("Event 5 is triggered");
 
                     clockscript.frezzeTime = true;
-
+                    computerInteraction.ExitInteraction();
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -363,7 +365,7 @@ public class EventManager : MonoBehaviour
                     //Debug.Log("Event 6 is triggered");
 
                     clockscript.frezzeTime = true;
-
+                    computerInteraction.ExitInteraction();
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -384,7 +386,7 @@ public class EventManager : MonoBehaviour
                     //Debug.Log("Event 8 is triggered");
 
                     clockscript.frezzeTime = true;
-
+                    computerInteraction.ExitInteraction();
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -403,7 +405,7 @@ public class EventManager : MonoBehaviour
                     //Debug.Log("Event 9 is triggered");
 
                     clockscript.frezzeTime = true;
-
+                    computerInteraction.ExitInteraction();
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -422,7 +424,7 @@ public class EventManager : MonoBehaviour
                     //Debug.Log("Event 10 is triggered");
 
                     clockscript.frezzeTime = true;
-
+                    computerInteraction.ExitInteraction();
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
