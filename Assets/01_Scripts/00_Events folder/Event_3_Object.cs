@@ -6,6 +6,7 @@ public class Event_3_Lights : MonoBehaviour
 {
     public GameObject lightsToTurnOn;
     public GameObject redDot;
+    public GameObject pcScreen;
   
     [SerializeField]private BoxCollider objectCollider;
 
@@ -20,7 +21,7 @@ public class Event_3_Lights : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-
+            pcScreen.SetActive(true);
             lightsToTurnOn.SetActive(true);
             redDot.SetActive(false);
             objectCollider.enabled = false;

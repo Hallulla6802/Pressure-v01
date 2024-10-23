@@ -12,6 +12,7 @@ public class Event_3_Object : MonoBehaviour
     public EventManager eventManager;
     [SerializeField]private BoxCollider objectCollider;
 
+    
     private ObjectivesManager objMan;
 
 
@@ -41,6 +42,7 @@ public class Event_3_Object : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && isTrigger)
         {
+          
             lightsToTurnOn.SetActive(true);
             redDot.SetActive(false);
 

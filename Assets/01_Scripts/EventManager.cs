@@ -9,6 +9,8 @@ public class EventManager : MonoBehaviour
     public ClockScript clockscript;
     public MecanographicScript mecanographicscript;
     public ComputerInteraction computerInteraction;
+    public Evento_10 evento_10;
+    public GameObject pcScreen;
 
     private EventsToTrigger lastEvent;
 
@@ -46,9 +48,7 @@ public class EventManager : MonoBehaviour
     public float timeEvent9Limit;
     public bool eventTrigged9 = false;
 
-    public float timeEvent10;
-    public float timeEvent10Limit;
-    public bool eventTrigged10 = false;
+    
     public enum EventsToTrigger
     {
         None,
@@ -94,6 +94,7 @@ public class EventManager : MonoBehaviour
         clockscript = FindObjectOfType<ClockScript>();
         mecanographicscript = FindObjectOfType<MecanographicScript>();
         computerInteraction = FindObjectOfType<ComputerInteraction>();
+        evento_10 = FindObjectOfType<Evento_10>();
         
     }
 
@@ -255,6 +256,25 @@ public class EventManager : MonoBehaviour
         }
 
 
+        if (!eventTrigged9 && clockscript.timeInMinutes >= timeEvent9 && clockscript.timeInMinutes <= timeEvent9Limit)
+        {
+            if (mecanographicscript.currentAmount < mecanographicscript.minimumMecanoAmount)
+            {
+
+                clockscript.frezzeTime = true;
+
+            }
+            if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
+            {
+                //Debug.Log("Se gatilla el evento8 Steps");
+                currentEvent = EventsToTrigger.Event9;
+
+                eventTrigged9 = true;
+            }
+
+        }
+
+
 
         if (currentEvent != lastEvent)
         {
@@ -265,7 +285,7 @@ public class EventManager : MonoBehaviour
                     // Debug.Log("Nothing is happening");
 
                     clockscript.frezzeTime = false;
-
+                    pcScreen.SetActive(true);
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -282,6 +302,7 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event1:
 
                     //Debug.Log("Event 1 is triggered");
+                    evento_10.ShadowEvent1();
                     computerInteraction.ExitInteraction();
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
@@ -302,6 +323,7 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event2:
 
                     //Debug.Log("Event 2 is triggered");
+                    evento_10.ShadowEvent2();
                     computerInteraction.ExitInteraction();
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
@@ -320,12 +342,14 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event3:
 
                     //Debug.Log("Event 3 is triggered");
+                    evento_10.ShadowEvent3();
+                    event3Collider.SetActive(true);
                     computerInteraction.ExitInteraction();
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
-                    event3Collider.SetActive(true);
+                    
                     event4Collider.SetActive(false);
                     event5Collider.SetActive(false);
                     event6Collider.SetActive(false);
@@ -339,6 +363,7 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event4:
 
                     //Debug.Log("Event 4 is triggered");
+                    evento_10.ShadowEvent4();
                     computerInteraction.ExitInteraction();
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
@@ -357,8 +382,9 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event5:
 
                     //Debug.Log("Event 5 is triggered");
-
+                    evento_10.ShadowEvent5();
                     clockscript.frezzeTime = true;
+                    AumentoMinMaxCurrentyArregloTimeScale();
                     computerInteraction.ExitInteraction();
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
@@ -376,8 +402,9 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event6:
 
                     //Debug.Log("Event 6 is triggered");
-
+                    evento_10.ShadowEvent6();
                     clockscript.frezzeTime = true;
+                    AumentoMinMaxCurrentyArregloTimeScale();
                     computerInteraction.ExitInteraction();
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
@@ -400,6 +427,7 @@ public class EventManager : MonoBehaviour
 
                     clockscript.frezzeTime = true;
                     computerInteraction.ExitInteraction();
+                    AumentoMinMaxCurrentyArregloTimeScale();
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -416,8 +444,9 @@ public class EventManager : MonoBehaviour
                 case EventsToTrigger.Event9:
 
                     //Debug.Log("Event 9 is triggered");
-
+                    evento_10.ShadowEvent9();
                     clockscript.frezzeTime = true;
+                    AumentoMinMaxCurrentyArregloTimeScale();
                     computerInteraction.ExitInteraction();
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
@@ -432,24 +461,7 @@ public class EventManager : MonoBehaviour
 
                     break;
 
-                case EventsToTrigger.Event10:
-
-                    //Debug.Log("Event 10 is triggered");
-
-                    clockscript.frezzeTime = true;
-                    computerInteraction.ExitInteraction();
-                    event1Collider.SetActive(false);
-                    event2Collider.SetActive(false);
-                    event3Collider.SetActive(false);
-                    event4Collider.SetActive(false);
-                    event5Collider.SetActive(false);
-                    event6Collider.SetActive(false);
-                    
-                    event8Collider.SetActive(false);
-                    event9Collider.SetActive(false);
-                    colaiderMicrondas.SetActive(false);
-
-                    break;
+               
             }
 
             lastEvent = currentEvent;
@@ -461,7 +473,7 @@ public class EventManager : MonoBehaviour
     {
         clockscript.timeScale = 1f;
         mecanographicscript.minimumMecanoAmount += 3;
-        mecanographicscript.maximumMecanoAmout += 5;
+        mecanographicscript.maximumMecanoAmout += 4;
     }
 
 }

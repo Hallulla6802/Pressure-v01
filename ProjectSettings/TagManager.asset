@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - InteractiveScreen
+  - ShadowEvent7
+  - ShadowEvent10
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - UI
   - UI_PC
   - pp
-  - 
+  - enemyLayer
   - 
   - 
   - 

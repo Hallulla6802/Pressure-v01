@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static EventManager;
 
 public class Event_5_TV : MonoBehaviour
 {
     public AudioSource tvSound;
     public TextoInteractuarScript textoInteractuarScript;
     private BoxCollider event5Collider;
+    public EventManager eventManager;
     public bool isTrigger;
 
     private ObjectivesManager objMan;
@@ -15,6 +17,7 @@ public class Event_5_TV : MonoBehaviour
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
         event5Collider = GetComponent<BoxCollider>();
         objMan = FindObjectOfType<ObjectivesManager>();
+        eventManager = FindObjectOfType<EventManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +35,7 @@ public class Event_5_TV : MonoBehaviour
        {
             tvSound.Stop();
             event5Collider.enabled = false;
+            eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
             isTrigger = false;
 

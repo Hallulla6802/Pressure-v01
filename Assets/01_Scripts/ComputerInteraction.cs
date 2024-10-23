@@ -19,6 +19,7 @@ public class ComputerInteraction : MonoBehaviour
     public bool isInInteraction = false;  // Bandera para saber si el jugador está interactuando
     public TMP_InputField inputField;
     public TextoInteractuarScript textoInteractuarScript;
+    public bool isTriggerMessage;
 
     private void Awake()
     {
@@ -27,28 +28,48 @@ public class ComputerInteraction : MonoBehaviour
     }
     void Update()
     {
-       
-        // Verificar la distancia entre el jugador y la computadora
-        float distance = Vector3.Distance(player.position, transform.position);
 
-        if (distance < interactionDistance && !isInInteraction)
-        {
-            //textoInteractuarScript.AbrirTextoInteractuar();
+        
            
            
 
-            // Si el jugador está lo suficientemente cerca y no está interactuando
-            if (Input.GetKeyDown(KeyCode.E))  // Usamos la tecla E para interactuar
+            // Si el jugador está lo suficientemente cerca y no está interactuando y esta en el trigger del computador
+            if (Input.GetKeyDown(KeyCode.E) && !isInInteraction && isTriggerMessage)  // Usamos la tecla E para interactuar
             {
                 if (eventManager.currentEvent == EventsToTrigger.None)
-                EnterInteraction();
-                //Debug.Log("Entra a Interaccion");
+                {
+                   EnterInteraction();
+                   textoInteractuarScript.CerrarTextoInteractuar();
+                }
 
+            
                 else
                 {
 
                 }
             }
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isTriggerMessage = true;
+            textoInteractuarScript.AbrirTextoInteractuar();
+
+
+        }
+    }
+
+   
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isTriggerMessage = false;
+            textoInteractuarScript.CerrarTextoInteractuar();
         }
     }
     public void OnDisable()

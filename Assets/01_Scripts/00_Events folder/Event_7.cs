@@ -19,23 +19,24 @@ public class Event_7 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && !shadowGuy.activeSelf)
         {
             if (Random.Range(0f, 1f) <= 0.5f)
             {
-                event7collider.enabled = false;
-                StartCoroutine(cooldownForGuy());
+                //event7collider.enabled = false;
+                shadowGuy.SetActive(true);
+                //StartCoroutine(cooldownForGuy());
             }
                
         }
     }
 
-    private IEnumerator cooldownForGuy()
+    public void cooldownForGuy()
     {
-        shadowGuy.SetActive(true);
-        yield return new WaitForSeconds(cooldown);
+        //shadowGuy.SetActive(true);
+       // yield return new WaitForSeconds(cooldown);
         shadowGuy.SetActive(false);
-        event7collider.enabled = false;
+        //event7collider.enabled = true;
 
     }
 }

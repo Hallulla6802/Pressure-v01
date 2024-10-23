@@ -9,7 +9,7 @@ public class Event_3 : MonoBehaviour
     public GameObject transformador;
 
     public bool lightsFixed;
-
+    public GameObject pcScreen;
     private BoxCollider event3Collider;
 
     private void Awake()
@@ -32,6 +32,7 @@ public class Event_3 : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            pcScreen.SetActive(false);
             lightempty.SetActive(false);
             redDotForOutside.SetActive(true);
             transformador.SetActive(true);
