@@ -51,12 +51,12 @@ public class ComputerInteraction : MonoBehaviour
             }
         }
     }
-    void OnDisable()
+    public void OnDisable()
     {
         ExitInteraction();
     }
 
-    void EnterInteraction()
+    public void EnterInteraction()
     {
         isInInteraction = true;
         playerMovement.canMove = false;  // Aquí puedes desactivar los controles del jugador, si fuera necesario
