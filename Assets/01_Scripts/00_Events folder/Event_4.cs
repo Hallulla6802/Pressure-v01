@@ -8,11 +8,14 @@ public class Event_4 : MonoBehaviour
     public GameObject sinkTrigger;
 
     private BoxCollider event4Collider;
+   
 
     private void Awake()
     {
         event4Collider = GetComponent<BoxCollider>();
         sinkTrigger.SetActive(false);
+
+        
     }
 
     private void OnTriggerEnter(Collider other)

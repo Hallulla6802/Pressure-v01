@@ -11,11 +11,15 @@ public class Event_6_RadioTrigger : MonoBehaviour
     public EventManager eventManager;
     public TextoInteractuarScript textoInteractuarScript;
 
+    private ObjectivesManager objMan;
+
     private void Awake()
     {
         event6Collider = GetComponent<BoxCollider>();
         eventManager = FindObjectOfType<EventManager>();
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
+
+        objMan = FindObjectOfType<ObjectivesManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,6 +40,8 @@ public class Event_6_RadioTrigger : MonoBehaviour
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
             isTrigger = false;
+
+            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         }
     }
 

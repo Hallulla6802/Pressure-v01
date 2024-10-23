@@ -86,11 +86,15 @@ public class EventManager : MonoBehaviour
     public GameObject colaiderMicrondas;
     //public Gameobject event10Collider;
 
+
+    public ObjectivesManager objMan;
+
     private void Awake()
     {
         clockscript = FindObjectOfType<ClockScript>();
         mecanographicscript = FindObjectOfType<MecanographicScript>();
         computerInteraction = FindObjectOfType<ComputerInteraction>();
+        
     }
 
 
@@ -98,6 +102,8 @@ public class EventManager : MonoBehaviour
     //empiezen escondidos y se vallan triggereando por caso
     private void Start()
     {
+        objMan = FindObjectOfType<ObjectivesManager>();
+
         lastEvent = EventsToTrigger.None;
         colaiderMicrondas.SetActive(false);
         event1Collider.SetActive(false);
@@ -129,6 +135,7 @@ public class EventManager : MonoBehaviour
             if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
             {
                 currentEvent = EventsToTrigger.Event1;
+                objMan.currentStates = ObjectivesManager.ObjectiveStates.InvestigateMicrowave;
                 event1Trigged = true;
                 
 
@@ -147,8 +154,9 @@ public class EventManager : MonoBehaviour
             }
             if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
             {
-                // Debug.Log("Se gatilla el evento2");
+                // Debug.Log("Se gatilla el evento2 Door Knock");
                 currentEvent = EventsToTrigger.Event2;
+                objMan.currentStates = ObjectivesManager.ObjectiveStates.InvestigateDoorKnocking;
                 eventTrigged2 = true;
 
             }
@@ -166,8 +174,9 @@ public class EventManager : MonoBehaviour
             }
             if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
             {
-                //Debug.Log("Se gatilla el evento3");
+                //Debug.Log("Se gatilla el evento3 Lights");
                 currentEvent = EventsToTrigger.Event3;
+                objMan.currentStates = ObjectivesManager.ObjectiveStates.FixTheLights;
                 eventTrigged3 = true;
             }
            
@@ -183,8 +192,9 @@ public class EventManager : MonoBehaviour
             }
             if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
             {
-                //Debug.Log("Se gatilla el evento3");
+                //Debug.Log("Se gatilla el evento4 Water");
                 currentEvent = EventsToTrigger.Event4;
+                objMan.currentStates = ObjectivesManager.ObjectiveStates.TurnOffTheWater;
                 eventTrigged4 = true;
             }
            
@@ -200,8 +210,9 @@ public class EventManager : MonoBehaviour
             }
             if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
             {
-                //Debug.Log("Se gatilla el evento3");
+                //Debug.Log("Se gatilla el evento5 TV");
                 currentEvent = EventsToTrigger.Event5;
+                objMan.currentStates = ObjectivesManager.ObjectiveStates.TurnOffTheTV;
                 eventTrigged5 = true;
             }
 
@@ -217,8 +228,9 @@ public class EventManager : MonoBehaviour
             }
             if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
             {
-                //Debug.Log("Se gatilla el evento3");
+                //Debug.Log("Se gatilla el evento6 Radio Fix");
                 currentEvent = EventsToTrigger.Event6;
+                objMan.currentStates = ObjectivesManager.ObjectiveStates.FixTheRadio;
                 eventTrigged6 = true;
             }
 
@@ -234,8 +246,9 @@ public class EventManager : MonoBehaviour
             }
             if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
             {
-                //Debug.Log("Se gatilla el evento3");
+                //Debug.Log("Se gatilla el evento8 Steps");
                 currentEvent = EventsToTrigger.Event8;
+                
                 eventTrigged8 = true;
             }
 

@@ -12,6 +12,8 @@ public class Event_3_Object : MonoBehaviour
     public EventManager eventManager;
     [SerializeField]private BoxCollider objectCollider;
 
+    private ObjectivesManager objMan;
+
 
     private void Awake()
     {
@@ -19,6 +21,8 @@ public class Event_3_Object : MonoBehaviour
         eventManager = FindObjectOfType<EventManager>();
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
         objectCollider.enabled = true;
+
+        objMan = FindObjectOfType<ObjectivesManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,6 +48,8 @@ public class Event_3_Object : MonoBehaviour
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
             isTrigger = false;
+
+            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         }
     }
 

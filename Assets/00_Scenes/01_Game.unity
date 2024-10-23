@@ -293,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clockscript: {fileID: 0}
   mecanographicscript: {fileID: 0}
+  computerInteraction: {fileID: 0}
   timeEvent1: 1380
   timeEvent1Limit: 1380.9
   event1Trigged: 0
@@ -330,6 +331,7 @@ MonoBehaviour:
   event8Collider: {fileID: 627006229}
   event9Collider: {fileID: 1091305242}
   colaiderMicrondas: {fileID: 1630770270}
+  objMan: {fileID: 462430376}
 --- !u!1 &146859156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +1934,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightsToTurnOn: {fileID: 2113189619}
   redDot: {fileID: 270681999}
+  isTrigger: 0
+  textoInteractuarScript: {fileID: 0}
   eventManager: {fileID: 0}
   objectCollider: {fileID: 605756044}
 --- !u!1 &627006229

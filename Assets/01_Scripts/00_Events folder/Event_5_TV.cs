@@ -9,10 +9,12 @@ public class Event_5_TV : MonoBehaviour
     private BoxCollider event5Collider;
     public bool isTrigger;
 
+    private ObjectivesManager objMan;
     private void Awake()
     {
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
         event5Collider = GetComponent<BoxCollider>();
+        objMan = FindObjectOfType<ObjectivesManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +34,8 @@ public class Event_5_TV : MonoBehaviour
             event5Collider.enabled = false;
             textoInteractuarScript.CerrarTextoInteractuar();
             isTrigger = false;
+
+            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         }
     }
 

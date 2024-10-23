@@ -10,12 +10,15 @@ public class Event_9_Door : MonoBehaviour
     public TextoInteractuarScript textoInteractuarScript;
     public EventManager eventManager;
 
+    private ObjectivesManager objMan;
+
 
     private void Awake()
     {
         event5Collider = GetComponent<BoxCollider>();
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
         eventManager = FindObjectOfType<EventManager>();
+        objMan = FindObjectOfType<ObjectivesManager>();
 
     }
 
@@ -37,6 +40,8 @@ public class Event_9_Door : MonoBehaviour
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
             isTrigger = false;
+
+            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         }
     }
 

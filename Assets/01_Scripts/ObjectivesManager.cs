@@ -26,6 +26,8 @@ public class ObjectivesManager : MonoBehaviour
     private void Start()
     {
         currentStates = ObjectiveStates.GoToThePC;
+
+        BeeperToHide.SetActive(false);
         
     }
 

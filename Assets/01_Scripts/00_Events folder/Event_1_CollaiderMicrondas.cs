@@ -12,12 +12,15 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
     public BoxCollider objectCollider;
     public bool isTrigger;
 
+    private ObjectivesManager objMan;
+
     private void Awake()
     {
         objectCollider = GetComponent<BoxCollider>();
         eventManager = FindObjectOfType<EventManager>();
         objectCollider.enabled = true;
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
+        objMan = FindObjectOfType<ObjectivesManager>();
     }
 
   
@@ -29,12 +32,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
             isTrigger = true;
             textoInteractuarScript.AbrirTextoInteractuar();
 
-           
-
-
-       
-          
-           
+        
         }
 
     }
@@ -49,6 +47,8 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
             isTrigger = false;
+
+            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         }
     }
 

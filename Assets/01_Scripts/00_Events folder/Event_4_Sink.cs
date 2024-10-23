@@ -12,11 +12,14 @@ public class Event_4_Sink : MonoBehaviour
     public bool isTrigger;
     public TextoInteractuarScript textoInteractuarScript;
 
+    private ObjectivesManager objMan;
+
     private void Awake()
     {
         event4Collider = GetComponent<BoxCollider>();
         eventManager = FindObjectOfType<EventManager>();
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
+        objMan = FindObjectOfType<ObjectivesManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +40,8 @@ public class Event_4_Sink : MonoBehaviour
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
             isTrigger = false;
+
+            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         }
     }
 

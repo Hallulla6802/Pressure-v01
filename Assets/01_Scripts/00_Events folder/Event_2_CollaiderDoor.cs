@@ -11,12 +11,16 @@ public class Event_2_CollaiderDoor : MonoBehaviour
     public AudioSource knocksound;
     public bool isTrigger;
 
+    private ObjectivesManager objMan;
+
     private void Awake()
     {
-    objectCollider = GetComponent<BoxCollider>();
-    eventManager = FindObjectOfType<EventManager>();
-    textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
-    objectCollider.enabled = true;
+        objectCollider = GetComponent<BoxCollider>();
+        eventManager = FindObjectOfType<EventManager>();
+        textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
+        objectCollider.enabled = true;
+
+        objMan = FindObjectOfType<ObjectivesManager>();
     }
 
 private void OnTriggerEnter(Collider other)
@@ -42,6 +46,8 @@ private void OnTriggerEnter(Collider other)
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
             isTrigger = false;
+
+            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         }
     }
 

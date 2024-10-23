@@ -7,24 +7,32 @@ public class TextSequence : MonoBehaviour
 {
     public TMP_Text textElement;         
     public List<string> fullTextStrings; 
-    public float typingSpeed = 0.05f;    
+    public float typingSpeed = 0.05f;
+
+    private ChangeSceneManager changeSceneMan;
     private int currentTextIndex = 0;    
     private bool isTyping = false;       
 
     private void Start()
     {
         
+    }
+
+    public void StartContextScreen()
+    {
+        changeSceneMan = FindObjectOfType<ChangeSceneManager>();
+
         if (fullTextStrings.Count == 0)
         {
             Debug.LogError("No text strings to display");
             return;
         }
 
-        
+
         textElement.text = "";
         textElement.gameObject.SetActive(false);
 
-        
+
         StartCoroutine(ShowText(fullTextStrings[currentTextIndex]));
     }
 
@@ -69,6 +77,8 @@ public class TextSequence : MonoBehaviour
         else
         {
             Debug.Log("No more texts to show.");
+
+            changeSceneMan.GoToGame();
         }
     }
 }
