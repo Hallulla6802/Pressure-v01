@@ -12,12 +12,20 @@ public class MecanographicScript : MonoBehaviour
     public TextMeshProUGUI feedbackText;
     [Space]
 
+    public EventManager eventManager;
     public int minimumMecanoAmount;
     public int currentAmount;
     public int maximumMecanoAmout;
 
     private const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
 
+  
+    private void Awake()
+    {
+       
+
+        eventManager = FindAnyObjectByType<EventManager>();
+    }
     private void Start()
     {
         GenerateRandomText();
@@ -25,9 +33,53 @@ public class MecanographicScript : MonoBehaviour
 
     private void GenerateRandomText()
     {
-        textToCopy.text = GetRandomString(8);
-    }
 
+        int eventCount = eventManager.eventCount;
+        if (eventCount >= 0 && eventCount <= 2)
+        {
+            // Generar texto aleatorio
+            textToCopy.text = GetRandomString(6);
+        }
+
+        else if (eventCount >= 3 && eventCount <= 5)
+        {
+            // Generar el texto aleatorio
+            string randomString = GetRandomString(2);
+            // Crear frases que incluyan el texto aleatorio
+            string[] predefinedSentences = {
+                $"print(\"{randomString}\")",
+                $"Output: {randomString}",
+                $"Generated: {randomString}",
+
+
+            };
+
+            // Seleccionar frase predefinida aleatoria
+            int randomIndex = Random.Range(0, predefinedSentences.Length);
+            textToCopy.text = predefinedSentences[randomIndex];
+
+        }
+
+        else if (eventCount >= 6)
+        {
+            // Frases relacionadas con programación de 8 caracteres
+            string[] programmingSentences = {
+                "private //",  
+                "for loop //",  
+                "try catch //",  
+                "function //",  
+                "variable //",   
+                "className //",  
+                "int main //",  
+                "return 0 //",  
+                "void func //",  
+                "namespace//"    
+            };
+
+            int randomIndex = Random.Range(0, programmingSentences.Length);
+            textToCopy.text = programmingSentences[randomIndex];
+        }
+    }
     private string GetRandomString(int length)
     {
         char[] stringChars = new char[length];

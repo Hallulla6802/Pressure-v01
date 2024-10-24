@@ -11,6 +11,7 @@ public class EventManager : MonoBehaviour
     public ComputerInteraction computerInteraction;
     public Evento_10 evento_10;
     public GameObject pcScreen;
+    public int eventCount;
 
     private EventsToTrigger lastEvent;
 
@@ -471,6 +472,7 @@ public class EventManager : MonoBehaviour
 
     void AumentoMinMaxCurrentyArregloTimeScale()
     {
+        eventCount += 1;
         clockscript.timeScale = 1f;
         mecanographicscript.minimumMecanoAmount += 3;
         mecanographicscript.maximumMecanoAmout += 4;
