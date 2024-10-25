@@ -62,7 +62,7 @@ public class MecanographicScript : MonoBehaviour
 
         else if (eventCount >= 6)
         {
-            // Frases relacionadas con programación de 8 caracteres
+            // Frases relacionadas con programaciï¿½n de 8 caracteres
             string[] programmingSentences = {
                 "private //",  
                 "for loop //",  
@@ -73,7 +73,9 @@ public class MecanographicScript : MonoBehaviour
                 "int main //",  
                 "return 0 //",  
                 "void func //",  
-                "namespace//"    
+                "namespace//",
+                "Vector3//",   
+                "MonoBehaviour//"
             };
 
             int randomIndex = Random.Range(0, programmingSentences.Length);
