@@ -70,9 +70,9 @@ public class EventManager : MonoBehaviour
     [Space]
     [Header("EMPTY COLLIDERS FOR EVENTS")]
     [Space]
-    // Para añadir eventos haga un gameobject 
+    // Para aï¿½adir eventos haga un gameobject 
     //que tenga nombre del evento y su numero, 
-    //a este gameobject añadale un collider trigger y un script del evento en si.
+    //a este gameobject aï¿½adale un collider trigger y un script del evento en si.
 
     public GameObject event1Collider;
     public GameObject event2Collider;
@@ -100,7 +100,7 @@ public class EventManager : MonoBehaviour
     }
 
 
-    //Añada los eventos a start y update para que
+    //Aï¿½ada los eventos a start y update para que
     //empiezen escondidos y se vallan triggereando por caso
     private void Start()
     {
@@ -250,7 +250,7 @@ public class EventManager : MonoBehaviour
             {
                 //Debug.Log("Se gatilla el evento8 Steps");
                 currentEvent = EventsToTrigger.Event8;
-                
+                objMan.currentStates = ObjectivesManager.ObjectiveStates.InvestigateSteps;
                 eventTrigged8 = true;
             }
 
@@ -269,7 +269,7 @@ public class EventManager : MonoBehaviour
             {
                 //Debug.Log("Se gatilla el evento8 Steps");
                 currentEvent = EventsToTrigger.Event9;
-
+                objMan.currentStates = ObjectivesManager.ObjectiveStates.CloseTheDoor;
                 eventTrigged9 = true;
             }
 

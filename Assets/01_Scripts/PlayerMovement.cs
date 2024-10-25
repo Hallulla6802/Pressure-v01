@@ -10,14 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     private Vector3 velocity;
     private bool isGrounded;
-    private
     void Start()
     {            
         controller = GetComponent<CharacterController>();
     }
 
     void Update()
-    {               
+    {            
+         
         isGrounded = controller.isGrounded;
         if(canMove)
         {

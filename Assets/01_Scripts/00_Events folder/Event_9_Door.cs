@@ -9,9 +9,8 @@ public class Event_9_Door : MonoBehaviour
     public bool isTrigger;
     public TextoInteractuarScript textoInteractuarScript;
     public EventManager eventManager;
-
     private ObjectivesManager objMan;
-
+    public GameObject lastCutsceneCollider;
 
     private void Awake()
     {
@@ -41,7 +40,8 @@ public class Event_9_Door : MonoBehaviour
             textoInteractuarScript.CerrarTextoInteractuar();
             isTrigger = false;
 
-            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
+            objMan.currentStates = ObjectivesManager.ObjectiveStates.UploadProject;
+            lastCutsceneCollider.SetActive(true);
         }
     }
 

@@ -15,13 +15,16 @@ public class ObjectivesManager : MonoBehaviour
         TurnOffTheWater,
         TurnOffTheTV,
         FixTheRadio,
-        CloseTheDoor
+        CloseTheDoor,
+        InvestigateSteps,
+        UploadProject
     }
 
-    public TextMeshPro textForObjectives;
+    public TextMeshProUGUI textForObjectives;
     public GameObject BeeperToHide;
     [Space]
     public ObjectiveStates currentStates;
+    public bool canSeeObj = true;
 
     private void Start()
     {
@@ -67,7 +70,7 @@ public class ObjectivesManager : MonoBehaviour
 
             case ObjectiveStates.TurnOffTheWater:
 
-                textForObjectives.text = "Cierra el grifo de agua en el baño.";
+                textForObjectives.text = "Cierra el grifo de agua en el baï¿½o.";
 
                 break;
 
@@ -86,7 +89,19 @@ public class ObjectivesManager : MonoBehaviour
             case ObjectiveStates.CloseTheDoor:
 
                 textForObjectives.text = "Investiga quien abrio la puerta.";
+        
+                break;
 
+            case ObjectiveStates.InvestigateSteps:
+
+                textForObjectives.text = "Investiga Los Pasos.";
+        
+                break;
+                
+            case ObjectiveStates.UploadProject:
+
+                textForObjectives.text = "Sube el Projecto.";
+        
                 break;
         }
 
@@ -97,7 +112,10 @@ public class ObjectivesManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.O) & BeeperToHide.activeSelf == false)
         {
-            BeeperToHide.SetActive(true);
+            if(canSeeObj == true)
+            {
+                BeeperToHide.SetActive(true);
+            }
         }
     }
 

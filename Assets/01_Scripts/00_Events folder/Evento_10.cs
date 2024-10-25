@@ -11,7 +11,6 @@ public class Evento_10 : MonoBehaviour
     public GameObject pos4;
     public GameObject pos5;
     public GameObject pos6;
-
     public GameObject pos9;
 
     public void ShadowEvent1()

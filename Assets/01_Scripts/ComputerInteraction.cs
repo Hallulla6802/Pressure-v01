@@ -86,11 +86,7 @@ public class ComputerInteraction : MonoBehaviour
         cameraScript.canLook = false;
         Cursor.lockState = CursorLockMode.None;  // Liberar el mouse para la UI
         Cursor.visible = true;
-        if(playerCam ==null)
-        {
-            playerCam.SetActive(false);
-
-        }
+        playerCam.SetActive(false);
         pcFocusCam.SetActive(true);
     }
 
