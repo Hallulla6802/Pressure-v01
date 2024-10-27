@@ -10,7 +10,7 @@ public class Event_6_RadioTrigger : MonoBehaviour
     private BoxCollider event6Collider;
     public EventManager eventManager;
     public TextoInteractuarScript textoInteractuarScript;
-
+    public Outline objOutline;
     private ObjectivesManager objMan;
 
     private void Awake()
@@ -28,6 +28,7 @@ public class Event_6_RadioTrigger : MonoBehaviour
         {
             isTrigger = true;
             textoInteractuarScript.AbrirTextoInteractuar();
+            objOutline.enabled = true;
         }
     }
 
@@ -39,6 +40,7 @@ public class Event_6_RadioTrigger : MonoBehaviour
             event6Collider.enabled = false;
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
             isTrigger = false;
 
             objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
@@ -51,6 +53,7 @@ public class Event_6_RadioTrigger : MonoBehaviour
         {
             isTrigger = false;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
         }
     }
 }

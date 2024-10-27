@@ -106,11 +106,11 @@ public class ObjectivesManager : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.O) & BeeperToHide.activeSelf == true)
+        if (Input.GetKeyDown(KeyCode.Q) & BeeperToHide.activeSelf == true)
         {
             BeeperToHide.SetActive(false);
         }
-        else if (Input.GetKeyDown(KeyCode.O) & BeeperToHide.activeSelf == false)
+        else if (Input.GetKeyDown(KeyCode.Q) & BeeperToHide.activeSelf == false)
         {
             if(canSeeObj == true)
             {

@@ -21,6 +21,7 @@ public class ComputerInteraction : MonoBehaviour
     public bool isInInteraction = false;  // Bandera para saber si el jugador está interactuando
     public TMP_InputField inputField;
     public bool isTriggerMessage;
+    public Outline pcOutline;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class ComputerInteraction : MonoBehaviour
                 {
                    EnterInteraction();
                    textoInteractuarScript.CerrarTextoInteractuar();
+                   pcOutline.enabled = false;
                 }
 
             
@@ -59,7 +61,7 @@ public class ComputerInteraction : MonoBehaviour
         {
             isTriggerMessage = true;
             textoInteractuarScript.AbrirTextoInteractuar();
-
+            pcOutline.enabled = true;
 
         }
     }
@@ -72,6 +74,7 @@ public class ComputerInteraction : MonoBehaviour
         {
             isTriggerMessage = false;
             textoInteractuarScript.CerrarTextoInteractuar();
+            pcOutline.enabled = false;
         }
     }
     public void OnDisable()

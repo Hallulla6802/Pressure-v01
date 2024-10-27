@@ -11,7 +11,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
     public EventManager eventManager;
     public BoxCollider objectCollider;
     public bool isTrigger;
-
+    public Outline objOutline;
     private ObjectivesManager objMan;
 
     private void Awake()
@@ -31,7 +31,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
         {
             isTrigger = true;
             textoInteractuarScript.AbrirTextoInteractuar();
-
+            objOutline.enabled = true;
         
         }
 
@@ -46,6 +46,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
             objectCollider.enabled = false;
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
             isTrigger = false;
 
             objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
@@ -59,6 +60,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
         {
             isTrigger = false;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
         }
     }
 }

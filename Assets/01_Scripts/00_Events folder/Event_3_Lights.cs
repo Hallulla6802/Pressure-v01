@@ -11,7 +11,7 @@ public class Event_3_Object : MonoBehaviour
     public TextoInteractuarScript textoInteractuarScript;
     public EventManager eventManager;
     [SerializeField]private BoxCollider objectCollider;
-
+    public Outline objOutline;
     
     private ObjectivesManager objMan;
 
@@ -34,7 +34,7 @@ public class Event_3_Object : MonoBehaviour
 
             isTrigger = true;
             textoInteractuarScript.AbrirTextoInteractuar();
-
+            objOutline.enabled = true;
         }
     }
 
@@ -49,6 +49,7 @@ public class Event_3_Object : MonoBehaviour
             objectCollider.enabled = false;
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
             isTrigger = false;
 
             objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
@@ -61,6 +62,7 @@ public class Event_3_Object : MonoBehaviour
         {
             isTrigger = false;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
         }
     }
 }

@@ -11,7 +11,7 @@ public class Event_4_Sink : MonoBehaviour
     public EventManager eventManager;
     public bool isTrigger;
     public TextoInteractuarScript textoInteractuarScript;
-
+    public Outline objOutline;
     private ObjectivesManager objMan;
 
     private void Awake()
@@ -28,6 +28,7 @@ public class Event_4_Sink : MonoBehaviour
         {
             isTrigger = true;
             textoInteractuarScript.AbrirTextoInteractuar();
+            objOutline.enabled = true;
         }
     }
 
@@ -39,6 +40,7 @@ public class Event_4_Sink : MonoBehaviour
             event4Collider.enabled = false;
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
             isTrigger = false;
 
             objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
@@ -51,6 +53,7 @@ public class Event_4_Sink : MonoBehaviour
         {
             isTrigger = false;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
         }
     }
 }
