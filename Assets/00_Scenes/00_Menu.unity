@@ -479,7 +479,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pressure
+  m_text: ParanoiC
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -590,8 +590,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20647918, y: 0}
   m_AnchorMax: {x: 0.7923125, y: 0.074}
-  m_AnchoredPosition: {x: 0.060424805, y: -444.24002}
-  m_SizeDelta: {x: 654.18207, y: 17.491295}
+  m_AnchoredPosition: {x: -63.329, y: 18.5569}
+  m_SizeDelta: {x: -126.6581, y: -13.4173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338472938
 MonoBehaviour:
@@ -613,7 +613,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Preciona el Click izquierdo para continuar.
+  m_text: 'Presiona el click izquierdo para continuar.
+
+    Preciona Espacio para
+    saltar el texto.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 108f7e5f1d079b243abe01707490da02, type: 2}
   m_sharedMaterial: {fileID: -3858914531322329581, guid: 108f7e5f1d079b243abe01707490da02, type: 2}
@@ -1263,9 +1266,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 116734726}
+  - {fileID: 338472937}
   - {fileID: 2050401289}
   - {fileID: 2121729828}
-  - {fileID: 338472937}
   m_Father: {fileID: 1716226305}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1323,20 +1326,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textElement: {fileID: 2121729829}
   fullTextStrings:
-  - Han pasado 221 dias, 16 horas y 35 minutos desde que  recibi mi mision..
-  - Casi como caida del cielo llego a mi mente..
-  - Puedo verla con una nitidez atemorisante pero real... Y ese es el problema..
-  - Soy el unico que puede verla..
-  - No me importa.
-  - Nada me detiene ni me detendra jamas..
-  - Aunque tenga que trasnochar dia tras dia ellos no se lo llevaran..
-  - Ellos no me atraparan..
-  - Soy mejor que ellos, que todos ellos.
-  - 221 dias.
-  - 16 horas.
-  - "36\_minutos."
+  - "Han pasado 221 d\xEDas, 16 horas y 35 minutos desde que recib\xED mi misi\xF3n\u2026
+    Casi como ca\xEDda del cielo, lleg\xF3 a mi mente. Puedo verla con una nitidez
+    aterradora pero real\u2026 Y ese es el problema. Soy el \xFAnico que puede verla."
+  - "No me importa. Nada me detiene ni me detendr\xE1 jam\xE1s. Aunque tenga que
+    trasnochar d\xEDa tras d\xEDa, ellos no se lo llevar\xE1n. Ellos no me atrapar\xE1n.
+    Soy mejor que ellos, mejor que todos ellos."
+  - " 221 d\xEDas. 16 horas. 36\_minutos."
   - . . . . . .
-  typingSpeed: 0.07
+  typingSpeed: 0.08
+  fastTypingSpeed: 0.01
 --- !u!1 &2054578831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,8 +1504,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19658335, y: 0.27681473}
   m_AnchorMax: {x: 0.7923125, y: 0.7148519}
-  m_AnchoredPosition: {x: 0.5551758, y: -4.083313}
-  m_SizeDelta: {x: 1015.9108, y: 69.534515}
+  m_AnchoredPosition: {x: 29.711426, y: -4.083313}
+  m_SizeDelta: {x: 517.0171, y: 69.5345}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121729829
 MonoBehaviour:
