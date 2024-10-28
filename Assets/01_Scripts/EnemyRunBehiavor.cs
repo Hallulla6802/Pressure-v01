@@ -1,0 +1,80 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyRunBehiavor : MonoBehaviour
+{
+    public float followSpeed = 5f;         // Velocidad con la que sigue al jugador
+    public float stopDistance = 1f;        // Distancia en la que el enemigo deja de seguir al jugador
+    public float diversionAngle = 30f;     // Ángulo de desviación al llegar cerca del jugador
+    public float destroyDelay = 1f;        // Tiempo antes de destruirse tras desviarse
+    public Transform player;              // Referencia al jugador
+    public bool isFollowing = false;       // Estado de seguimiento
+    public bool hasStoppedFollowing = false; // Para que el desvío solo ocurra una vez
+
+    public Vector3 diversionDirection;     // Dirección de desvío calculada
+    public bool isCurving = false;        // Estado para controlar si el enemigo está curvando
+
+    private void Start()
+    {
+        // Encuentra al jugador usando la etiqueta "Player"
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    private void Update()
+    {
+        if (isFollowing && !hasStoppedFollowing)
+        {
+            FollowPlayer();
+        }
+        else if (isCurving)
+        {
+            MoveInDiversionDirection();
+        }
+    }
+
+    private void FollowPlayer()
+    {
+        // Calcula la distancia al jugador
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        // Si el enemigo está a la distancia especificada, calcula la dirección de desvío y comienza la curva
+        if (distanceToPlayer <= stopDistance)
+        {
+            hasStoppedFollowing = true;
+            StartCoroutine(DivertAndDestroy());
+        }
+        else
+        {
+            // Sigue al jugador
+            Vector3 direction = (player.position - transform.position).normalized;
+            transform.position += direction * followSpeed * Time.deltaTime;
+        }
+    }
+
+    private IEnumerator DivertAndDestroy()
+    {
+        // Determina aleatoriamente si el enemigo se desvía hacia la izquierda o la derecha
+        float angle = Random.Range(0, 2) == 0 ? -diversionAngle : diversionAngle;
+
+        // Calcula la dirección de desvío girando el vector hacia el ángulo determinado
+        diversionDirection = Quaternion.Euler(0, angle, 0) * (player.position - transform.position).normalized;
+
+        isCurving = true;  // Activa el estado de curva
+        yield return new WaitForSeconds(destroyDelay);  // Espera antes de destruir
+
+        Destroy(gameObject);
+    }
+
+    private void MoveInDiversionDirection()
+    {
+        // Mueve el enemigo en la dirección de desvío de manera suave, simulando una curva
+        transform.position += diversionDirection * followSpeed * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Si choca con otro objeto, se destruye inmediatamente
+        Destroy(gameObject);
+    }
+}

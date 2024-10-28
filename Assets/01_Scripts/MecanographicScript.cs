@@ -17,7 +17,7 @@ public class MecanographicScript : MonoBehaviour
     public int currentAmount;
     public int maximumMecanoAmout;
 
-    private const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+    private const string chars = "ABCDEFGHIJKLMNPQRSTUVWXYZ123456789abcdefghijklmnpqrstuvwxyz";
 
   
     private void Awake()

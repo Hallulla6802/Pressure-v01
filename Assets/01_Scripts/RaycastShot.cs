@@ -40,5 +40,22 @@ public class RaycastShot : MonoBehaviour
 
             }
         }
+
+        if (Physics.Raycast(ray, out hit, rayDistance, enemyLayer))
+        {
+            // Verifica si el objeto colisionado es un enemigo (puedes comprobar por tag o script)
+            if (hit.collider.CompareTag("ShadowRunner"))  // Asegúrate de que el enemigo tenga el tag "Enemy"
+            {
+                EnemyRunBehiavor enemyScript = hit.collider.GetComponent<EnemyRunBehiavor>();
+
+                if (enemyScript != null)
+                {
+                    // Activa la variable isFollowing en el script del enemigo
+                    enemyScript.isFollowing = true;  // Activa directamente la variable
+                }
+
+
+            }
+        }
     }
 }
