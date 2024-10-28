@@ -13,25 +13,48 @@ public class EnemyRunBehiavor : MonoBehaviour
     public bool hasStoppedFollowing = false; // Para que el desvío solo ocurra una vez
 
     public Vector3 diversionDirection;     // Dirección de desvío calculada
-    public bool isCurving = false;        // Estado para controlar si el enemigo está curvando
+    public bool isCurving = false;
+
+    public  AudioSource footstepSound;
 
     private void Start()
     {
         // Encuentra al jugador usando la etiqueta "Player"
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        AudioSource[] audioSources = GetComponentsInChildren<AudioSource>();
+        foreach (AudioSource audioSource in audioSources)
+        {
+            if (audioSource.gameObject.name == "SonidoPisadasCorriendo")
+            {
+                footstepSound = audioSource;
+                break;
+            }
+
+        }
     }
 
-    private void Update()
-    {
+        private void Update()
+
+        {
         if (isFollowing && !hasStoppedFollowing)
         {
+            if (!footstepSound.isPlaying)
+            {
+                footstepSound.Play(); // Activa el sonido si está siguiendo y el sonido no se está reproduciendo
+            }
             FollowPlayer();
         }
         else if (isCurving)
         {
             MoveInDiversionDirection();
         }
-    }
+        else if (footstepSound.isPlaying)
+        {
+            footstepSound.Stop(); // Detiene el sonido si no está siguiendo o está en desvío
+        }
+        }
+
 
     private void FollowPlayer()
     {
