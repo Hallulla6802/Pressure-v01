@@ -883,7 +883,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8796440584807215837}
         m_TargetAssemblyTypeName: ComputerInteraction, Assembly-CSharp
         m_MethodName: ExitInteraction
         m_Mode: 1
@@ -2271,7 +2271,7 @@ MonoBehaviour:
   isInInteraction: 0
   inputField: {fileID: 4845077065893377558}
   isTriggerMessage: 0
-  pcOutline: {fileID: 0}
+  pcOutline: {fileID: 2914829931118136782}
 --- !u!114 &6643187579729999463
 MonoBehaviour:
   m_ObjectHideFlags: 0

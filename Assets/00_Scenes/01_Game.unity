@@ -2511,17 +2511,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 870705950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &651498673 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8796440584807215837, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
-  m_PrefabInstance: {fileID: 1936750841}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780f57c4048c0c744aa971e4524fe3b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &707887474
 GameObject:
   m_ObjectHideFlags: 0
@@ -7165,14 +7154,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 808555915858769979, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 651498673}
-    - target: {fileID: 808555915858769979, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitInteraction
-      objectReference: {fileID: 0}
     - target: {fileID: 2723695694053228721, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
       propertyPath: m_Name
       value: PCInteraction
@@ -7222,10 +7203,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1661014211}
     - target: {fileID: 8796440584807215837, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
-      propertyPath: pcOutline
-      value: 
-      objectReference: {fileID: 1936750842}
-    - target: {fileID: 8796440584807215837, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 1741822779}
@@ -7242,17 +7219,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
---- !u!114 &1936750842 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2914829931118136782, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
-  m_PrefabInstance: {fileID: 1936750841}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1936750843 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2967464681289029965, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
