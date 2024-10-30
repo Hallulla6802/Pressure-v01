@@ -5,9 +5,9 @@ using UnityEngine;
 public class Event_7 : MonoBehaviour
 {
     public GameObject shadowGuy;
-    public float cooldown;
 
-    private BoxCollider event7collider;
+
+    public BoxCollider event7collider;
 
 
     private void Awake()

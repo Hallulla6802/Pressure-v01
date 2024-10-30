@@ -12,6 +12,7 @@ public class EventManager : MonoBehaviour
     public Evento_10 evento_10;
     public GameObject pcScreen;
     public int eventCount;
+    public GameObject audioVentilador;
 
     private EventsToTrigger lastEvent;
 
@@ -297,6 +298,7 @@ public class EventManager : MonoBehaviour
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
+                    audioVentilador.SetActive(true);
 
                     break;
 
@@ -358,6 +360,7 @@ public class EventManager : MonoBehaviour
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
+                    audioVentilador.SetActive(false);
 
                     break;
 

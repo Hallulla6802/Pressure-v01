@@ -14,10 +14,18 @@ public class Event_3_Object : MonoBehaviour
     public Outline objOutline;
     
     private ObjectivesManager objMan;
+    public AudioSource botonSonido;
 
 
     private void Awake()
     {
+
+        GameObject botonObject = GameObject.Find("Switch");
+
+        if (botonObject != null)
+        {
+            botonSonido = botonObject.GetComponent<AudioSource>();
+        }
         objectCollider = GetComponent<BoxCollider>();
         eventManager = FindObjectOfType<EventManager>();
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
@@ -42,7 +50,7 @@ public class Event_3_Object : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && isTrigger)
         {
-          
+            botonSonido.Play();
             lightsToTurnOn.SetActive(true);
             redDot.SetActive(false);
 

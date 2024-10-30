@@ -14,8 +14,18 @@ public class EnemyRunBehiavor : MonoBehaviour
 
     public Vector3 diversionDirection;     // Dirección de desvío calculada
     public bool isCurving = false;
-
+    public AudioSource sombraAudio;
     public  AudioSource footstepSound;
+
+    private void Awake()
+    {
+        GameObject sombraObject = GameObject.Find("SombraAudio");
+
+        if (sombraObject != null)
+        {
+            sombraAudio = sombraObject.GetComponent<AudioSource>();
+        }
+    }
 
     private void Start()
     {
@@ -87,6 +97,7 @@ public class EnemyRunBehiavor : MonoBehaviour
         yield return new WaitForSeconds(destroyDelay);  // Espera antes de destruir
 
         Destroy(gameObject);
+        sombraAudio.Play();
     }
 
     private void MoveInDiversionDirection()
@@ -99,5 +110,6 @@ public class EnemyRunBehiavor : MonoBehaviour
     {
         // Si choca con otro objeto, se destruye inmediatamente
         Destroy(gameObject);
+        sombraAudio.Play();
     }
 }

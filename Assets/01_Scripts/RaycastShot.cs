@@ -8,7 +8,17 @@ public class RaycastShot : MonoBehaviour
     public float rayDistance = 100f;  // Distancia del raycast
     public LayerMask enemyLayer;  // Capas que el raycast puede afectar (opcional)
 
+    public AudioSource sombraAudio;
 
+    private void Awake()
+    {
+        GameObject sombraObject = GameObject.Find("SombraAudio");
+
+        if (sombraObject != null)
+        {
+            sombraAudio = sombraObject.GetComponent<AudioSource>();
+        }
+    }
     private void Update()
     {
         ShootRay();
@@ -26,6 +36,7 @@ public class RaycastShot : MonoBehaviour
             if (hit.collider.CompareTag("ShadowEvent7"))  // Asegúrate de que el enemigo tenga el tag "Enemy"
             {
                 hit.collider.gameObject.SetActive(false);
+                sombraAudio.Play();
 
 
             }
@@ -36,6 +47,7 @@ public class RaycastShot : MonoBehaviour
             if (hit.collider.CompareTag("ShadowEvent10"))  // Asegúrate de que el enemigo tenga el tag "Enemy"
             {
                 Destroy(hit.collider.gameObject);
+                sombraAudio.Play();
 
 
             }

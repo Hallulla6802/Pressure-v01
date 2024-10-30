@@ -12,8 +12,18 @@ public class Event_3 : MonoBehaviour
     public GameObject pcScreen;
     private BoxCollider event3Collider;
 
+    public AudioSource lucesapangadnoseAudio;
+
     private void Awake()
     {
+
+        GameObject lucesapagadaObject = GameObject.Find("Light Switch Off");
+
+        if (lucesapagadaObject != null)
+        {
+            lucesapangadnoseAudio = lucesapagadaObject.GetComponent<AudioSource>();
+        }
+
         event3Collider = GetComponent<BoxCollider>();
 
         transformador.SetActive(false);
@@ -32,6 +42,7 @@ public class Event_3 : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            lucesapangadnoseAudio.Play();
             pcScreen.SetActive(false);
             lightempty.SetActive(false);
             redDotForOutside.SetActive(true);

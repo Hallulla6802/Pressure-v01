@@ -13,9 +13,17 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
     public bool isTrigger;
     public Outline objOutline;
     private ObjectivesManager objMan;
+    public AudioSource microwaveAudio;
 
     private void Awake()
     {
+       
+        GameObject microwaveObject = GameObject.Find("Microwave Button");
+
+        if (microwaveObject != null)
+        {
+            microwaveAudio = microwaveObject.GetComponent<AudioSource>();
+        }
         objectCollider = GetComponent<BoxCollider>();
         eventManager = FindObjectOfType<EventManager>();
         objectCollider.enabled = true;
@@ -43,6 +51,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
         {
 
             microndasSound.Stop();
+            microwaveAudio.Play();
             objectCollider.enabled = false;
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
