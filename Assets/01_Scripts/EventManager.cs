@@ -14,6 +14,8 @@ public class EventManager : MonoBehaviour
     public int eventCount;
     public GameObject audioVentilador;
 
+ 
+
     private EventsToTrigger lastEvent;
 
     public float timeEvent1;
@@ -480,5 +482,7 @@ public class EventManager : MonoBehaviour
         mecanographicscript.minimumMecanoAmount += 3;
         mecanographicscript.maximumMecanoAmout += 4;
     }
+
+   
 
 }

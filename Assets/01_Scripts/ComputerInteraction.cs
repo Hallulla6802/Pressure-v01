@@ -23,8 +23,16 @@ public class ComputerInteraction : MonoBehaviour
     public bool isTriggerMessage;
     public Outline pcOutline;
 
+    public AudioSource sonidoClick;
     private void Awake()
     {
+        GameObject clickObject = GameObject.Find("Click Mouse");
+
+        if (clickObject != null)
+        {
+           sonidoClick = clickObject.GetComponent<AudioSource>();
+        }
+
         eventManager = FindObjectOfType<EventManager>();
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
         eventSystem = FindObjectOfType<EventSystem>();
@@ -51,6 +59,11 @@ public class ComputerInteraction : MonoBehaviour
                 {
 
                 }
+            }
+
+            if (isInInteraction && Input.GetMouseButtonDown(0))
+            {
+            sonidoClick.Play();
             }
         
     }

@@ -131,6 +131,7 @@ MonoBehaviour:
   hasStoppedFollowing: 0
   diversionDirection: {x: 0, y: 0, z: 0}
   isCurving: 0
+  sombraAudio: {fileID: 0}
   footstepSound: {fileID: 0}
 --- !u!1 &8011778201670077702
 GameObject:
@@ -173,7 +174,7 @@ AudioSource:
   m_GameObject: {fileID: 8011778201670077702}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3485205516368428057, guid: 67a7658983b78504e90648fb7f4fc02a, type: 2}
   m_audioClip: {fileID: 8300000, guid: 76e99cacf7f374140ae5784f32a3b696, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -301,7 +302,7 @@ AudioSource:
   m_GameObject: {fileID: 8172493061091659170}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3485205516368428057, guid: 67a7658983b78504e90648fb7f4fc02a, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0cc804e23fec68845a8ae8927cc82e53, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
