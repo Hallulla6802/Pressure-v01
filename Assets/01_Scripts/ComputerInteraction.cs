@@ -16,8 +16,8 @@ public class ComputerInteraction : MonoBehaviour
     public float interactionDistance = 2.0f;  // Distancia mínima para interactuar
     public PlayerMovement playerMovement;
     public CameraScript cameraScript;
-    public GameObject playerCam;
-    public GameObject pcFocusCam;
+    public Camera playerCam;
+    public Camera pcFocusCam;
     public bool isInInteraction = false;  // Bandera para saber si el jugador está interactuando
     public TMP_InputField inputField;
     public bool isTriggerMessage;
@@ -89,8 +89,8 @@ public class ComputerInteraction : MonoBehaviour
         cameraScript.canLook = false;
         Cursor.lockState = CursorLockMode.None;  // Liberar el mouse para la UI
         Cursor.visible = true;
-        playerCam.SetActive(false);
-        pcFocusCam.SetActive(true);
+        playerCam.enabled = false;
+        pcFocusCam.enabled = true;
     }
 
     public void ExitInteraction()
@@ -100,8 +100,8 @@ public class ComputerInteraction : MonoBehaviour
         cameraScript.canLook = true;  
         Cursor.lockState = CursorLockMode.Locked;  // Bloquear el mouse de nuevo
         Cursor.visible = false;        
-        playerCam.SetActive(true);       
-        pcFocusCam.SetActive(false);
+        playerCam.enabled = true;       
+        pcFocusCam.enabled = false;
         DeselectAndClear();
     }
     public void DeselectAndClear()

@@ -1,50 +1,82 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class AudioManagerRedux : MonoBehaviour
 {
-    public AudioMixer audioMixer;
+    #region VARIABLES
 
-    public Slider generalSlider;
-    public Slider musicSlider;
-    public Slider sfxSlider;
+    [Header("MIXER")]
+    [Space]
 
-    void Start()
-    {
-        Time.timeScale = 1f;
-        LoadVolume();
-    }
-    public void UpdateMasterVolume(float volume)
-    {
-        audioMixer.SetFloat("MasterVolume", volume);
-    }
-    public void UpdateMusicVolume(float volume)
-    {
-        audioMixer.SetFloat("MusicVolume", volume);
-    }
-    public void UpdateSFXVolume(float volume)
-    {
-        audioMixer.SetFloat("SFXVolume", volume);
-    }
-    public void SaveVolume()
-    {
-        audioMixer.GetFloat("MasterVolume", out float masterVolume);
-        PlayerPrefs.SetFloat("MasterVolume", masterVolume);
+    [SerializeField] private AudioMixer mainMixer;
 
-        audioMixer.GetFloat("MusicVolume", out float musicVolume);
-        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+    [Header("SLIDERS")]
+    [Space]
 
-        audioMixer.GetFloat("SFXVolume", out float sfxVolume);
-        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+    [SerializeField] private Slider generalSlider;
+    [SerializeField] private Slider musicVolumeSlider;
+    [SerializeField] private Slider sfxVolumeSlider;
+
+    #endregion
+
+    private void Start()
+    {        
+        LoadValues();
     }
-    public void LoadVolume()
+
+
+    #region VOLUME SETTINGS
+
+    #region General Volume
+
+    public void SetGeneralVolume(float sliderValue)
     {
-        generalSlider.value = PlayerPrefs.GetFloat("MasterVolume");
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        mainMixer.SetFloat("MasterVolume", Mathf.Log10(sliderValue) * 20);
     }
+
+    #endregion
+
+    #region BG Volume
+    public void SetMusicVolume(float sliderValue)
+    {
+        mainMixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+    }
+        #endregion
+
+        #region SFX Volume
+
+    public void SetSFXVolume(float sliderValue)
+    {
+        mainMixer.SetFloat("SFXVolume", Mathf.Log10(sliderValue) * 20);
+    }
+
+
+    #endregion
+
+    #endregion
+
+    #region SAVE & LOAD VOLUME
+
+    public void SaveVolumeButton()
+    {
+        
+        PlayerPrefs.SetFloat("MasterValue", generalSlider.value);       
+        PlayerPrefs.SetFloat("MusicValue", musicVolumeSlider.value);
+        PlayerPrefs.SetFloat("SFXValue", sfxVolumeSlider.value);    
+
+        PlayerPrefs.Save(); 
+    }
+    void LoadValues()
+    {         
+        mainMixer.SetFloat("MasterVolume", Mathf.Log10(PlayerPrefs.GetFloat("MasterValue", 1) * 20));             
+        mainMixer.SetFloat("MusicVolume", Mathf.Log10(PlayerPrefs.GetFloat("MusicValue", 1) * 20));      
+        mainMixer.SetFloat("SFXVolume", Mathf.Log10(PlayerPrefs.GetFloat("SFXValue", 1) * 20));  
+        generalSlider.value = PlayerPrefs.GetFloat("MasterValue", 1); 
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicValue", 1);    
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXValue", 1);
+    }
+    #endregion
 }
