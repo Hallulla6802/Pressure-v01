@@ -15,6 +15,8 @@ public class TextSequence : MonoBehaviour
     private bool isTyping = false;
     private Coroutine typingCoroutine;
 
+    public AudioSource typingAudioSource;
+
     public void StartContextScreen()
     {
         changeSceneMan = FindObjectOfType<ChangeSceneManager>();
@@ -46,11 +48,18 @@ public class TextSequence : MonoBehaviour
 
     IEnumerator ShowText(string fullText)
     {
+       
+
         isTyping = true;
         textElement.gameObject.SetActive(true);
         textElement.text = "";
 
         Debug.Log("Starting to type text: " + fullText);
+
+        if (typingAudioSource != null && !typingAudioSource.isPlaying)
+        {
+            typingAudioSource.Play();
+        }
 
         for (int i = 0; i < fullText.Length; i++)
         {
@@ -63,6 +72,11 @@ public class TextSequence : MonoBehaviour
 
         Debug.Log("Finished typing text: " + fullText);
         isTyping = false;
+
+        if (typingAudioSource != null && typingAudioSource.isPlaying)
+        {
+            typingAudioSource.Stop();
+        }
     }
 
     void NextText()
@@ -86,6 +100,11 @@ public class TextSequence : MonoBehaviour
         Debug.Log("Space pressed");
 
         changeSceneMan.GoToGame();
+
+        if (typingAudioSource != null && typingAudioSource.isPlaying)
+        {
+            typingAudioSource.Stop();
+        }
         StopCoroutine(ShowText(fullTextStrings[currentTextIndex]));
     }
 }
