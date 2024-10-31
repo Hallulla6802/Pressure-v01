@@ -69,7 +69,7 @@ public class EventManager : MonoBehaviour
         Event8,
         Event9,
         Event10,
-        Final
+        Final12
     }
 
     [Space]
@@ -296,7 +296,9 @@ public class EventManager : MonoBehaviour
                     // Debug.Log("Nothing is happening");
 
                     clockscript.frezzeTime = false;
+
                     pcScreen.SetActive(true);
+
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -390,6 +392,7 @@ public class EventManager : MonoBehaviour
                     computerInteraction.ExitInteraction();
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
+
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -409,6 +412,7 @@ public class EventManager : MonoBehaviour
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
                     computerInteraction.ExitInteraction();
+
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -429,6 +433,7 @@ public class EventManager : MonoBehaviour
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
                     computerInteraction.ExitInteraction();
+
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -451,6 +456,7 @@ public class EventManager : MonoBehaviour
                     clockscript.frezzeTime = true;
                     computerInteraction.ExitInteraction();
                     AumentoMinMaxCurrentyArregloTimeScale();
+
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -472,6 +478,7 @@ public class EventManager : MonoBehaviour
                     clockscript.frezzeTime = true;
                     AumentoMinMaxCurrentyArregloTimeScale();
                     computerInteraction.ExitInteraction();
+
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     event3Collider.SetActive(false);
@@ -486,7 +493,7 @@ public class EventManager : MonoBehaviour
 
                     break;
 
-                case EventsToTrigger.Final:
+                case EventsToTrigger.Final12:
 
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
@@ -498,6 +505,7 @@ public class EventManager : MonoBehaviour
                     event9Collider.SetActive(false);
 
                     colaiderMicrondas.SetActive(false);
+                    
 
                     finalCollider.SetActive(true);
                     lastCutScript.UploadProjectButton.interactable = true;

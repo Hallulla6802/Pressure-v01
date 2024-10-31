@@ -704,7 +704,7 @@ MonoBehaviour:
   timeEvent9: 360
   timeEvent9Limit: 360.9
   eventTrigged9: 0
-  currentEvent: 0
+  currentEvent: 9
   event1Collider: {fileID: 1573883649}
   event2Collider: {fileID: 146859156}
   event3Collider: {fileID: 957984214}
@@ -5246,6 +5246,7 @@ MonoBehaviour:
   audioSource: {fileID: 196770740}
   audioDuration: 15
   eventManager: {fileID: 0}
+  objMan: {fileID: 0}
 --- !u!65 &627006231
 BoxCollider:
   m_ObjectHideFlags: 0

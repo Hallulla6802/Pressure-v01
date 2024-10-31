@@ -38,7 +38,7 @@ public class Event_9_Door : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && isTrigger)
         {
            
-            eventManager.currentEvent = EventsToTrigger.Final;
+            eventManager.currentEvent = EventsToTrigger.Final12;
             textoInteractuarScript.CerrarTextoInteractuar();
             event5Collider.enabled = false;
             isTrigger = false;
