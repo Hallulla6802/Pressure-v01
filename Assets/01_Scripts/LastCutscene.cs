@@ -20,13 +20,16 @@ public class LastCutscene : MonoBehaviour
 
     [Space]
     public Button UploadProjectButton;
+    public GameObject buttonUpload;
 
 
     private void Start()
     {
         blackScreen.SetActive(false);
-        UploadProjectButton.interactable = false;
+        
     }
+
+   
 
     public void EndGameFunction()
     {

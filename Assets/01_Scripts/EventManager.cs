@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.ProBuilder.Shapes;
+using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
     public ClockScript clockscript;
     public MecanographicScript mecanographicscript;
     public ComputerInteraction computerInteraction;
-    public LastCutscene lastCutScript;
 
     public Evento_10 evento_10;
     public GameObject pcScreen;
@@ -17,7 +17,10 @@ public class EventManager : MonoBehaviour
     public int eventCount;
     public GameObject audioVentilador;
 
- 
+    public Button UploadProjectButton;
+    public GameObject buttonUpload;
+
+
 
     private EventsToTrigger lastEvent;
 
@@ -113,6 +116,10 @@ public class EventManager : MonoBehaviour
     private void Start()
     {
         objMan = FindObjectOfType<ObjectivesManager>();
+
+        UploadProjectButton.interactable = false;
+        buttonUpload.SetActive(false);
+
 
         lastEvent = EventsToTrigger.None;
         colaiderMicrondas.SetActive(false);
@@ -508,7 +515,10 @@ public class EventManager : MonoBehaviour
                     
 
                     finalCollider.SetActive(true);
-                    lastCutScript.UploadProjectButton.interactable = true;
+
+                    UploadProjectButton.interactable = true;
+                    buttonUpload.SetActive(true);
+
                     break;
 
                

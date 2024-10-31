@@ -873,6 +873,59 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!1 &714819773288840909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971025297573221552}
+  - component: {fileID: 7237666728691628511}
+  m_Layer: 0
+  m_Name: EndGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1971025297573221552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714819773288840909}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000012218951}
+  m_LocalPosition: {x: -23, y: 1207, z: -2311}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3894783256121268901}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &7237666728691628511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714819773288840909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4195f7442437bc84791da96a0ce2c583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
+  cameraScript: {fileID: 0}
+  objectivesManager: {fileID: 0}
+  blackScreen: {fileID: 0}
+  noise: {fileID: 0}
+  bodythumpNoise: {fileID: 0}
+  fanAudio: {fileID: 0}
+  UploadProjectButton: {fileID: 8969805608387090656}
+  buttonUpload: {fileID: 5084210434338962629}
 --- !u!1 &1195467435478715097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,6 +1824,7 @@ RectTransform:
   - {fileID: 3404673479058245097}
   - {fileID: 4624224094496666121}
   - {fileID: 2446436313820960921}
+  - {fileID: 1971025297573221552}
   m_Father: {fileID: 8710939249689798011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
