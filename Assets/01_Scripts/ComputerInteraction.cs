@@ -22,6 +22,7 @@ public class ComputerInteraction : MonoBehaviour
     public TMP_InputField inputField;
     public bool isTriggerMessage;
     public Outline pcOutline;
+    public Image crosshair;
 
     public AudioSource sonidoClick;
     private void Awake()
@@ -75,7 +76,6 @@ public class ComputerInteraction : MonoBehaviour
             isTriggerMessage = true;
             textoInteractuarScript.AbrirTextoInteractuar();
             pcOutline.enabled = true;
-
         }
     }
 
@@ -104,6 +104,7 @@ public class ComputerInteraction : MonoBehaviour
         Cursor.visible = true;
         playerCam.enabled = false;
         pcFocusCam.enabled = true;
+        crosshair.enabled = false;
     }
 
     public void ExitInteraction()
@@ -115,6 +116,7 @@ public class ComputerInteraction : MonoBehaviour
         Cursor.visible = false;        
         playerCam.enabled = true;       
         pcFocusCam.enabled = false;
+        crosshair.enabled = true;
         DeselectAndClear();
     }
     public void DeselectAndClear()

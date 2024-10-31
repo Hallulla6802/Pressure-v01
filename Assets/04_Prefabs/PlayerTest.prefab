@@ -452,7 +452,6 @@ GameObject:
   - component: {fileID: 8516558214319775454}
   - component: {fileID: 7273811362564845180}
   - component: {fileID: 4902910356970239890}
-  - component: {fileID: 8597556700987286469}
   - component: {fileID: 1302796290824565325}
   m_Layer: 3
   m_Name: PlayerTest
@@ -535,23 +534,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1
---- !u!320 &8597556700987286469
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6548562934967921615}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 90e2aceefd80d134f84a684d4cfaa051, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References: []
+  sombraAudio: {fileID: 0}
 --- !u!33 &1302796290824565325
 MeshFilter:
   m_ObjectHideFlags: 0

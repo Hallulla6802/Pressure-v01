@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorInteraction : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class DoorInteraction : MonoBehaviour
     public KeyCode interactionKey = KeyCode.E;  // La tecla que usaremos para interactuar
     private DoorScript doorController;
     private TextoInteractuarScript textoInteractuarScript;
-    private bool isLookingAtHandle = false;
+    [SerializeField] private bool isLookingAtHandle = false;
     private Outline outline;
+    public Image CrossHair;
+    public Sprite crosshairclossed, crosshairopen;
    
     public Camera playerCamera;  // La cámara del jugador
     void Start()
@@ -40,8 +43,9 @@ public class DoorInteraction : MonoBehaviour
                 if(!isLookingAtHandle)
                 {
                     textoInteractuarScript.AbrirTextoInteractuar();
-                    outline.enabled = true;
+                    hit.collider.GetComponent<Outline>().enabled = true;
                     isLookingAtHandle = true;
+                    CrossHair.sprite = crosshairopen;
                 }
                
                 // Si presionamos la tecla de interacción
@@ -64,6 +68,7 @@ public class DoorInteraction : MonoBehaviour
                     textoInteractuarScript.CerrarTextoInteractuar();
                     outline.enabled = false;
                     isLookingAtHandle = false;
+                    CrossHair.sprite = crosshairclossed;
                } 
             }
         }

@@ -33,6 +33,7 @@ public class DoorScript : MonoBehaviour
         doorAnimator.Play(openAnimationName);  // Reproduce la animación de apertura
         isDoorOpen = true;
         Invoke("CloseDoor", closeDelay);  // Programar el cierre de la puerta después del retraso
+        
     }
 
     // Función para cerrar la puerta
@@ -42,15 +43,6 @@ public class DoorScript : MonoBehaviour
         {
             doorAnimator.Play(closeAnimationName);  // Reproduce la animación de cierre
             isDoorOpen = false;
-        }
-    }
-
-    // Detecta cuando el jugador pasa por la puerta
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player") && isDoorOpen)
-        {
-            CloseDoor();
         }
     }
 }
