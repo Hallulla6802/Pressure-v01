@@ -86,6 +86,7 @@ public class ComputerInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isTriggerMessage = false;
+            isInInteraction = false;
             textoInteractuarScript.CerrarTextoInteractuar();
             pcOutline.enabled = false;
         }
@@ -110,6 +111,7 @@ public class ComputerInteraction : MonoBehaviour
     public void ExitInteraction()
     {
         isInInteraction = false;
+        isTriggerMessage = false;
         playerMovement.canMove = true;// Reactivar los controles del jugador   
         cameraScript.canLook = true;  
         Cursor.lockState = CursorLockMode.Locked;  // Bloquear el mouse de nuevo

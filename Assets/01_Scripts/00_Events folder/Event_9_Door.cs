@@ -11,7 +11,7 @@ public class Event_9_Door : MonoBehaviour
     public EventManager eventManager;
     private ObjectivesManager objMan;
     public GameObject lastCutsceneCollider;
-    public Outline objOutline;
+   
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class Event_9_Door : MonoBehaviour
             //Debug.Log("Player Has closed Door");
             isTrigger = true;
             textoInteractuarScript.AbrirTextoInteractuar();
-            objOutline.enabled = true;
+           
 
         }
     }
@@ -37,14 +37,14 @@ public class Event_9_Door : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && isTrigger)
         {
-            event5Collider.enabled = false;
-            eventManager.currentEvent = EventsToTrigger.None;
+           
+            eventManager.currentEvent = EventsToTrigger.Final;
             textoInteractuarScript.CerrarTextoInteractuar();
-            objOutline.enabled = false;
+            event5Collider.enabled = false;
             isTrigger = false;
 
             objMan.currentStates = ObjectivesManager.ObjectiveStates.UploadProject;
-            lastCutsceneCollider.SetActive(true);
+            
         }
     }
 
@@ -54,7 +54,7 @@ public class Event_9_Door : MonoBehaviour
         {
             isTrigger = false;
             textoInteractuarScript.CerrarTextoInteractuar();
-            objOutline.enabled = false;
+            
         }
     }
 }

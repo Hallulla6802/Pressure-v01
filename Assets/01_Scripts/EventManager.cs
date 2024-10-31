@@ -65,7 +65,8 @@ public class EventManager : MonoBehaviour
         Event7,
         Event8,
         Event9,
-        Event10
+        Event10,
+        Final
     }
 
     [Space]
@@ -86,6 +87,7 @@ public class EventManager : MonoBehaviour
    
     public GameObject event8Collider;
     public GameObject event9Collider;
+    public GameObject finalCollider;
 
     public GameObject colaiderMicrondas;
     //public Gameobject event10Collider;
@@ -301,6 +303,7 @@ public class EventManager : MonoBehaviour
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
                     audioVentilador.SetActive(true);
+                    finalCollider.SetActive(false);
 
                     break;
 
@@ -321,7 +324,7 @@ public class EventManager : MonoBehaviour
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(true);
-
+                    finalCollider.SetActive(false);
 
                     break;
 
@@ -341,7 +344,7 @@ public class EventManager : MonoBehaviour
                     
                     event8Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
-
+                    finalCollider.SetActive(false);
                     break;
 
                 case EventsToTrigger.Event3:
@@ -363,7 +366,7 @@ public class EventManager : MonoBehaviour
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
                     audioVentilador.SetActive(false);
-
+                    finalCollider.SetActive(false);
                     break;
 
                 case EventsToTrigger.Event4:
@@ -382,7 +385,7 @@ public class EventManager : MonoBehaviour
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
-
+                    finalCollider.SetActive(false);
                     break;
 
                 case EventsToTrigger.Event5:
@@ -402,7 +405,7 @@ public class EventManager : MonoBehaviour
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
-
+                    finalCollider.SetActive(false);
                     break;
 
                 case EventsToTrigger.Event6:
@@ -422,7 +425,7 @@ public class EventManager : MonoBehaviour
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
-
+                    finalCollider.SetActive(false);
                     break;
 
                 
@@ -444,6 +447,7 @@ public class EventManager : MonoBehaviour
                     event8Collider.SetActive(true);
                     event9Collider.SetActive(false);
                     colaiderMicrondas.SetActive(false);
+                    finalCollider.SetActive(false);
 
                     break;
 
@@ -464,7 +468,12 @@ public class EventManager : MonoBehaviour
                     event8Collider.SetActive(false);
                     event9Collider.SetActive(true);
                     colaiderMicrondas.SetActive(false);
+                    finalCollider.SetActive(false);
 
+                    break;
+
+                case EventsToTrigger.Final:
+                    finalCollider.SetActive(true);
                     break;
 
                

@@ -58,9 +58,10 @@ public class Event_3_Object : MonoBehaviour
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
             objOutline.enabled = false;
+            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
             isTrigger = false;
 
-            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
+            
         }
     }
 
