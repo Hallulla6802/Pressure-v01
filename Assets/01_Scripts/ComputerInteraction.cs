@@ -41,14 +41,11 @@ public class ComputerInteraction : MonoBehaviour
     void Update()
     {
 
-        
-           
-           
 
             // Si el jugador está lo suficientemente cerca y no está interactuando y esta en el trigger del computador
             if (Input.GetKeyDown(KeyCode.E) && !isInInteraction && isTriggerMessage)  // Usamos la tecla E para interactuar
             {
-                if (eventManager.currentEvent == EventsToTrigger.None)
+                if (eventManager.currentEvent == EventsToTrigger.None || eventManager.currentEvent == EventsToTrigger.Final12)
                 {
                    EnterInteraction();
                    textoInteractuarScript.CerrarTextoInteractuar();
