@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LastCutscene : MonoBehaviour
 {
@@ -9,32 +10,36 @@ public class LastCutscene : MonoBehaviour
     public CameraScript cameraScript;
     public ObjectivesManager objectivesManager;
 
-    public Camera playerCamera;
-    public Transform playerArm;
-    public Animator camAnim;
+    [Space]
+    public GameObject blackScreen;
 
-    private void Awake()
+    [Space]
+    public AudioSource noise;
+    public AudioSource bodythumpNoise;
+    public AudioSource fanAudio;
+
+    [Space]
+    public Button UploadProjectButton;
+
+
+    private void Start()
     {
-        camAnim = FindObjectOfType<Animator>();
-        camAnim.enabled = false;
+        blackScreen.SetActive(false);
+        UploadProjectButton.interactable = false;
     }
 
-    void OnTriggerEnter(Collider other)
+    public void EndGameFunction()
     {
-        if(other.CompareTag("Player"))
-        {
+        playerMovement.canMove = false;
+        cameraScript.canLook = false;
+        objectivesManager.canSeeObj = false;
 
-            playerMovement.canMove = false;
-            cameraScript.canLook = false;
-            objectivesManager.canSeeObj = false;
+        blackScreen.SetActive(true);
 
-            playerArm.gameObject.SetActive(false);
-            camAnim.enabled = true;
+        noise.Stop();
+        fanAudio.Stop();
 
-            
-            
-        }
+        bodythumpNoise.Play();
     }
-
 
 }

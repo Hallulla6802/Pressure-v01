@@ -9,8 +9,11 @@ public class EventManager : MonoBehaviour
     public ClockScript clockscript;
     public MecanographicScript mecanographicscript;
     public ComputerInteraction computerInteraction;
+    public LastCutscene lastCutScript;
+
     public Evento_10 evento_10;
     public GameObject pcScreen;
+
     public int eventCount;
     public GameObject audioVentilador;
 
@@ -122,6 +125,8 @@ public class EventManager : MonoBehaviour
         
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
+
+        finalCollider.SetActive(false);
     }
     private void Update()
     {
@@ -272,7 +277,7 @@ public class EventManager : MonoBehaviour
             }
             if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
             {
-                //Debug.Log("Se gatilla el evento8 Steps");
+                //Debug.Log("Se abre la puerta");
                 currentEvent = EventsToTrigger.Event9;
                 objMan.currentStates = ObjectivesManager.ObjectiveStates.CloseTheDoor;
                 eventTrigged9 = true;
@@ -332,9 +337,13 @@ public class EventManager : MonoBehaviour
 
                     //Debug.Log("Event 2 is triggered");
                     evento_10.ShadowEvent2();
+
                     computerInteraction.ExitInteraction();
+
                     clockscript.frezzeTime = true;
+
                     AumentoMinMaxCurrentyArregloTimeScale();
+
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(true);
                     event3Collider.SetActive(false);
@@ -351,10 +360,15 @@ public class EventManager : MonoBehaviour
 
                     //Debug.Log("Event 3 is triggered");
                     evento_10.ShadowEvent3();
+
                     event3Collider.SetActive(true);
+
                     computerInteraction.ExitInteraction();
+
                     clockscript.frezzeTime = true;
+
                     AumentoMinMaxCurrentyArregloTimeScale();
+
                     event1Collider.SetActive(false);
                     event2Collider.SetActive(false);
                     
@@ -473,7 +487,20 @@ public class EventManager : MonoBehaviour
                     break;
 
                 case EventsToTrigger.Final:
+
+                    event1Collider.SetActive(false);
+                    event2Collider.SetActive(false);
+                    event3Collider.SetActive(false);
+                    event4Collider.SetActive(false);
+                    event5Collider.SetActive(false);
+                    event6Collider.SetActive(false);
+                    event8Collider.SetActive(false);
+                    event9Collider.SetActive(false);
+
+                    colaiderMicrondas.SetActive(false);
+
                     finalCollider.SetActive(true);
+                    lastCutScript.UploadProjectButton.interactable = true;
                     break;
 
                

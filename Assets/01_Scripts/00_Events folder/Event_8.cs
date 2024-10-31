@@ -8,6 +8,7 @@ public class Event_8 : MonoBehaviour
     public AudioSource audioSource;
     public float audioDuration = 20f; // Duración en segundos
     public EventManager eventManager;
+    public ObjectivesManager objMan;
 
     private BoxCollider event8Collider;
 
@@ -16,6 +17,7 @@ public class Event_8 : MonoBehaviour
     {
         event8Collider = GetComponent<BoxCollider>();
         eventManager = FindObjectOfType<EventManager>();
+        objMan = FindObjectOfType<ObjectivesManager>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -34,6 +36,7 @@ public class Event_8 : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         audioSource.Stop();
+        objMan.currentStates =  ObjectivesManager.ObjectiveStates.GoToThePC;
         eventManager.currentEvent = EventsToTrigger.None;
         event8Collider.enabled = false;
     }

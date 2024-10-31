@@ -64,7 +64,7 @@ public class ComputerInteraction : MonoBehaviour
 
             if (isInInteraction && Input.GetMouseButtonDown(0))
             {
-            sonidoClick.Play();
+                sonidoClick.Play();
             }
         
     }
