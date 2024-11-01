@@ -22,11 +22,14 @@ public class LastCutscene : MonoBehaviour
     public Button UploadProjectButton;
     public GameObject buttonUpload;
 
+    private ChangeSceneManager changeScene;
+
 
     private void Start()
     {
         blackScreen.SetActive(false);
         
+        changeScene = FindObjectOfType<ChangeSceneManager>();
     }
 
    
@@ -43,6 +46,14 @@ public class LastCutscene : MonoBehaviour
         fanAudio.Stop();
 
         bodythumpNoise.Play();
+
+        StartCoroutine(ChangeScene());
+    }
+
+    private IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(3f);
+        changeScene.ExitGame();
     }
 
 }
