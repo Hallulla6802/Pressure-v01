@@ -87,7 +87,7 @@ Material:
     - _AoIntensity: 1
     - _BlendMainNormal: 0
     - _BlendmodeOverlay: 0
-    - _Brightness: 8
+    - _Brightness: 4.1
     - _BumpScale: 1
     - _ContrastDetailMap: 0
     - _ContrastTransparentMap: 0
