@@ -8,7 +8,7 @@ public class Event_1 : MonoBehaviour
 
     public AudioSource microndasSound;
     private BoxCollider event1collider;
-
+    public GameObject microwaveLight;
     public EventManager eventManager;
 
     private void Awake()
@@ -22,7 +22,7 @@ public class Event_1 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
+            microwaveLight.SetActive(true);
             microndasSound.Play();
             event1collider.enabled = false;
                 

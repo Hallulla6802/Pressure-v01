@@ -14,6 +14,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
     public Outline objOutline;
     private ObjectivesManager objMan;
     public AudioSource microwaveAudio;
+    public GameObject microwaveLight;
 
     private void Awake()
     {
@@ -52,6 +53,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
 
             microndasSound.Stop();
             microwaveAudio.Play();
+            microwaveLight.SetActive(false);
             objectCollider.enabled = false;
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();

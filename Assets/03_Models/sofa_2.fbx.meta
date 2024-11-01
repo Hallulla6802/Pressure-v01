@@ -3,7 +3,22 @@ guid: 0f9de6692ead03f4eba0a3dec5e48abf
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Sofa_base
+    second: {fileID: 2100000, guid: a0c74976393fbd741860087040ec7c3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_sofa_legs
+    second: {fileID: 2100000, guid: 51b4e9701727a354685504f27a513560, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_sofa_pillows
+    second: {fileID: 2100000, guid: 4b651ba42fb89a94a966f41482b9ac1d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

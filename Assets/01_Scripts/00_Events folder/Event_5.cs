@@ -6,7 +6,7 @@ public class Event_5 : MonoBehaviour
 {
     public AudioSource tvSound;
     public GameObject tvTrigger;
-
+    public GameObject tvObj;
     private BoxCollider event5Collider;
 
     private void Awake()
@@ -20,7 +20,7 @@ public class Event_5 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             tvSound.Play();
-
+            tvObj.SetActive(true);
             event5Collider.enabled = false;
             tvTrigger.SetActive(true);
         }

@@ -10,6 +10,7 @@ public class Event_5_TV : MonoBehaviour
     private BoxCollider event5Collider;
     public EventManager eventManager;
     public bool isTrigger;
+    public GameObject tvObj;
     public Outline objOutline;
 
     private ObjectivesManager objMan;
@@ -41,7 +42,7 @@ public class Event_5_TV : MonoBehaviour
             textoInteractuarScript.CerrarTextoInteractuar();
             objOutline.enabled = false;
             isTrigger = false;
-
+            tvObj.SetActive(false);
             objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         }
     }
