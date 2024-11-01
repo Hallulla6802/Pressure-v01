@@ -12,6 +12,6 @@ public class ChangeSceneManager : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit(5);
+        Application.Quit();
     }
 }
