@@ -25,6 +25,8 @@ public class EnemyRunBehiavor : MonoBehaviour
         {
             sombraAudio = sombraObject.GetComponent<AudioSource>();
         }
+
+
     }
 
     private void Start()

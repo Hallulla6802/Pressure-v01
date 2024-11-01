@@ -6,7 +6,7 @@ using static EventManager;
 public class Event_8 : MonoBehaviour
 {
     public AudioSource audioSource;
-    public float audioDuration = 20f; // Duración en segundos
+    public float audioDuration = 15f; // Duración en segundos
     public EventManager eventManager;
     public ObjectivesManager objMan;
 

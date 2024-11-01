@@ -81,7 +81,7 @@ MonoBehaviour:
   diversionDirection: {x: 0, y: 0, z: 0}
   isCurving: 0
   sombraAudio: {fileID: 0}
-  footstepSound: {fileID: 0}
+  footstepSound: {fileID: 3609784678637946998}
 --- !u!1 &8011778201670077702
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,9 +396,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2af58972ffbeffe4fb90291114de32a3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6115581476389591461}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2af58972ffbeffe4fb90291114de32a3, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5674201638894798453}
   m_SourcePrefab: {fileID: 100100000, guid: 2af58972ffbeffe4fb90291114de32a3, type: 3}
 --- !u!1 &3693761394591133295 stripped
@@ -406,29 +403,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2af58972ffbeffe4fb90291114de32a3, type: 3}
   m_PrefabInstance: {fileID: 4576653082148655934}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6115581476389591461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3693761394591133295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f9c5fb0e542044c9c860831b0c8ca7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followSpeed: 16
-  stopDistance: 3
-  diversionAngle: 30
-  destroyDelay: 0.5
-  player: {fileID: 0}
-  isFollowing: 0
-  hasStoppedFollowing: 0
-  diversionDirection: {x: 0, y: 0, z: 0}
-  isCurving: 0
-  sombraAudio: {fileID: 0}
-  footstepSound: {fileID: 0}
 --- !u!95 &5674201638894798453
 Animator:
   serializedVersion: 5
