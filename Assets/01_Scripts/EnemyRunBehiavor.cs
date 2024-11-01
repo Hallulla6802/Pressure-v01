@@ -16,6 +16,7 @@ public class EnemyRunBehiavor : MonoBehaviour
     public bool isCurving = false;
     public AudioSource sombraAudio;
     public  AudioSource footstepSound;
+    public float initialY;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class EnemyRunBehiavor : MonoBehaviour
     {
         // Encuentra al jugador usando la etiqueta "Player"
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
+        initialY = transform.position.y;
         AudioSource[] audioSources = GetComponentsInChildren<AudioSource>();
         foreach (AudioSource audioSource in audioSources)
         {
@@ -65,7 +66,9 @@ public class EnemyRunBehiavor : MonoBehaviour
         {
             footstepSound.Stop(); // Detiene el sonido si no está siguiendo o está en desvío
         }
-        }
+
+        transform.position = new Vector3(transform.position.x, initialY, transform.position.z);
+    }
 
 
     private void FollowPlayer()
