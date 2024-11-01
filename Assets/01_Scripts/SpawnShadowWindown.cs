@@ -16,7 +16,7 @@ public class SpawnShadowWindown : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Si el player entra en el trigger
         {
-            // Generar un número aleatorio entre 0 y 100
+            // Generar un nï¿½mero aleatorio entre 0 y 100
             float randomValue = Random.Range(0f, 100f);
 
             // Chequear si la probabilidad es suficiente para hacer spawn del enemigo
@@ -27,7 +27,7 @@ public class SpawnShadowWindown : MonoBehaviour
             }
             else
             {
-                // Aumentar la probabilidad para la próxima vez
+                // Aumentar la probabilidad para la prï¿½xima vez
                 spawnProbability += increaseProbability;
             }
         }
@@ -38,19 +38,19 @@ public class SpawnShadowWindown : MonoBehaviour
         // Elegir un spawn al azar (izquierda o derecha)
         selectedSpawn = Random.Range(0, 2) == 0 ? spawnLeft : spawnRight;
 
-        // Crear el enemigo en la posición del spawn elegido
+        // Crear el enemigo en la posiciï¿½n del spawn elegido
         GameObject enemy = Instantiate(enemyShadowPrefab, selectedSpawn.position, Quaternion.identity);
 
-        // Asignar la dirección de movimiento del enemigo
+        // Asignar la direcciï¿½n de movimiento del enemigo
         ShadowWindownMovement shadowWindownMovent = enemy.GetComponent<ShadowWindownMovement>();
 
         if (selectedSpawn == spawnLeft)
         {
-            shadowWindownMovent.direction = Vector3.left; // Hacia -X
+            shadowWindownMovent.direction = Vector3.forward; // Hacia -Z
         }
         else
         {
-            shadowWindownMovent.direction = Vector3.right; // Hacia +X
+            shadowWindownMovent.direction = Vector3.back; // Hacia +
         }
     }
 }

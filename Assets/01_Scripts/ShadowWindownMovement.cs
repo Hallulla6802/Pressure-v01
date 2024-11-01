@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class ShadowWindownMovement : MonoBehaviour
 {
-    public Vector3 direction; // Dirección a la que se moverá el enemigo
-    public float speed = 3f;  // Velocidad de movimiento
+    public Vector3 direction; // Direcciï¿½n a la que se moverï¿½ el enemigo
+    public float speed = 2.5f;  // Velocidad de movimiento
 
     public  void Start()
     {
-        StartCoroutine(DestroyAfterTime(10f)); // 10 segundos
+        StartCoroutine(DestroyAfterTime(6f)); // 10 segundos
     }
 
     void Update()
     {
-        // Mover el enemigo en la dirección asignada
+        // Mover el enemigo en la direcciï¿½n asignada
         transform.position += direction * speed * Time.deltaTime;
     }
 
     private IEnumerator DestroyAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
-        Destroy(gameObject); // Destruir el enemigo después de que pase el tiempo
+        Destroy(gameObject); // Destruir el enemigo despuï¿½s de que pase el tiempo
     }
 }

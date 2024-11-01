@@ -22,6 +22,7 @@ public class ObjectivesManager : MonoBehaviour
 
     public TextMeshProUGUI textForObjectives;
     public GameObject BeeperToHide;
+    public GameObject animatedArm;
     [Space]
     public ObjectiveStates currentStates;
     public bool canSeeObj = true;
@@ -31,6 +32,7 @@ public class ObjectivesManager : MonoBehaviour
         currentStates = ObjectiveStates.GoToThePC;
 
         BeeperToHide.SetActive(false);
+        animatedArm.SetActive(true);
         
     }
 
@@ -109,12 +111,14 @@ public class ObjectivesManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) & BeeperToHide.activeSelf == true)
         {
             BeeperToHide.SetActive(false);
+            animatedArm.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.Q) & BeeperToHide.activeSelf == false)
         {
             if(canSeeObj == true)
             {
                 BeeperToHide.SetActive(true);
+                animatedArm.SetActive(false);
             }
         }
     }

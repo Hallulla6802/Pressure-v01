@@ -3,7 +3,12 @@ guid: e0d09e8ed1e5f7845b6a1e7c6f017033
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShadowGuys
+    second: {fileID: 2100000, guid: cdd507c36459dc4438829a6500579c12, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

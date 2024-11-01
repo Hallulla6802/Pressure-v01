@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float gravity = 9.8f;
     public bool canMove = true;
+    public Animator animator;
     private CharacterController controller;
     private Vector3 velocity;
     private bool isGrounded;
@@ -29,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
             // Aplicamos movimiento horizontal
             controller.Move(move * moveSpeed * Time.deltaTime);
 
+            bool isMoving = move.magnitude > 0.1f;
+
             // Si estamos en el suelo, reseteamos la velocidad vertical
             if (isGrounded && velocity.y < 0)
             {
@@ -40,6 +43,15 @@ public class PlayerMovement : MonoBehaviour
 
             // Movimiento vertical (solo gravedad)
             controller.Move(velocity * Time.deltaTime);
+
+            if (isMoving)
+            {
+                animator.SetBool("IsMoving", true);
+            }
+            else
+            {
+                animator.SetBool("IsMoving", false);
+            }
         }
        
     }

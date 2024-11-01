@@ -10,6 +10,7 @@ public class Event_5_TV : MonoBehaviour
     private BoxCollider event5Collider;
     public EventManager eventManager;
     public bool isTrigger;
+    public Outline objOutline;
 
     private ObjectivesManager objMan;
     private void Awake()
@@ -26,6 +27,7 @@ public class Event_5_TV : MonoBehaviour
         {
             isTrigger = true;
             textoInteractuarScript.AbrirTextoInteractuar();
+            objOutline.enabled = true;
         }
     }
 
@@ -37,6 +39,7 @@ public class Event_5_TV : MonoBehaviour
             event5Collider.enabled = false;
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
             isTrigger = false;
 
             objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
@@ -47,6 +50,7 @@ public class Event_5_TV : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            objOutline.enabled = false;
             isTrigger = false;
             textoInteractuarScript.CerrarTextoInteractuar();
         }

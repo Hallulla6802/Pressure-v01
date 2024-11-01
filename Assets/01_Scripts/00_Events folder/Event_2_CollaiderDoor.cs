@@ -10,7 +10,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
     public BoxCollider objectCollider;
     public AudioSource knocksound;
     public bool isTrigger;
-
+    public Outline objOutline;
     private ObjectivesManager objMan;
 
     private void Awake()
@@ -30,9 +30,7 @@ private void OnTriggerEnter(Collider other)
         //Debug.Log("PlayerHasCollided");
         isTrigger = true;
         textoInteractuarScript.AbrirTextoInteractuar();
-
-        
-
+        objOutline.enabled = true;
     }
 
 }
@@ -45,6 +43,7 @@ private void OnTriggerEnter(Collider other)
             objectCollider.enabled = false;
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
             isTrigger = false;
 
             objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
@@ -57,6 +56,7 @@ private void OnTriggerEnter(Collider other)
         {
             isTrigger = false;
             textoInteractuarScript.CerrarTextoInteractuar();
+            objOutline.enabled = false;
         }
     }
 }
