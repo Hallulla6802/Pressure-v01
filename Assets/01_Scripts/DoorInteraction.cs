@@ -72,5 +72,12 @@ public class DoorInteraction : MonoBehaviour
                } 
             }
         }
+        else
+        {
+            textoInteractuarScript.CerrarTextoInteractuar();
+            outline.enabled = false;
+            isLookingAtHandle = false;
+            CrossHair.sprite = crosshairclossed;
+        }
     }
 }

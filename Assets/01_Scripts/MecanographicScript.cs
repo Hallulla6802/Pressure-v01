@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEditor;
+using Unity.VisualScripting;
 
 public class MecanographicScript : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class MecanographicScript : MonoBehaviour
     public int minimumMecanoAmount;
     public int currentAmount;
     public int maximumMecanoAmout;
+    public ComputerInteraction computerInteraction;
 
     private const string chars = "ABCDEFGHIJKLMNPQRSTUVWXYZ123456789abcdefghijklmnpqrstuvwxyz";
 
@@ -30,6 +32,18 @@ public class MecanographicScript : MonoBehaviour
     {
         GenerateRandomText();
     }
+    void Update()
+    {
+        if(computerInteraction.isInInteraction)
+        {
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                CheckText();
+                
+            }
+        }
+    }
+
 
     private void GenerateRandomText()
     {

@@ -8,6 +8,7 @@ public class CameraScript : MonoBehaviour
     public Transform playerBody;  // Referencia al cuerpo del jugador
     public bool canLook = true;
     private float xRotation = 0f;
+    public Transform arm;
 
     void Start()
     {
