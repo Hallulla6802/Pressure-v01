@@ -26,7 +26,7 @@ public class EventManager : MonoBehaviour
 
     private EventsToTrigger lastEvent;
 
-    //Dos variables del tiempo del evento correspondiente, basicamente actuan como un rango para definir cuando ocurre el evefnto. Y tambien un bool para definir si se "Triggereo" el evento o no.
+    //Dos variables del tiempo del evento correspondiente, basicamente actuan como un rango para definir cuando ocurre el evento. Y tambien un bool para definir si se "Triggereo" el evento o no.
     public float timeEvent1;
     public float timeEvent1Limit;
     public bool event1Trigged = false;
@@ -72,7 +72,7 @@ public class EventManager : MonoBehaviour
         Event7,
         Event8,
         Event9,
-        Event10,
+        Event10, //Evento de spawn de sombras en el "livin"
         Final12
     }
 
@@ -92,7 +92,7 @@ public class EventManager : MonoBehaviour
     public GameObject event8Collider;
     public GameObject event9Collider;
     public GameObject finalCollider;
-    public GameObject colaiderMicrondas;
+    public GameObject colaiderMicrondas; //collider
 
 
 
@@ -150,7 +150,7 @@ public class EventManager : MonoBehaviour
             {
                 case EventsToTrigger.None:
 
-                    EventNothingIsHappenig();
+                    EventNothingIsHappening();
 
                     break;
 
@@ -215,7 +215,7 @@ public class EventManager : MonoBehaviour
             lastEvent = currentEvent;
         }
     }
-    void EventNothingIsHappenig() //La mayoria de los void Events siguen la misma logica.
+    void EventNothingIsHappening() //La mayoria de los void Events siguen la misma logica.
     {
         //El tiempo congelado se desactiva, se activa la pantalla del pc, y de desactiva todos los collaiders que gatillen el evento, salvo el evento correspondido.
         clockscript.frezzeTime = false;
@@ -236,7 +236,7 @@ public class EventManager : MonoBehaviour
     void Event1()
     {
         //Debug.Log("Event 1 is triggered");
-        evento_10.ShadowEvent1();
+        evento_10.ShadowEvent1(); //Evento el cual spawnea la sombra en el "livin" esta esta enumerada para que sea una sombra en especifico. 
         computerInteraction.ExitInteraction();
         clockscript.frezzeTime = true;
         AumentoMinMaxCurrentyArregloTimeScale();
@@ -409,8 +409,8 @@ public class EventManager : MonoBehaviour
 
     void SeVerificaElTiempoParaActivarElTriggerYElEvento1() //Todos los demas void siguen la misma logica.
     {
-        //Si el triger del evento correspondiente no esta activado y el tiempo en minutos es mayor que el tiempo del evento, pero menor que el limite, ocurre lo siguiente:
-        if (!event1Trigged && clockscript.timeInMinutes >= timeEvent1 && clockscript.timeInMinutes <= timeEvent1Limit) //Por lo qu si, para verificar el evento hay que crear una variable de EventTrigged, TimeEvent y timeEventLimit para cada evento
+        //Si el trigger del evento correspondiente no esta activado y el tiempo en minutos es mayor que el tiempo del evento, pero menor que el limite, ocurre lo siguiente:
+        if (!event1Trigged && clockscript.timeInMinutes >= timeEvent1 && clockscript.timeInMinutes <= timeEvent1Limit) //Por lo que si, para verificar el evento hay que crear una variable de EventTrigged, TimeEvent y timeEventLimit para cada evento
         {  //La razon por la cual hay como un rango de tiempo por asi decirlo, es que los minutos son un float, es decir dicimales. Y muchas veces pasaba que el tiempo pasaba muy rapido y no alcanzaba el valor exacto, a como lo seria un int.
             //Si las tareas de mecanografia son menores que el minimo establecido, se congela el tiempo para que el jugador pueda terminarlas.
             if (mecanographicscript.currentAmount < mecanographicscript.minimumMecanoAmount)

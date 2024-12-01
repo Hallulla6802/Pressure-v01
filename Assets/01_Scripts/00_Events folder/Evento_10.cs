@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Evento_10 : MonoBehaviour
 {
-    public GameObject shadow;
-    public GameObject shadowRunner;
+    public GameObject shadowPrefab;
+    public GameObject shadowKitchenRunnerPrefab;
     public GameObject pos1;
     public GameObject pos2;
     public GameObject pos3;
@@ -18,7 +18,7 @@ public class Evento_10 : MonoBehaviour
     {
         
        
-            Instantiate(shadowRunner, pos1.transform.position, pos1.transform.rotation);
+            Instantiate(shadowKitchenRunnerPrefab, pos1.transform.position, pos1.transform.rotation);
         
     }
 
@@ -26,7 +26,7 @@ public class Evento_10 : MonoBehaviour
     {
         
         
-            Instantiate(shadow, pos2.transform.position, pos2.transform.rotation);
+            Instantiate(shadowPrefab, pos2.transform.position, pos2.transform.rotation);
         
     }
 
@@ -34,7 +34,7 @@ public class Evento_10 : MonoBehaviour
     {
        
         
-            Instantiate(shadow, pos3.transform.position, pos3.transform.rotation);
+            Instantiate(shadowPrefab, pos3.transform.position, pos3.transform.rotation);
         
     }
 
@@ -42,14 +42,14 @@ public class Evento_10 : MonoBehaviour
     {
         
         
-            Instantiate(shadow, pos4.transform.position, pos4.transform.rotation);
+            Instantiate(shadowPrefab, pos4.transform.position, pos4.transform.rotation);
         
     }
     public void ShadowEvent5()
     {
         
         
-            Instantiate(shadowRunner, pos5.transform.position, pos5.transform.rotation);
+            Instantiate(shadowKitchenRunnerPrefab, pos5.transform.position, pos5.transform.rotation);
         
     }
 
@@ -57,7 +57,7 @@ public class Evento_10 : MonoBehaviour
     {
         
         
-            Instantiate(shadow, pos6.transform.position, pos6.transform.rotation);
+            Instantiate(shadowPrefab, pos6.transform.position, pos6.transform.rotation);
         
     }
  
@@ -66,7 +66,7 @@ public class Evento_10 : MonoBehaviour
     {
         
         
-            Instantiate(shadow, pos9.transform.position, pos9.transform.rotation);
+            Instantiate(shadowPrefab, pos9.transform.position, pos9.transform.rotation);
         
     }
 
