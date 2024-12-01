@@ -1073,8 +1073,7 @@ Transform:
   m_LocalPosition: {x: 8.71, y: -1.95, z: 16.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 239886758}
+  m_Children: []
   m_Father: {fileID: 1863282245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &146859158
@@ -2170,30 +2169,15 @@ GameObject:
   m_Component:
   - component: {fileID: 228091616}
   - component: {fileID: 228091615}
-  - component: {fileID: 228091614}
+  - component: {fileID: 228091617}
+  - component: {fileID: 228091618}
   m_Layer: 0
-  m_Name: PivotDoor (4)
+  m_Name: PivotDoor(PuertaPrincipal)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &228091614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228091613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d392eb01d7247a41b08ee9d754b2cf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorAnimator: {fileID: 228091615}
-  openAnimationName: DoorInvertOpen
-  closeAnimationName: DoorInvertClose
-  closeDelay: 2
 --- !u!95 &228091615
 Animator:
   serializedVersion: 5
@@ -2231,46 +2215,13 @@ Transform:
   - {fileID: 334016242}
   m_Father: {fileID: 1644924382}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
---- !u!1 &239886757
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 239886758}
-  - component: {fileID: 239886760}
-  - component: {fileID: 239886759}
-  m_Layer: 0
-  m_Name: CollaiderDoor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &239886758
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239886757}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.19, y: -0.29999995, z: -32.67}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 146859157}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &239886759
+--- !u!114 &228091617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239886757}
+  m_GameObject: {fileID: 228091613}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e52fb31c9caa914f8089433a42de5ae, type: 3}
@@ -2278,31 +2229,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventManager: {fileID: 0}
   textoInteractuarScript: {fileID: 0}
-  objectCollider: {fileID: 0}
   knocksound: {fileID: 737883469}
   isTrigger: 0
   objOutline: {fileID: 334016243}
---- !u!65 &239886760
-BoxCollider:
+  objMan: {fileID: 0}
+--- !u!114 &228091618
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239886757}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_GameObject: {fileID: 228091613}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.5, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e2f79be0a0a0e4d8fce9d8cb81cb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorAnimator: {fileID: 228091615}
+  openAnimationName: DoorInvertOpen
+  closeAnimationName: DoorInvertClose
+  closeDelay: 2
+  event2collaiderscript: {fileID: 0}
+  eventmanager: {fileID: 0}
 --- !u!1 &247370762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,7 +3169,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 334016241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08858d24f96e3224181e67b91dca6c67, type: 3}
+  m_Script: {fileID: 11500000, guid: 21ed25cf7823d7e4a87af4e0b953ded5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactionRange: 4
