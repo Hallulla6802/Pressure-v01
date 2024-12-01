@@ -39,8 +39,9 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isTrigger = true;
-            textoInteractuarScript.AbrirTextoInteractuar();
             objOutline.enabled = true;
+            textoInteractuarScript.AbrirTextoInteractuar();
+            
         
         }
 
@@ -70,8 +71,9 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isTrigger = false;
-            textoInteractuarScript.CerrarTextoInteractuar();
             objOutline.enabled = false;
+            textoInteractuarScript.CerrarTextoInteractuar();
+            
         }
     }
 }

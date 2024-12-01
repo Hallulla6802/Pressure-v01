@@ -691,6 +691,7 @@ MonoBehaviour:
   clockscript: {fileID: 0}
   mecanographicscript: {fileID: 0}
   computerInteraction: {fileID: 0}
+  objMan: {fileID: 462430376}
   evento_10: {fileID: 0}
   pcScreen: {fileID: 759755628}
   eventCount: 0
@@ -732,7 +733,6 @@ MonoBehaviour:
   event9Collider: {fileID: 1091305242}
   finalCollider: {fileID: 1908565479}
   colaiderMicrondas: {fileID: 1630770270}
-  objMan: {fileID: 462430376}
 --- !u!1 &131567060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,7 +1955,7 @@ Transform:
   m_GameObject: {fileID: 193235728}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 7.92, y: -2.832, z: 21.74}
+  m_LocalPosition: {x: 1.49, y: -2.832, z: 21.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5814,7 +5814,7 @@ Transform:
   m_GameObject: {fileID: 651209121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.54, y: -2.832, z: -9.88}
+  m_LocalPosition: {x: -1.72, y: -2.832, z: 7.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
