@@ -49,16 +49,34 @@ public class MecanographicScript : MonoBehaviour
     {
 
         int eventCount = eventManager.eventCount;
+
         if (eventCount >= 0 && eventCount <= 2)
         {
-            // Generar texto aleatorio
-            textToCopy.text = GetRandomString(6);
+
+            // Frases relacionadas con programaci�n de 8 caracteres
+            string[] programmingSentences = {
+                "private //",
+                "for loop //",
+                "try catch //",
+                "function //",
+                "variable //",
+                "className //",
+                "int main //",
+                "return 0 //",
+                "void func //",
+                "namespace//",
+                "Vector3//",
+                "MonoBehaviour//"
+            };
+
+            int randomIndex = Random.Range(0, programmingSentences.Length);
+            textToCopy.text = programmingSentences[randomIndex];
         }
 
         else if (eventCount >= 3 && eventCount <= 5)
         {
             // Generar el texto aleatorio
-            string randomString = GetRandomString(2);
+            string randomString = GetRandomString(4);
             // Crear frases que incluyan el texto aleatorio
             string[] predefinedSentences = {
                 $"print(\"{randomString}\")",
@@ -76,24 +94,32 @@ public class MecanographicScript : MonoBehaviour
 
         else if (eventCount >= 6)
         {
-            // Frases relacionadas con programaci�n de 8 caracteres
-            string[] programmingSentences = {
-                "private //",  
-                "for loop //",  
-                "try catch //",  
-                "function //",  
-                "variable //",   
-                "className //",  
-                "int main //",  
-                "return 0 //",  
-                "void func //",  
-                "namespace//",
-                "Vector3//",   
-                "MonoBehaviour//"
+            // Generar texto aleatorio
+            string randomletters = GetRandomString(6);
+
+            string StringForWeirdSentences = GetRandomString(2);
+
+            string[] weirdsentences = {
+                $"{StringForWeirdSentences}FeedMe{StringForWeirdSentences}",
+                $"{StringForWeirdSentences}HelpMe{StringForWeirdSentences}",
+                $"{StringForWeirdSentences}GET{StringForWeirdSentences}OUT{StringForWeirdSentences}",
+                $"Get{StringForWeirdSentences}HIM{StringForWeirdSentences}away",
+                $"Ineed{StringForWeirdSentences}to{StringForWeirdSentences}finish.",
             };
 
-            int randomIndex = Random.Range(0, programmingSentences.Length);
-            textToCopy.text = programmingSentences[randomIndex];
+            bool chooseWeirdSentence = Random.value > 0.8f; // Este valor da un % de prob a las frases de arriba a aparecer. De 0 a 1.
+
+            if (chooseWeirdSentence)
+            {
+                int randomIndexForWeirdSentences = Random.Range(0, weirdsentences.Length);
+                textToCopy.text = weirdsentences[randomIndexForWeirdSentences];
+            }
+            else
+            {
+                textToCopy.text = randomletters;
+            }
+
+
         }
     }
     private string GetRandomString(int length)
