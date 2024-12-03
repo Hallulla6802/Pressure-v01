@@ -574,9 +574,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
       propertyPath: m_Name
       value: microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
+      propertyPath: m_TagString
+      value: Microndas
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -585,9 +593,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1630770271}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1237082055}
@@ -607,6 +612,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 310582655}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 310582660}
   m_SourcePrefab: {fileID: 100100000, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
 --- !u!1 &113278562 stripped
 GameObject:
@@ -732,7 +740,6 @@ MonoBehaviour:
   event8Collider: {fileID: 627006229}
   event9Collider: {fileID: 1091305242}
   finalCollider: {fileID: 1908565479}
-  colaiderMicrondas: {fileID: 1630770270}
 --- !u!1 &131567060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,6 +2829,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
   m_PrefabInstance: {fileID: 95962098}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &310582660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310582654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997893b83f6ad7d448a107a29a3ae2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  microndasSound: {fileID: 869503504}
+  textoInteractuarScript: {fileID: 0}
+  eventManager: {fileID: 0}
+  microwaveAudio: {fileID: 0}
+  microwaveLight: {fileID: 152034544}
 --- !u!1001 &312520755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5471,7 +5495,6 @@ GameObject:
   - component: {fileID: 622076724}
   - component: {fileID: 622076723}
   - component: {fileID: 622076722}
-  - component: {fileID: 622076726}
   - component: {fileID: 622076725}
   m_Layer: 0
   m_Name: Door
@@ -5611,26 +5634,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &622076726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622076720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08858d24f96e3224181e67b91dca6c67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 4
-  handleTag: Door
-  interactionKey: 101
-  isLookingAtHandle: 0
-  CrossHair: {fileID: 91050011}
-  crosshairclossed: {fileID: 21300000, guid: bf6849a743eb8334880667cf8c8f5a8a, type: 3}
-  crosshairopen: {fileID: 21300000, guid: de4818ff7ab34b0498890f3c580c3724, type: 3}
-  playerCamera: {fileID: 1239398482}
 --- !u!1 &627006229
 GameObject:
   m_ObjectHideFlags: 0
@@ -8833,7 +8836,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7273811362564845180, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
   m_PrefabInstance: {fileID: 1797740850}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1143867217}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58671333690f26c4e9ce968f636e6f44, type: 3}
@@ -9081,6 +9084,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2564ab9b556f3584bb0fbbaf2a877ec6, type: 3}
+--- !u!1 &1143867217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6548562934967921615, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
+  m_PrefabInstance: {fileID: 1797740850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1145149524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10499,7 +10507,6 @@ GameObject:
   - component: {fileID: 1314125830}
   - component: {fileID: 1314125829}
   - component: {fileID: 1314125828}
-  - component: {fileID: 1314125832}
   - component: {fileID: 1314125831}
   m_Layer: 0
   m_Name: Door
@@ -10639,26 +10646,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &1314125832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314125826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08858d24f96e3224181e67b91dca6c67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 4
-  handleTag: Door
-  interactionKey: 101
-  isLookingAtHandle: 0
-  CrossHair: {fileID: 91050011}
-  crosshairclossed: {fileID: 21300000, guid: bf6849a743eb8334880667cf8c8f5a8a, type: 3}
-  crosshairopen: {fileID: 21300000, guid: de4818ff7ab34b0498890f3c580c3724, type: 3}
-  playerCamera: {fileID: 1239398482}
 --- !u!1 &1335129611
 GameObject:
   m_ObjectHideFlags: 0
@@ -12562,80 +12549,6 @@ MonoBehaviour:
   tvSound: {fileID: 858898119}
   tvTrigger: {fileID: 1750012146}
   tvObj: {fileID: 1657604400}
---- !u!1 &1630770270
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1630770271}
-  - component: {fileID: 1630770273}
-  - component: {fileID: 1630770272}
-  m_Layer: 0
-  m_Name: TiggerMicrondas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 64
-  m_IsActive: 1
---- !u!4 &1630770271
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630770270}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.50000006, y: -0.5, z: -0.5, w: 0.50000006}
-  m_LocalPosition: {x: -0.011079979, y: 0.00031999705, z: -0.00994}
-  m_LocalScale: {x: 0.019999994, y: 0.019999994, z: 0.05907799}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 310582659}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1630770272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630770270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 997893b83f6ad7d448a107a29a3ae2c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  microndasSound: {fileID: 869503504}
-  textoInteractuarScript: {fileID: 0}
-  eventManager: {fileID: 0}
-  objectCollider: {fileID: 0}
-  isTrigger: 0
-  objOutline: {fileID: 310582655}
-  microwaveAudio: {fileID: 0}
-  microwaveLight: {fileID: 152034544}
---- !u!65 &1630770273
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630770270}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4.1931577, y: 3.1689105, z: 2.0631247}
-  m_Center: {x: 0.84405375, y: 1.0844553, z: 0.17894122}
 --- !u!1 &1636026011 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f2437c2041887d548b325c3b82c137a5, type: 3}
@@ -12942,6 +12855,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3804552657845679767, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
   m_PrefabInstance: {fileID: 1797740850}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1661014212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143867217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecff782569f4c134a8ffd6815ec702a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 4
+  interactionKey: 101
+  eventmanager: {fileID: 0}
+  isLookingAtHandle: 0
+  CrossHair: {fileID: 91050011}
+  crosshairclossed: {fileID: 21300000, guid: bf6849a743eb8334880667cf8c8f5a8a, type: 3}
+  crosshairopen: {fileID: 21300000, guid: de4818ff7ab34b0498890f3c580c3724, type: 3}
+  playerCamera: {fileID: 1239398482}
 --- !u!1 &1673602791
 GameObject:
   m_ObjectHideFlags: 0
@@ -13082,7 +13015,6 @@ GameObject:
   - component: {fileID: 1679644018}
   - component: {fileID: 1679644017}
   - component: {fileID: 1679644016}
-  - component: {fileID: 1679644021}
   - component: {fileID: 1679644020}
   m_Layer: 0
   m_Name: Door
@@ -13222,26 +13154,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &1679644021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1679644015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08858d24f96e3224181e67b91dca6c67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 4
-  handleTag: Door
-  interactionKey: 101
-  isLookingAtHandle: 0
-  CrossHair: {fileID: 91050011}
-  crosshairclossed: {fileID: 21300000, guid: bf6849a743eb8334880667cf8c8f5a8a, type: 3}
-  crosshairopen: {fileID: 21300000, guid: de4818ff7ab34b0498890f3c580c3724, type: 3}
-  playerCamera: {fileID: 1239398482}
 --- !u!1 &1716264206
 GameObject:
   m_ObjectHideFlags: 0
@@ -14320,7 +14232,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6548562934967921615, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1661014212}
   m_SourcePrefab: {fileID: 100100000, guid: ac8ae60a169a6ba4a9026803644b963c, type: 3}
 --- !u!1 &1797740851 stripped
 GameObject:
@@ -14344,7 +14259,6 @@ GameObject:
   - component: {fileID: 1806301009}
   - component: {fileID: 1806301008}
   - component: {fileID: 1806301007}
-  - component: {fileID: 1806301011}
   - component: {fileID: 1806301010}
   m_Layer: 0
   m_Name: Door
@@ -14484,26 +14398,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &1806301011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806301005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08858d24f96e3224181e67b91dca6c67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 4
-  handleTag: Door
-  interactionKey: 101
-  isLookingAtHandle: 0
-  CrossHair: {fileID: 91050011}
-  crosshairclossed: {fileID: 21300000, guid: bf6849a743eb8334880667cf8c8f5a8a, type: 3}
-  crosshairopen: {fileID: 21300000, guid: de4818ff7ab34b0498890f3c580c3724, type: 3}
-  playerCamera: {fileID: 1239398482}
 --- !u!1001 &1809759469
 PrefabInstance:
   m_ObjectHideFlags: 0

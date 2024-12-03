@@ -92,7 +92,7 @@ public class EventManager : MonoBehaviour
     public GameObject event8Collider;
     public GameObject event9Collider;
     public GameObject finalCollider;
-    public GameObject colaiderMicrondas; //collider
+
 
 
 
@@ -228,7 +228,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-        colaiderMicrondas.SetActive(false);
+       
         audioVentilador.SetActive(true);
         finalCollider.SetActive(false);
     }
@@ -248,7 +248,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-        colaiderMicrondas.SetActive(true);
+       
         finalCollider.SetActive(false);
     }
 
@@ -266,7 +266,7 @@ public class EventManager : MonoBehaviour
         event5Collider.SetActive(false);
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
-        colaiderMicrondas.SetActive(false);
+     
         finalCollider.SetActive(false);
     }
 
@@ -285,7 +285,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-        colaiderMicrondas.SetActive(false);
+        
         audioVentilador.SetActive(false);
         finalCollider.SetActive(false);
     }
@@ -304,7 +304,7 @@ public class EventManager : MonoBehaviour
         event5Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-        colaiderMicrondas.SetActive(false);
+       
         finalCollider.SetActive(false);
     }
 
@@ -323,7 +323,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-        colaiderMicrondas.SetActive(false);
+       
         finalCollider.SetActive(false);
     }
 
@@ -342,7 +342,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(true);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-        colaiderMicrondas.SetActive(false);
+        
         finalCollider.SetActive(false);
     }
 
@@ -360,7 +360,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(true);
         event9Collider.SetActive(false);
-        colaiderMicrondas.SetActive(false);
+        
         finalCollider.SetActive(false);
     }
 
@@ -379,7 +379,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(true);
-        colaiderMicrondas.SetActive(false);
+        
         finalCollider.SetActive(false);
     }
 
@@ -393,7 +393,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-        colaiderMicrondas.SetActive(false);
+       
         finalCollider.SetActive(true);
         UploadProjectButton.interactable = true;
         buttonUpload.SetActive(true);
@@ -588,7 +588,7 @@ public class EventManager : MonoBehaviour
         UploadProjectButton.interactable = false;
         buttonUpload.SetActive(false);
         lastEvent = EventsToTrigger.None;
-        colaiderMicrondas.SetActive(false);
+       
         event1Collider.SetActive(false);
         event2Collider.SetActive(false);
         event3Collider.SetActive(false);
