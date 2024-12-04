@@ -7,11 +7,11 @@ public class Event_3_Object : MonoBehaviour
 {
     public GameObject lightsToTurnOn;
     public GameObject redDot;
-    public bool isTrigger;
+    
     public TextoInteractuarScript textoInteractuarScript;
     public EventManager eventManager;
-    [SerializeField]private BoxCollider objectCollider;
-    public Outline objOutline;
+    //[SerializeField]private BoxCollider objectCollider;
+    //public Outline objOutline;
     
     private ObjectivesManager objMan;
     public AudioSource botonSonido;
@@ -27,52 +27,32 @@ public class Event_3_Object : MonoBehaviour
         {
             botonSonido = botonObject.GetComponent<AudioSource>();
         }
-        objectCollider = GetComponent<BoxCollider>();
+        
         eventManager = FindObjectOfType<EventManager>();
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
-        objectCollider.enabled = true;
+    
 
         objMan = FindObjectOfType<ObjectivesManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
 
 
-            isTrigger = true;
-            textoInteractuarScript.AbrirTextoInteractuar(objectText);
-            objOutline.enabled = true;
-        }
-    }
+  public void PrenderLuces()
+  {
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && isTrigger)
-        {
-            botonSonido.Play();
-            lightsToTurnOn.SetActive(true);
-            redDot.SetActive(false);
+        botonSonido.Play();
+        lightsToTurnOn.SetActive(true);
+        redDot.SetActive(false);
+        
+        eventManager.currentEvent = EventsToTrigger.None;
+        textoInteractuarScript.CerrarTextoInteractuar();
+      
+        objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
+      
 
-            objectCollider.enabled = false;
-            eventManager.currentEvent = EventsToTrigger.None;
-            textoInteractuarScript.CerrarTextoInteractuar();
-            objOutline.enabled = false;
-            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
-            isTrigger = false;
+  }
+  
 
-            
-        }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isTrigger = false;
-            textoInteractuarScript.CerrarTextoInteractuar();
-            objOutline.enabled = false;
-        }
-    }
+
 }

@@ -11,6 +11,7 @@ TagManager:
   - Door
   - Microndas
   - DoorPrincipal
+  - Generador
   layers:
   - Default
   - TransparentFX

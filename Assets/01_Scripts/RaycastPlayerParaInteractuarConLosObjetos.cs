@@ -13,6 +13,7 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
     public EventManager eventmanager;
     //Scripts de los colliders
     private Event_1_CollaiderMicrondas event1collaidermicrondas;
+    private Event_3_Object event3objects;
     private TextoInteractuarScript textoInteractuarScript;
     private DoorScript doorController;
     [SerializeField] private bool isLookingAtHandle = false;
@@ -49,6 +50,12 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
             {
                 ManejarInteraccionMicrondas(hit);
                 ActualizarOutline(hit.collider.GetComponent<Outline>()); // Activar Outline para Microndas
+            }
+
+            else if (hit.collider.CompareTag("Generador") && eventmanager.currentEvent == EventsToTrigger.Event3)
+            {
+                InteraccionGenerador(hit);
+                ActualizarOutline(hit.collider.GetComponent<Outline>()); // Activar Outline para el Generador
             }
             else
             {
@@ -113,6 +120,22 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
             if (event1collaidermicrondas != null)
             {
                 event1collaidermicrondas.PrenderMicrondas();
+                
+            }
+        }
+    }
+
+    private void InteraccionGenerador(RaycastHit hit)
+    {
+     
+        CrossHair.sprite = crosshairopen;
+
+        if (Input.GetKeyDown(interactionKey))
+        {
+            event3objects = hit.collider.GetComponentInParent<Event_3_Object>();
+            if (event3objects != null)
+            {
+                event3objects.PrenderLuces();
             }
         }
     }

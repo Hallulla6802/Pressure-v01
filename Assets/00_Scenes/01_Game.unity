@@ -5814,81 +5814,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &605756042
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 605756043}
-  - component: {fileID: 605756044}
-  - component: {fileID: 605756045}
-  m_Layer: 0
-  m_Name: TransEmtpyTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 64
-  m_IsActive: 1
---- !u!4 &605756043
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605756042}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0031097613, y: -0.02292965, z: -0.008903272}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 975038612}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &605756044
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605756042}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1.5}
-  m_Center: {x: 0, y: 0.8, z: 0}
---- !u!114 &605756045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605756042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59abb6d44562afd48af699ffd3c845da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsToTurnOn: {fileID: 2113189619}
-  redDot: {fileID: 270681999}
-  isTrigger: 0
-  textoInteractuarScript: {fileID: 0}
-  eventManager: {fileID: 0}
-  objectCollider: {fileID: 605756044}
-  objOutline: {fileID: 975038614}
-  botonSonido: {fileID: 0}
-  objectText: 
 --- !u!1 &622076720
 GameObject:
   m_ObjectHideFlags: 0
@@ -8557,7 +8482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightempty: {fileID: 2113189619}
   redDotForOutside: {fileID: 270681999}
-  transformador: {fileID: 605756042}
   lightsFixed: 0
   pcScreen: {fileID: 759755628}
   lucesapangadnoseAudio: {fileID: 0}
@@ -8684,15 +8608,16 @@ PrefabInstance:
       value: electric_box
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 812ba6e06da0b884b998637398295167, type: 3}
+      propertyPath: m_TagString
+      value: Generador
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 812ba6e06da0b884b998637398295167, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 812ba6e06da0b884b998637398295167, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 605756043}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 812ba6e06da0b884b998637398295167, type: 3}
       insertIndex: -1
       addedObject: {fileID: 270682000}
@@ -8709,6 +8634,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 812ba6e06da0b884b998637398295167, type: 3}
       insertIndex: -1
       addedObject: {fileID: 975038614}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 812ba6e06da0b884b998637398295167, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 975038616}
   m_SourcePrefab: {fileID: 100100000, guid: 812ba6e06da0b884b998637398295167, type: 3}
 --- !u!4 &975038612 stripped
 Transform:
@@ -8810,6 +8738,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3262789968867269347, guid: 812ba6e06da0b884b998637398295167, type: 3}
+--- !u!114 &975038616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975038613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59abb6d44562afd48af699ffd3c845da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightsToTurnOn: {fileID: 2113189619}
+  redDot: {fileID: 270681999}
+  textoInteractuarScript: {fileID: 0}
+  eventManager: {fileID: 0}
+  botonSonido: {fileID: 0}
+  objectText: 
 --- !u!1 &992111045
 GameObject:
   m_ObjectHideFlags: 0
