@@ -5,7 +5,7 @@ using UnityEngine;
 public class Event_4 : MonoBehaviour
 {
     public AudioSource waterSound;
-    public GameObject sinkTrigger;
+
 
     private BoxCollider event4Collider;
    
@@ -13,7 +13,7 @@ public class Event_4 : MonoBehaviour
     private void Awake()
     {
         event4Collider = GetComponent<BoxCollider>();
-        sinkTrigger.SetActive(false);
+    
 
         
     }
@@ -25,7 +25,7 @@ public class Event_4 : MonoBehaviour
             waterSound.Play();
 
             event4Collider.enabled = false;
-            sinkTrigger.SetActive(true);
+           
         }
     }
 }

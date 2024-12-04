@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,16 +8,22 @@ using static EventManager;
 
 public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 {
-    public float interactionRange = 3f;  // Distancia m�xima para interactuar con la manilla
+    public float interactionRange = 2f;  // Distancia maxima para intractuar con los objetos
     private Outline lastOutline = null;
     public KeyCode interactionKey = KeyCode.E;  // La tecla que usaremos para interactuar
     public EventManager eventmanager;
     //Scripts de los colliders
+    public ComputerInteraction computerInteracion;
     private Event_1_CollaiderMicrondas event1collaidermicrondas;
     private Event_3_Object event3objects;
+    private Event_4_Sink event4sink;
+    private Event_5_TV event5tv;
+    private Event_6_RadioTrigger event6radiotrigger;
+
     private TextoInteractuarScript textoInteractuarScript;
     private DoorScript doorController;
     [SerializeField] private bool isLookingAtHandle = false;
+    [SerializeField] private Outline outlinePC;
     private Outline outline;
     public Image CrossHair;
     public Sprite crosshairclossed, crosshairopen;
@@ -39,12 +46,18 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactionRange))
         {
-            
+
             // Filtrar por los tags v�lidos
+            
             if (hit.collider.CompareTag("Door"))
             {
                 ManejarInteraccionPuerta(hit);
                 ActualizarOutline(hit.collider.GetComponent<Outline>()); // Activar Outline para Door
+            }
+            else if (hit.collider.CompareTag("PC") && eventmanager.currentEvent == EventsToTrigger.None || eventmanager.currentEvent == EventsToTrigger.Final12)
+            {
+                InteraccionPC(hit);
+                  // Activar Outline para PC
             }
             else if (hit.collider.CompareTag("Microndas") && eventmanager.currentEvent == EventsToTrigger.Event1)
             {
@@ -56,6 +69,21 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
             {
                 InteraccionGenerador(hit);
                 ActualizarOutline(hit.collider.GetComponent<Outline>()); // Activar Outline para el Generador
+            }
+            else if (hit.collider.CompareTag("Lavamanos") && eventmanager.currentEvent == EventsToTrigger.Event4)
+            {
+                InteraccionLavamanos(hit);
+                ActualizarOutline(hit.collider.GetComponent<Outline>()); // Activar Outline para el Lavamanos
+            }
+            else if (hit.collider.CompareTag("TV") && eventmanager.currentEvent == EventsToTrigger.Event5)
+            {
+                ApagarLaTele(hit);
+                ActualizarOutline(hit.collider.GetComponent<Outline>()); // Activar Outline para el TV
+            }
+            else if (hit.collider.CompareTag("Radio") && eventmanager.currentEvent == EventsToTrigger.Event6)
+            {
+                ApagarLaRadio(hit);
+                ActualizarOutline(hit.collider.GetComponent<Outline>()); // Activar Outline para el Radio
             }
             else
             {
@@ -109,6 +137,36 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
         }
     }
 
+    private void InteraccionPC(RaycastHit hit)
+    {
+        if (!computerInteracion.isInInteraction)
+        {
+            ActualizarOutline(outlinePC);
+            textoInteractuarScript.AbrirTextoInteractuar("Trabajar en el computador");
+            CrossHair.sprite = crosshairopen;
+        }
+        else
+        {
+            CerrarInteraccion();
+            ActualizarOutline(null);
+        }
+
+        
+
+
+        if (Input.GetKeyDown(interactionKey))
+        {
+            computerInteracion = hit.collider.GetComponentInParent<ComputerInteraction>();
+            if (computerInteracion != null)
+            {
+                computerInteracion.TrabajarEnPC();
+               
+
+
+            }
+        }
+    }
+
     private void ManejarInteraccionMicrondas(RaycastHit hit)
     {
         textoInteractuarScript.AbrirTextoInteractuar("Apagar Microondas");
@@ -127,7 +185,7 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
     private void InteraccionGenerador(RaycastHit hit)
     {
-     
+        textoInteractuarScript.AbrirTextoInteractuar("Prender el generador");
         CrossHair.sprite = crosshairopen;
 
         if (Input.GetKeyDown(interactionKey))
@@ -139,6 +197,55 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
             }
         }
     }
+    private void InteraccionLavamanos(RaycastHit hit)
+    {
+        textoInteractuarScript.AbrirTextoInteractuar("Cerrar lavamanos");
+        CrossHair.sprite = crosshairopen;
+
+        if (Input.GetKeyDown(interactionKey))
+        {
+            event4sink = hit.collider.GetComponentInParent<Event_4_Sink>();
+            if (event4sink != null)
+            {
+                event4sink.CerrarLavamanos();
+
+            }
+        }
+    }
+
+    private void ApagarLaTele(RaycastHit hit)
+    {
+        textoInteractuarScript.AbrirTextoInteractuar("Apagar la televisión");
+        CrossHair.sprite = crosshairopen;
+
+        if (Input.GetKeyDown(interactionKey))
+        {
+            event5tv = hit.collider.GetComponentInParent<Event_5_TV>();
+            if (event5tv != null)
+            {
+                event5tv.ApagarTele();
+
+            }
+        }
+    }
+
+    private void ApagarLaRadio(RaycastHit hit)
+    {
+        textoInteractuarScript.AbrirTextoInteractuar("Apagar la radio");
+        CrossHair.sprite = crosshairopen;
+
+        if (Input.GetKeyDown(interactionKey))
+        {
+            event6radiotrigger = hit.collider.GetComponentInParent<Event_6_RadioTrigger>();
+            if (event6radiotrigger != null)
+            {
+                event6radiotrigger.ApagarRadio();
+
+            }
+        }
+    }
+
+
 
     private void CerrarInteraccion()
     {

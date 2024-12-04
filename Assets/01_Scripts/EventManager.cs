@@ -138,7 +138,7 @@ public class EventManager : MonoBehaviour
     {
         eventCount += 1;
         clockscript.timeScale = 1f;
-        mecanographicscript.minimumMecanoAmount += 3;
+        mecanographicscript.minimumMecanoAmount += 4;
         mecanographicscript.maximumMecanoAmout += 4;
     }
 
@@ -401,7 +401,7 @@ public class EventManager : MonoBehaviour
 
     void ElTiempoPasaMasRapidoSiLasTareasYaEstanHechas()
     {
-        if (mecanographicscript.currentAmount == mecanographicscript.maximumMecanoAmout) //Si el numero de tareas hecho es igual al maximo, se aumenta la escala del tiempo.
+        if (mecanographicscript.currentAmount >= mecanographicscript.maximumMecanoAmout) //Si el numero de tareas hecho es igual al maximo, se aumenta la escala del tiempo.
         {
             clockscript.timeScale = 10f;
         }
