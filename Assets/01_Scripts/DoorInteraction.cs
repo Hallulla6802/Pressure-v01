@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,12 +38,13 @@ public class DoorInteraction : MonoBehaviour
         // Si el raycast impacta con algo dentro del rango de interacción
         if (Physics.Raycast(ray, out hit, interactionRange))
         {
+            ObjectInfo target = hit.collider.GetComponent<ObjectInfo>();
             // Si el objeto golpeado tiene el tag de la manilla
             if (hit.collider.CompareTag(handleTag))
             {
                 if(!isLookingAtHandle)
                 {
-                    textoInteractuarScript.AbrirTextoInteractuar();
+                    textoInteractuarScript.AbrirTextoInteractuar(target.objectName);
                     hit.collider.GetComponent<Outline>().enabled = true;
                     isLookingAtHandle = true;
                     CrossHair.sprite = crosshairopen;

@@ -15,6 +15,7 @@ public class Event_3_Object : MonoBehaviour
     
     private ObjectivesManager objMan;
     public AudioSource botonSonido;
+    public string objectText;
 
 
     private void Awake()
@@ -41,7 +42,7 @@ public class Event_3_Object : MonoBehaviour
 
 
             isTrigger = true;
-            textoInteractuarScript.AbrirTextoInteractuar();
+            textoInteractuarScript.AbrirTextoInteractuar(objectText);
             objOutline.enabled = true;
         }
     }

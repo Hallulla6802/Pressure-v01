@@ -12,6 +12,7 @@ public class Event_5_TV : MonoBehaviour
     public bool isTrigger;
     public GameObject tvObj;
     public Outline objOutline;
+    public string objectText;
 
     private ObjectivesManager objMan;
     private void Awake()
@@ -27,7 +28,7 @@ public class Event_5_TV : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             isTrigger = true;
-            textoInteractuarScript.AbrirTextoInteractuar();
+            textoInteractuarScript.AbrirTextoInteractuar(objectText);
             objOutline.enabled = true;
         }
     }

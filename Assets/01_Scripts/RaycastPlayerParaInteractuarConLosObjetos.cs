@@ -7,7 +7,7 @@ using static EventManager;
 
 public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 {
-    public float interactionRange = 3f;  // Distancia máxima para interactuar con la manilla
+    public float interactionRange = 3f;  // Distancia mï¿½xima para interactuar con la manilla
     private Outline lastOutline = null;
     public KeyCode interactionKey = KeyCode.E;  // La tecla que usaremos para interactuar
     public EventManager eventmanager;
@@ -19,8 +19,7 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
     private Outline outline;
     public Image CrossHair;
     public Sprite crosshairclossed, crosshairopen;
-
-    public Camera playerCamera;  // La cámara del jugador
+    public Camera playerCamera;  // La cï¿½mara del jugador
     void Start()
     {
         eventmanager = FindObjectOfType<EventManager>();
@@ -39,7 +38,8 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactionRange))
         {
-            // Filtrar por los tags válidos
+            
+            // Filtrar por los tags vï¿½lidos
             if (hit.collider.CompareTag("Door"))
             {
                 ManejarInteraccionPuerta(hit);
@@ -65,7 +65,7 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
     private void ActualizarOutline(Outline newOutline)
     {
-        // Desactivar el último Outline si es diferente del actual
+        // Desactivar el ï¿½ltimo Outline si es diferente del actual
         if (lastOutline != null && lastOutline != newOutline)
         {
             lastOutline.enabled = false;
@@ -83,7 +83,11 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
     {
         if (!isLookingAtHandle)
         {
-            textoInteractuarScript.AbrirTextoInteractuar();
+            DoorScript target = hit.collider.GetComponentInParent<DoorScript>();
+            if(target != null)
+            {
+                textoInteractuarScript.AbrirTextoInteractuar(target.proptText);
+            }     
             CrossHair.sprite = crosshairopen;
             isLookingAtHandle = true;
         }
@@ -100,7 +104,7 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
     private void ManejarInteraccionMicrondas(RaycastHit hit)
     {
-        textoInteractuarScript.AbrirTextoInteractuar();
+        textoInteractuarScript.AbrirTextoInteractuar("Apagar Microondas");
         CrossHair.sprite = crosshairopen;
 
         if (Input.GetKeyDown(interactionKey))

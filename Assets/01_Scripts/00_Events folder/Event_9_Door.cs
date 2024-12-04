@@ -12,7 +12,7 @@ public class Event_9_Door : MonoBehaviour
     public Outline objOutline;
     private ObjectivesManager objMan;
     public GameObject lastCutsceneCollider;
-   
+   public string objectText;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class Event_9_Door : MonoBehaviour
         {
             //Debug.Log("Player Has closed Door");
             isTrigger = true;
-            textoInteractuarScript.AbrirTextoInteractuar();
+            textoInteractuarScript.AbrirTextoInteractuar(objectText);
             objOutline.enabled = true;
 
         }

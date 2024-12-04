@@ -72,7 +72,7 @@ public class ObjectivesManager : MonoBehaviour
 
             case ObjectiveStates.TurnOffTheWater:
 
-                textForObjectives.text = "Cierra el grifo de agua en el ba�o.";
+                textForObjectives.text = "Cierra el grifo de agua en el baño.";
 
                 break;
 

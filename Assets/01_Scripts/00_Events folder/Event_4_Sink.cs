@@ -13,6 +13,7 @@ public class Event_4_Sink : MonoBehaviour
     public TextoInteractuarScript textoInteractuarScript;
     public Outline objOutline;
     private ObjectivesManager objMan;
+    public string objectText;
 
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class Event_4_Sink : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             isTrigger = true;
-            textoInteractuarScript.AbrirTextoInteractuar();
+            textoInteractuarScript.AbrirTextoInteractuar(objectText);
             objOutline.enabled = true;
         }
     }

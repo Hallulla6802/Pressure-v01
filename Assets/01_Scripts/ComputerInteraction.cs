@@ -23,6 +23,7 @@ public class ComputerInteraction : MonoBehaviour
     public bool isTriggerMessage;
     public Outline pcOutline;
     public Image crosshair;
+    public string objectText;
 
     public AudioSource sonidoClick;
     private void Awake()
@@ -71,7 +72,7 @@ public class ComputerInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isTriggerMessage = true;
-            textoInteractuarScript.AbrirTextoInteractuar();
+            textoInteractuarScript.AbrirTextoInteractuar(objectText);
             pcOutline.enabled = true;
         }
     }

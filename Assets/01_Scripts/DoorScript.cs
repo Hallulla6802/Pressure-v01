@@ -9,6 +9,7 @@ public class DoorScript : MonoBehaviour
     public string closeAnimationName = "DoorClose"; // Nombre de la animación de cierre
     public float closeDelay = 2f;  // Tiempo de retraso para que la puerta se cierre automáticamente
     private bool isDoorOpen = false;  // Estado de la puerta (abierta o cerrada)
+    public string proptText;
 
     private void Start()
     {

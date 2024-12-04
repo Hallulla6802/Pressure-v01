@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PrincipalDoorInteraction : MonoBehaviour
 {
-    public float interactionRange = 3f;  // Distancia máxima para interactuar con la manilla
-    public string handleTag = "Handle";  // El tag que debe tener la manilla
+    public float interactionRange = 3f;  // Distancia mï¿½xima para interactuar con la manilla
+    public string handleTag = "DoorPrincipal";  // El tag que debe tener la manilla
     public KeyCode interactionKey = KeyCode.E;  // La tecla que usaremos para interactuar
     private PrincipalDoorScript principalDoorController;
     private TextoInteractuarScript textoInteractuarScript;
@@ -14,8 +14,7 @@ public class PrincipalDoorInteraction : MonoBehaviour
     private Outline outline;
     public Image CrossHair;
     public Sprite crosshairclossed, crosshairopen;
-
-    public Camera playerCamera;  // La cámara del jugador
+    public Camera playerCamera;  // La cï¿½mara del jugador
     void Start()
     {
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
@@ -23,32 +22,35 @@ public class PrincipalDoorInteraction : MonoBehaviour
     }
     private void Update()
     {
-        // Detectamos si el jugador está mirando hacia la manilla
+        // Detectamos si el jugador estï¿½ mirando hacia la manilla
         DetectHandle();
     }
 
     // Detecta la manilla usando un raycast
     private void DetectHandle()
     {
-        // Lanzamos un raycast desde la cámara del jugador hacia donde esté mirando
+        // Lanzamos un raycast desde la cï¿½mara del jugador hacia donde estï¿½ mirando
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
-
-        // Si el raycast impacta con algo dentro del rango de interacción
+        // Si el raycast impacta con algo dentro del rango de interacciï¿½n
         if (Physics.Raycast(ray, out hit, interactionRange))
         {
+            PrincipalDoorScript target = hit.collider.GetComponentInParent<PrincipalDoorScript>();
             // Si el objeto golpeado tiene el tag de la manilla
             if (hit.collider.CompareTag(handleTag))
             {
                 if (!isLookingAtHandle)
                 {
-                    textoInteractuarScript.AbrirTextoInteractuar();
+                    if(target != null)
+                    {
+                        textoInteractuarScript.AbrirTextoInteractuar(target.proptText);
+                    }                                    
                     hit.collider.GetComponent<Outline>().enabled = true;
                     isLookingAtHandle = true;
                     CrossHair.sprite = crosshairopen;
                 }
 
-                // Si presionamos la tecla de interacción
+                // Si presionamos la tecla de interacciï¿½n
                 if (Input.GetKeyDown(interactionKey))
                 {
                     // Intentamos obtener el componente DoorController del objeto golpeado o de su padre
@@ -56,7 +58,7 @@ public class PrincipalDoorInteraction : MonoBehaviour
 
                     if (principalDoorController != null)
                     {
-                        // Llamamos a la función de interacción con la manilla
+                        // Llamamos a la funciï¿½n de interacciï¿½n con la manilla
                         principalDoorController.InteractWithHandle();
                     }
                 }
