@@ -293,7 +293,6 @@ public class EventManager : MonoBehaviour
     void Event4()
     {
         //Debug.Log("Event 4 is triggered");
-        evento_10.ShadowEvent4();
         computerInteraction.ExitInteraction();
         clockscript.frezzeTime = true;
         AumentoMinMaxCurrentyArregloTimeScale();

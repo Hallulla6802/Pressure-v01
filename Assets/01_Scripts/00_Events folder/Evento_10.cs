@@ -6,6 +6,7 @@ public class Evento_10 : MonoBehaviour
 {
     public GameObject shadowPrefab;
     public GameObject shadowKitchenRunnerPrefab;
+    public GameObject shadowMirror;
     public GameObject pos1;
     public GameObject pos2;
     public GameObject pos3;
@@ -37,12 +38,12 @@ public class Evento_10 : MonoBehaviour
             Instantiate(shadowPrefab, pos3.transform.position, pos3.transform.rotation);
         
     }
-
     public void ShadowEvent4()
     {
         
         
-            Instantiate(shadowPrefab, pos4.transform.position, pos4.transform.rotation);
+            Instantiate(shadowMirror, pos4.transform.position, pos4.transform.rotation);
+            // La sombra del evento 10 que se activa en el evento 4, instancia la sombra cuando apaga la llave
         
     }
     public void ShadowEvent5()

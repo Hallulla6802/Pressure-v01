@@ -7,7 +7,7 @@ public class Event_4_Sink : MonoBehaviour
 {
     public AudioSource waterSound;
 
-    
+    public Evento_10 evento_10;
     public EventManager eventManager;
    
     public TextoInteractuarScript textoInteractuarScript;
@@ -29,11 +29,9 @@ public class Event_4_Sink : MonoBehaviour
     {
         
             waterSound.Stop();
-            
+            evento_10.ShadowEvent4();
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
-           
-           
 
             objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         

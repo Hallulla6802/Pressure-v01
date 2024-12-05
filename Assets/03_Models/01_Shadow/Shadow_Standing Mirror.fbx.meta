@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 48c3489652263b44fbe0015325ea897b
+guid: fd5654ce888a0a14c919029b8363338f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Metal
-    second: {fileID: 2100000, guid: c87cef7786bf8ad4a9c02d3ec3c30de2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_mesa_top
-    second: {fileID: 2100000, guid: 6bd3c6718d7fa6749a7ba19c0c23e71c, type: 2}
+      name: ShadowGuys
+    second: {fileID: 2100000, guid: cdd507c36459dc4438829a6500579c12, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -42,10 +37,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
