@@ -6,13 +6,13 @@ public class EnemyRunBehiavor : MonoBehaviour
 {
     public float followSpeed = 5f;         // Velocidad con la que sigue al jugador
     public float stopDistance = 1f;        // Distancia en la que el enemigo deja de seguir al jugador
-    public float diversionAngle = 30f;     // Ángulo de desviación al llegar cerca del jugador
+    public float diversionAngle = 30f;     // ï¿½ngulo de desviaciï¿½n al llegar cerca del jugador
     public float destroyDelay = 1f;        // Tiempo antes de destruirse tras desviarse
     public Transform player;              // Referencia al jugador
     public bool isFollowing = false;       // Estado de seguimiento
-    public bool hasStoppedFollowing = false; // Para que el desvío solo ocurra una vez
+    public bool hasStoppedFollowing = false; // Para que el desvï¿½o solo ocurra una vez
 
-    public Vector3 diversionDirection;     // Dirección de desvío calculada
+    public Vector3 diversionDirection;     // Direcciï¿½n de desvï¿½o calculada
     public bool isCurving = false;
     public AudioSource sombraAudio;
     public  AudioSource footstepSound;
@@ -54,7 +54,7 @@ public class EnemyRunBehiavor : MonoBehaviour
         {
             if (!footstepSound.isPlaying)
             {
-                footstepSound.Play(); // Activa el sonido si está siguiendo y el sonido no se está reproduciendo
+                footstepSound.Play(); // Activa el sonido si estï¿½ siguiendo y el sonido no se estï¿½ reproduciendo
             }
             FollowPlayer();
         }
@@ -64,7 +64,7 @@ public class EnemyRunBehiavor : MonoBehaviour
         }
         else if (footstepSound.isPlaying)
         {
-            footstepSound.Stop(); // Detiene el sonido si no está siguiendo o está en desvío
+            footstepSound.Stop(); // Detiene el sonido si no estï¿½ siguiendo o estï¿½ en desvï¿½o
         }
 
         transform.position = new Vector3(transform.position.x, initialY, transform.position.z);
@@ -76,7 +76,7 @@ public class EnemyRunBehiavor : MonoBehaviour
         // Calcula la distancia al jugador
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        // Si el enemigo está a la distancia especificada, calcula la dirección de desvío y comienza la curva
+        // Si el enemigo estï¿½ a la distancia especificada, calcula la direcciï¿½n de desvï¿½o y comienza la curva
         if (distanceToPlayer <= stopDistance)
         {
             hasStoppedFollowing = true;
@@ -92,10 +92,10 @@ public class EnemyRunBehiavor : MonoBehaviour
 
     private IEnumerator DivertAndDestroy()
     {
-        // Determina aleatoriamente si el enemigo se desvía hacia la izquierda o la derecha
+        // Determina aleatoriamente si el enemigo se desvï¿½a hacia la izquierda o la derecha
         float angle = Random.Range(0, 2) == 0 ? -diversionAngle : diversionAngle;
 
-        // Calcula la dirección de desvío girando el vector hacia el ángulo determinado
+        // Calcula la direcciï¿½n de desvï¿½o girando el vector hacia el ï¿½ngulo determinado
         diversionDirection = Quaternion.Euler(0, angle, 0) * (player.position - transform.position).normalized;
 
         isCurving = true;  // Activa el estado de curva
@@ -107,7 +107,7 @@ public class EnemyRunBehiavor : MonoBehaviour
 
     private void MoveInDiversionDirection()
     {
-        // Mueve el enemigo en la dirección de desvío de manera suave, simulando una curva
+        // Mueve el enemigo en la direcciï¿½n de desvï¿½o de manera suave, simulando una curva
         transform.position += diversionDirection * followSpeed * Time.deltaTime;
     }
 

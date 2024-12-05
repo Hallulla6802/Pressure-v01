@@ -14,7 +14,6 @@ public class CameraScript : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;  // Bloquear el cursor en la pantalla
         xRotation = 0f;  // La cámara comenzará mirando hacia adelante
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 
     void Update()
@@ -32,6 +31,7 @@ public class CameraScript : MonoBehaviour
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);  // Limitar la rotación vertical para no girar demasiado
 
+            
             // Aplicar la rotación a la cámara
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         }

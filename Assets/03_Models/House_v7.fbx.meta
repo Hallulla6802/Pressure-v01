@@ -3,7 +3,72 @@ guid: f41ef70854b8591498d908d00dfad8b7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Grass
+    second: {fileID: 2100000, guid: 1c7d62f6ab6300846a4ef67688c63732, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Housewall
+    second: {fileID: 2100000, guid: 96538ff7e969273459ed8e4088a99d8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_bathroomCelling
+    second: {fileID: 2100000, guid: c0a9be6152906fc40a353ff415e2be45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_bathroomFloor
+    second: {fileID: 2100000, guid: 17936be6260db95468df9e2a12699c20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_bathroomWall
+    second: {fileID: 2100000, guid: 5318b0ee9c8c4bf4685fb15dfb3c6617, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_bedroomCarpet
+    second: {fileID: 2100000, guid: 03483318659665043a1d626542780a2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_fence
+    second: {fileID: 2100000, guid: 5df3657c46cbd724c83b03795486e9ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_floor0
+    second: {fileID: 2100000, guid: 41c94020b2ef9d14a964c11ec5110954, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_floor1
+    second: {fileID: 2100000, guid: 059d985a2e84c5a47b356ce6ff689778, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_frontPorch
+    second: {fileID: 2100000, guid: d0bdf51d18aa76a4980849b824ebdaf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_houiseCelling
+    second: {fileID: 2100000, guid: 6de0ab5571a885a4fa6d138b95074eb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_inside_walls
+    second: {fileID: 2100000, guid: e926e49a2dbbc904885cedb0e7b6debb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_kitchenWalls
+    second: {fileID: 2100000, guid: a629b9e2253dbe34a8a7fa77c753ec04, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
