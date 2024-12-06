@@ -12,6 +12,7 @@ public class EventManager : MonoBehaviour
     public MecanographicScript mecanographicscript;
     public ComputerInteraction computerInteraction;
     public ObjectivesManager objMan;
+   
 
     public Evento_10 evento_10;
     public GameObject pcScreen;
@@ -59,7 +60,7 @@ public class EventManager : MonoBehaviour
     public float timeEvent9Limit;
     public bool eventTrigged9 = false;
 
-    
+
     public enum EventsToTrigger
     {
         None,
@@ -73,7 +74,8 @@ public class EventManager : MonoBehaviour
         Event8,
         Event9,
         Event10, //Evento de spawn de sombras en el "livin"
-        Final12
+        Final12,
+        SentProyect
     }
 
     [Space]
@@ -81,7 +83,7 @@ public class EventManager : MonoBehaviour
     [Space]
     [Header("EMPTY COLLIDERS FOR EVENTS")]
     [Space]
-   
+
     //Los Collider de cada evento, los cuales al presionarlos se activan.
     public GameObject event1Collider;
     public GameObject event2Collider;
@@ -96,15 +98,15 @@ public class EventManager : MonoBehaviour
 
 
 
-    
+
 
     private void Awake()
     {
-        SetearLosScriptsQueVamosAUtilizarEnEsteCodigo(); 
+        SetearLosScriptsQueVamosAUtilizarEnEsteCodigo();
     }
 
 
-   
+
     private void Start()
     {
         TodosLosCollidersSeDesactivanYElCurreventEventNadaEstaPasandoAlIniciarElJuego();
@@ -129,9 +131,9 @@ public class EventManager : MonoBehaviour
 
         SeVerificaElTiempoParaActivarElTriggerYElEvento9();
 
-       
+
         CambiarEventos();
-        
+
     }
 
     void AumentoMinMaxCurrentyArregloTimeScale() //Este es el aumento, para que cuando termine un evento y vuelvas al escritorio, se aumente el maximo y minimos de tarreas de mecanografia.
@@ -209,6 +211,12 @@ public class EventManager : MonoBehaviour
 
                     break;
 
+                case EventsToTrigger.SentProyect:
+
+                    SentProyect();
+
+                    break;
+
 
             }
 
@@ -228,7 +236,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-       
+
         audioVentilador.SetActive(true);
         finalCollider.SetActive(false);
     }
@@ -248,7 +256,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-       
+
         finalCollider.SetActive(false);
     }
 
@@ -266,7 +274,7 @@ public class EventManager : MonoBehaviour
         event5Collider.SetActive(false);
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
-     
+
         finalCollider.SetActive(false);
     }
 
@@ -285,7 +293,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-        
+
         audioVentilador.SetActive(false);
         finalCollider.SetActive(false);
     }
@@ -303,7 +311,7 @@ public class EventManager : MonoBehaviour
         event5Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-       
+
         finalCollider.SetActive(false);
     }
 
@@ -322,7 +330,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-       
+
         finalCollider.SetActive(false);
     }
 
@@ -341,7 +349,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(true);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-        
+
         finalCollider.SetActive(false);
     }
 
@@ -359,7 +367,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(true);
         event9Collider.SetActive(false);
-        
+
         finalCollider.SetActive(false);
     }
 
@@ -378,7 +386,7 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(true);
-        
+
         finalCollider.SetActive(false);
     }
 
@@ -392,10 +400,26 @@ public class EventManager : MonoBehaviour
         event6Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
-       
+
         finalCollider.SetActive(true);
         UploadProjectButton.interactable = true;
         buttonUpload.SetActive(true);
+    }
+
+    void SentProyect()
+    {
+        clockscript.frezzeTime = true;
+        pcScreen.SetActive(true);
+        event1Collider.SetActive(false);
+        event2Collider.SetActive(false);
+        event3Collider.SetActive(false);
+        event4Collider.SetActive(false);
+        event5Collider.SetActive(false);
+        event6Collider.SetActive(false);
+        event8Collider.SetActive(false);
+        event9Collider.SetActive(false);
+        audioVentilador.SetActive(true);
+        finalCollider.SetActive(false);
     }
 
     void ElTiempoPasaMasRapidoSiLasTareasYaEstanHechas()
@@ -581,13 +605,13 @@ public class EventManager : MonoBehaviour
         }
     }
 
-   void TodosLosCollidersSeDesactivanYElCurreventEventNadaEstaPasandoAlIniciarElJuego()
-   {
+    void TodosLosCollidersSeDesactivanYElCurreventEventNadaEstaPasandoAlIniciarElJuego()
+    {
         objMan = FindObjectOfType<ObjectivesManager>();
         UploadProjectButton.interactable = false;
         buttonUpload.SetActive(false);
         lastEvent = EventsToTrigger.None;
-       
+
         event1Collider.SetActive(false);
         event2Collider.SetActive(false);
         event3Collider.SetActive(false);
@@ -597,7 +621,7 @@ public class EventManager : MonoBehaviour
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
         finalCollider.SetActive(false);
-   }
+    }
 
     void SetearLosScriptsQueVamosAUtilizarEnEsteCodigo()
     {
@@ -605,5 +629,6 @@ public class EventManager : MonoBehaviour
         mecanographicscript = FindObjectOfType<MecanographicScript>();
         computerInteraction = FindObjectOfType<ComputerInteraction>();
         evento_10 = FindObjectOfType<Evento_10>();
+        
     }
 }

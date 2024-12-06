@@ -6,7 +6,7 @@ using static EventManager;
 public class Event_2_CollaiderDoor : MonoBehaviour
 {
     public EventManager eventManager;
-    public TextoInteractuarScript textoInteractuarScript;
+   
    
     public AudioSource knocksound;
     public bool isTrigger;
@@ -17,7 +17,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
     {
         
         eventManager = FindObjectOfType<EventManager>();
-        textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
+
        
         objMan = FindObjectOfType<ObjectivesManager>();
     }
@@ -27,7 +27,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         knocksound.Stop();
        
         eventManager.currentEvent = EventsToTrigger.None;
-        textoInteractuarScript.CerrarTextoInteractuar();
+   
         objOutline.enabled = false;
         isTrigger = false;
         objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;

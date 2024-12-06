@@ -6,13 +6,14 @@ public class Event_9 : MonoBehaviour
 {
     public AudioSource doorSound;
     public GameObject doorTrigger;
+    public PrincipalDoorScript principaldoorscript;
 
     private BoxCollider event9Collider;
 
     private void Awake()
     {
         event9Collider = GetComponent<BoxCollider>();
-        doorTrigger.SetActive(false);
+        principaldoorscript = FindObjectOfType<PrincipalDoorScript>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,9 +21,9 @@ public class Event_9 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             doorSound.Play();
-
+            principaldoorscript.OpenDoorEvent9();
             event9Collider.enabled = false;
-            doorTrigger.SetActive(true);
+            
         }
     }
 }

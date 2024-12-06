@@ -22,6 +22,7 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
     private TextoInteractuarScript textoInteractuarScript;
     private DoorScript doorController;
+    private PrincipalDoorScript principalDoorScript;
     [SerializeField] private bool isLookingAtHandle = false;
     [SerializeField] private Outline outlinePC;
     private Outline outline;
@@ -33,6 +34,7 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
         eventmanager = FindObjectOfType<EventManager>();
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
         outline = gameObject.GetComponent<Outline>();
+        computerInteracion = FindObjectOfType<ComputerInteraction>();
     }
     private void Update()
     {
@@ -54,7 +56,14 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
                 ManejarInteraccionPuerta(hit);
                 ActualizarOutline(hit.collider.GetComponent<Outline>()); // Activar Outline para Door
             }
-            else if (hit.collider.CompareTag("PC") && eventmanager.currentEvent == EventsToTrigger.None || eventmanager.currentEvent == EventsToTrigger.Final12)
+
+            else if (hit.collider.CompareTag("Door2"))
+            {
+                ManejarInteraccionPuertaPrincipal(hit);
+                ActualizarOutline(hit.collider.GetComponent<Outline>());
+
+            }
+            else if (hit.collider.CompareTag("PC"))
             {
                 InteraccionPC(hit);
                   // Activar Outline para PC
@@ -137,6 +146,49 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
         }
     }
 
+    private void ManejarInteraccionPuertaPrincipal(RaycastHit hit)
+    {
+        if (!isLookingAtHandle)
+        {
+            PrincipalDoorScript target = hit.collider.GetComponentInParent<PrincipalDoorScript>();
+            if (target != null)
+            {
+                if (eventmanager.currentEvent == EventsToTrigger.Event9)
+                {
+                    textoInteractuarScript.AbrirTextoInteractuar("Cerrar puerta principal");
+                  
+                }
+                else
+                {
+                    textoInteractuarScript.AbrirTextoInteractuar("Abrir puerta principal");
+                    
+                }
+            }
+            CrossHair.sprite = crosshairopen;
+            isLookingAtHandle = true;
+        }
+
+        if (Input.GetKeyDown(interactionKey))
+        {
+            principalDoorScript = hit.collider.GetComponentInParent<PrincipalDoorScript>();
+            if (principalDoorScript != null)
+            {
+                if (eventmanager.currentEvent == EventsToTrigger.Event9)
+                {
+                    
+                    principalDoorScript.CloseDoorEvent9();
+                   
+                }
+                else
+                {
+                   
+                    principalDoorScript.InteractWithHandle();
+                }
+                
+            }
+        }
+    }
+
     private void InteraccionPC(RaycastHit hit)
     {
         if (!computerInteracion.isInInteraction)
@@ -156,14 +208,12 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
         if (Input.GetKeyDown(interactionKey))
         {
-            computerInteracion = hit.collider.GetComponentInParent<ComputerInteraction>();
-            if (computerInteracion != null)
-            {
+           
                 computerInteracion.TrabajarEnPC();
                
 
 
-            }
+            
         }
     }
 

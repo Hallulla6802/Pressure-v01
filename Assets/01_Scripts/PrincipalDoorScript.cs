@@ -11,6 +11,7 @@ public class PrincipalDoorScript : MonoBehaviour
     public float closeDelay = 2f;  // Tiempo de retraso para que la puerta se cierre autom�ticamente
     private bool isDoorOpen = false;  // Estado de la puerta (abierta o cerrada)
     public Event_2_CollaiderDoor event2collaiderscript;
+    public Event_9_Door event9door;
     public EventManager eventmanager;
     public string proptText;
 
@@ -18,6 +19,7 @@ public class PrincipalDoorScript : MonoBehaviour
     {
         event2collaiderscript = FindObjectOfType<Event_2_CollaiderDoor>();
         eventmanager = FindObjectOfType<EventManager>();
+        event9door = FindObjectOfType<Event_9_Door>();
     }
 
     private void Start()
@@ -50,12 +52,39 @@ public class PrincipalDoorScript : MonoBehaviour
     }
 
     // Funci�n para cerrar la puerta
-    private void CloseDoor()
+    public void CloseDoor()
     {
         if (isDoorOpen)
         {
             doorAnimator.Play(closeAnimationName);  // Reproduce la animaci�n de cierre
             isDoorOpen = false;
         }
+
+       
+    }
+
+    public void CloseDoorEvent9()
+    {
+        if (eventmanager.currentEvent == EventsToTrigger.Event9)
+        {
+            if (isDoorOpen)
+            {
+                doorAnimator.Play(closeAnimationName);  // Reproduce la animaci�n de cierre
+                isDoorOpen = false;
+                event9door.CerrarPuertaEvent9();
+            }
+            
+        }
+    }
+
+    public void OpenDoorEvent9()
+    {
+        if (!isDoorOpen)
+        {
+            doorAnimator.Play(openAnimationName);  // Reproduce la animaci�n de apertura
+            isDoorOpen = true;
+        }
+       
+     
     }
 }

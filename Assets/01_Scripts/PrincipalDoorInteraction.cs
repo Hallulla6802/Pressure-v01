@@ -8,8 +8,10 @@ public class PrincipalDoorInteraction : MonoBehaviour
     public float interactionRange = 3f;  // Distancia m�xima para interactuar con la manilla
     public string handleTag = "DoorPrincipal";  // El tag que debe tener la manilla
     public KeyCode interactionKey = KeyCode.E;  // La tecla que usaremos para interactuar
+    public EventManager eventmanager;
     private PrincipalDoorScript principalDoorController;
     private TextoInteractuarScript textoInteractuarScript;
+  
     [SerializeField] private bool isLookingAtHandle = false;
     private Outline outline;
     public Image CrossHair;
@@ -17,6 +19,7 @@ public class PrincipalDoorInteraction : MonoBehaviour
     public Camera playerCamera;  // La c�mara del jugador
     void Start()
     {
+        eventmanager = FindObjectOfType<EventManager>();
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
         outline = gameObject.GetComponent<Outline>();
     }
@@ -43,7 +46,15 @@ public class PrincipalDoorInteraction : MonoBehaviour
                 {
                     if(target != null)
                     {
-                        textoInteractuarScript.AbrirTextoInteractuar(target.proptText);
+                        if (eventmanager.currentEvent == EventManager.EventsToTrigger.Event9)
+                        {
+                            textoInteractuarScript.AbrirTextoInteractuar("Cerrar puerta principal");
+                        }
+                        else
+                        {
+                            textoInteractuarScript.AbrirTextoInteractuar("Abrir puerta principal");
+                        }
+                        
                     }                                    
                     hit.collider.GetComponent<Outline>().enabled = true;
                     isLookingAtHandle = true;
@@ -58,8 +69,17 @@ public class PrincipalDoorInteraction : MonoBehaviour
 
                     if (principalDoorController != null)
                     {
-                        // Llamamos a la funci�n de interacci�n con la manilla
-                        principalDoorController.InteractWithHandle();
+                        if (eventmanager.currentEvent == EventManager.EventsToTrigger.Event9)
+                        {
+                            principalDoorController.CloseDoorEvent9();
+                        }
+                        else
+                        {
+                            principalDoorController.InteractWithHandle();
+                        }
+                        
+                       
+                        
                     }
                 }
             }

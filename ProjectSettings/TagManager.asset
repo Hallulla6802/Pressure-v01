@@ -16,6 +16,7 @@ TagManager:
   - TV
   - Radio
   - PC
+  - Door2
   layers:
   - Default
   - TransparentFX

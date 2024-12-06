@@ -40,11 +40,21 @@ public class Evento_10 : MonoBehaviour
     }
     public void ShadowEvent4()
     {
-        
-        
-            Instantiate(shadowMirror, pos4.transform.position, pos4.transform.rotation);
-            // La sombra del evento 10 que se activa en el evento 4, instancia la sombra cuando apaga la llave
-        
+
+
+        GameObject instance = Instantiate(shadowMirror, pos4.transform.position, pos4.transform.rotation);
+        // La sombra del evento 10 que se activa en el evento 4, instancia la sombra cuando apaga la llave
+        // Asegurarte de asignar la capa "pp" al objeto instanciado
+        int ppLayer = LayerMask.NameToLayer("pp"); // Obtener el índice de la capa "pp"
+        if (ppLayer != -1) // Verificar que la capa exista
+        {
+            SetLayerRecursively(instance, ppLayer);
+        }
+        else
+        {
+            Debug.LogWarning("La capa 'pp' no existe. Asegúrate de que esté definida en Unity.");
+        }
+
     }
     public void ShadowEvent5()
     {
@@ -71,5 +81,16 @@ public class Evento_10 : MonoBehaviour
         
     }
 
+    void SetLayerRecursively(GameObject obj, int newLayer)
+    {
+        if (obj == null) return;
 
+        obj.layer = newLayer;
+
+        foreach (Transform child in obj.transform)
+        {
+            if (child == null) continue;
+            SetLayerRecursively(child.gameObject, newLayer);
+        }
+    }
 }
