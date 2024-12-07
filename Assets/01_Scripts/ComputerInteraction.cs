@@ -23,7 +23,7 @@ public class ComputerInteraction : MonoBehaviour
     public Outline pcOutline;
     public Image crosshair;
     public string objectText;
-
+    public Animator playerAnimator;
     public AudioSource sonidoClick;
     private void Awake()
     {
@@ -80,6 +80,10 @@ public class ComputerInteraction : MonoBehaviour
     public void EnterInteraction()
     {
         isInInteraction = true;
+        if(playerAnimator.GetBool("IsMoving"))
+        {
+            playerAnimator.SetBool("IsMoving", false);
+        }
         playerMovement.canMove = false;  // Aquí puedes desactivar los controles del jugador, si fuera necesario
         cameraScript.canLook = false;
         Cursor.lockState = CursorLockMode.None;  // Liberar el mouse para la UI
