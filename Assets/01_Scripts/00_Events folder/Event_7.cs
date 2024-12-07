@@ -1,42 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static EventManager;
 
 public class Event_7 : MonoBehaviour
 {
-    public GameObject shadowGuy;
+    public AudioSource audioSource;
+    public float audioDuration = 15f; // Duración en segundos
+    public EventManager eventManager;
+    public ObjectivesManager objMan;
 
-
-    public BoxCollider event7collider;
+    private BoxCollider event7Collider;
 
 
     private void Awake()
     {
-        event7collider = GetComponent<BoxCollider>();
-
-        shadowGuy.SetActive(false);
+        event7Collider = GetComponent<BoxCollider>();
+        eventManager = FindObjectOfType<EventManager>();
+        objMan = FindObjectOfType<ObjectivesManager>();
     }
-
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && !shadowGuy.activeSelf)
+        if (other.CompareTag("Player"))
         {
-            if (Random.Range(0f, 1f) <= 0.5f)
+            if (audioSource != null)
             {
-                //event7collider.enabled = false;
-                shadowGuy.SetActive(true);
-                //StartCoroutine(cooldownForGuy());
+                event7Collider.enabled = false;
+                audioSource.Play();
+                StartCoroutine(StopAudioAfterDelay(audioDuration));
             }
-               
         }
     }
 
-    public void cooldownForGuy()
+    private IEnumerator StopAudioAfterDelay(float delay)
     {
-        //shadowGuy.SetActive(true);
-       // yield return new WaitForSeconds(cooldown);
-        shadowGuy.SetActive(false);
-        //event7collider.enabled = true;
-
+        yield return new WaitForSeconds(delay);
+        audioSource.Stop();
+        objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
+        eventManager.currentEvent = EventsToTrigger.None;
+        event7Collider.enabled = false;
     }
 }

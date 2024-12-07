@@ -52,6 +52,10 @@ public class EventManager : MonoBehaviour
     public float timeEvent6Limit;
     public bool eventTrigged6 = false;
 
+    public float timeEvent7;
+    public float timeEvent7Limit;
+    public bool eventTrigged7 = false;
+
     public float timeEvent8;
     public float timeEvent8Limit;
     public bool eventTrigged8 = false;
@@ -91,6 +95,7 @@ public class EventManager : MonoBehaviour
     public GameObject event4Collider;
     public GameObject event5Collider;
     public GameObject event6Collider;
+    public GameObject event7Collider;
     public GameObject event8Collider;
     public GameObject event9Collider;
     public GameObject finalCollider;
@@ -126,6 +131,8 @@ public class EventManager : MonoBehaviour
         SeVerificaElTiempoParaActivarElTriggerYElEvento5();
 
         SeVerificaElTiempoParaActivarElTriggerYElEvento6();
+
+        SeVerificaElTiempoParaActivarElTriggerYElEvento7();
 
         SeVerificaElTiempoParaActivarElTriggerYElEvento8();
 
@@ -192,6 +199,12 @@ public class EventManager : MonoBehaviour
 
                     break;
 
+                case EventsToTrigger.Event7:
+
+                    Event7();
+
+                    break;
+
 
                 case EventsToTrigger.Event8:
 
@@ -211,11 +224,7 @@ public class EventManager : MonoBehaviour
 
                     break;
 
-                case EventsToTrigger.SentProyect:
-
-                    SentProyect();
-
-                    break;
+               
 
 
             }
@@ -234,6 +243,7 @@ public class EventManager : MonoBehaviour
         event4Collider.SetActive(false);
         event5Collider.SetActive(false);
         event6Collider.SetActive(false);
+        event7Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
 
@@ -254,6 +264,7 @@ public class EventManager : MonoBehaviour
         event4Collider.SetActive(false);
         event5Collider.SetActive(false);
         event6Collider.SetActive(false);
+        event7Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
 
@@ -273,6 +284,7 @@ public class EventManager : MonoBehaviour
         event4Collider.SetActive(false);
         event5Collider.SetActive(false);
         event6Collider.SetActive(false);
+        event7Collider.SetActive(false);
         event8Collider.SetActive(false);
 
         finalCollider.SetActive(false);
@@ -291,6 +303,7 @@ public class EventManager : MonoBehaviour
         event4Collider.SetActive(false);
         event5Collider.SetActive(false);
         event6Collider.SetActive(false);
+        event7Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
 
@@ -309,6 +322,7 @@ public class EventManager : MonoBehaviour
         event3Collider.SetActive(false);
         event4Collider.SetActive(true);
         event5Collider.SetActive(false);
+        event7Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
 
@@ -328,6 +342,7 @@ public class EventManager : MonoBehaviour
         event4Collider.SetActive(false);
         event5Collider.SetActive(true);
         event6Collider.SetActive(false);
+        event7Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
 
@@ -347,6 +362,27 @@ public class EventManager : MonoBehaviour
         event4Collider.SetActive(false);
         event5Collider.SetActive(false);
         event6Collider.SetActive(true);
+        event7Collider.SetActive(false);
+        event8Collider.SetActive(false);
+        event9Collider.SetActive(false);
+
+        finalCollider.SetActive(false);
+    }
+
+    void Event7()
+    {
+        //Debug.Log("Event 6 is triggered");
+        
+        clockscript.frezzeTime = true;
+        AumentoMinMaxCurrentyArregloTimeScale();
+        computerInteraction.ExitInteraction();
+        event1Collider.SetActive(false);
+        event2Collider.SetActive(false);
+        event3Collider.SetActive(false);
+        event4Collider.SetActive(false);
+        event5Collider.SetActive(false);
+        event6Collider.SetActive(false);
+        event7Collider.SetActive(true);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
 
@@ -365,6 +401,7 @@ public class EventManager : MonoBehaviour
         event4Collider.SetActive(false);
         event5Collider.SetActive(false);
         event6Collider.SetActive(false);
+        event7Collider.SetActive(false);
         event8Collider.SetActive(true);
         event9Collider.SetActive(false);
 
@@ -384,6 +421,7 @@ public class EventManager : MonoBehaviour
         event4Collider.SetActive(false);
         event5Collider.SetActive(false);
         event6Collider.SetActive(false);
+        event7Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(true);
 
@@ -398,6 +436,7 @@ public class EventManager : MonoBehaviour
         event4Collider.SetActive(false);
         event5Collider.SetActive(false);
         event6Collider.SetActive(false);
+        event7Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
 
@@ -406,21 +445,7 @@ public class EventManager : MonoBehaviour
         buttonUpload.SetActive(true);
     }
 
-    void SentProyect()
-    {
-        clockscript.frezzeTime = true;
-        pcScreen.SetActive(true);
-        event1Collider.SetActive(false);
-        event2Collider.SetActive(false);
-        event3Collider.SetActive(false);
-        event4Collider.SetActive(false);
-        event5Collider.SetActive(false);
-        event6Collider.SetActive(false);
-        event8Collider.SetActive(false);
-        event9Collider.SetActive(false);
-        audioVentilador.SetActive(true);
-        finalCollider.SetActive(false);
-    }
+   
 
     void ElTiempoPasaMasRapidoSiLasTareasYaEstanHechas()
     {
@@ -563,6 +588,27 @@ public class EventManager : MonoBehaviour
         }
     }
 
+    void SeVerificaElTiempoParaActivarElTriggerYElEvento7()
+    {
+        if (!eventTrigged7 && clockscript.timeInMinutes >= timeEvent7 && clockscript.timeInMinutes <= timeEvent7Limit)
+        {
+            if (mecanographicscript.currentAmount < mecanographicscript.minimumMecanoAmount)
+            {
+
+                clockscript.frezzeTime = true;
+
+            }
+            if (mecanographicscript.currentAmount >= mecanographicscript.minimumMecanoAmount)
+            {
+                //Debug.Log("Se gatilla el evento6 Radio Fix");
+                currentEvent = EventsToTrigger.Event7;
+                objMan.currentStates = ObjectivesManager.ObjectiveStates.InvestigateFigth;
+                eventTrigged7 = true;
+            }
+
+        }
+    }
+
     void SeVerificaElTiempoParaActivarElTriggerYElEvento8()
     {
         if (!eventTrigged8 && clockscript.timeInMinutes >= timeEvent8 && clockscript.timeInMinutes <= timeEvent8Limit)
@@ -618,6 +664,7 @@ public class EventManager : MonoBehaviour
         event4Collider.SetActive(false);
         event5Collider.SetActive(false);
         event6Collider.SetActive(false);
+        event7Collider.SetActive(false);
         event8Collider.SetActive(false);
         event9Collider.SetActive(false);
         finalCollider.SetActive(false);

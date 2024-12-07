@@ -17,6 +17,7 @@ public class ObjectivesManager : MonoBehaviour
         FixTheRadio,
         CloseTheDoor,
         InvestigateSteps,
+        InvestigateFigth,
         UploadProject
     }
 
@@ -99,7 +100,13 @@ public class ObjectivesManager : MonoBehaviour
                 textForObjectives.text = "Investiga Los Pasos.";
         
                 break;
-                
+
+            case ObjectiveStates.InvestigateFigth:
+
+                textForObjectives.text = "Investiga la discusión.";
+
+                break;
+
             case ObjectiveStates.UploadProject:
 
                 textForObjectives.text = "Sube el Projecto.";

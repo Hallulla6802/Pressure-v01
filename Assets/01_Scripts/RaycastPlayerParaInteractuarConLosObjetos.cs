@@ -193,9 +193,13 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
     {
         if (!computerInteracion.isInInteraction)
         {
-            ActualizarOutline(outlinePC);
-            textoInteractuarScript.AbrirTextoInteractuar("Trabajar en el computador");
-            CrossHair.sprite = crosshairopen;
+            if (eventmanager.currentEvent == EventsToTrigger.None || eventmanager.currentEvent == EventsToTrigger.Final12)
+            {
+                ActualizarOutline(outlinePC);
+                textoInteractuarScript.AbrirTextoInteractuar("Trabajar en el computador");
+                CrossHair.sprite = crosshairopen;
+            }
+          
         }
         else
         {
