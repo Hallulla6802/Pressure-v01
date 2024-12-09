@@ -1163,8 +1163,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1820, y: 980}
+  m_AnchoredPosition: {x: -8.829529, y: -4.8635254}
+  m_SizeDelta: {x: 91.085, y: 27.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116734727
 MonoBehaviour:
@@ -1179,14 +1179,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a42ea2350c59bf84d81a7601b84348f4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2302,8 +2302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20647918, y: 0}
   m_AnchorMax: {x: 0.7923125, y: 0.074}
-  m_AnchoredPosition: {x: -63.329, y: 18.5569}
-  m_SizeDelta: {x: -126.6581, y: -13.4173}
+  m_AnchoredPosition: {x: 0, y: 30}
+  m_SizeDelta: {x: -128, y: -0.000015259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338472938
 MonoBehaviour:
@@ -2338,7 +2338,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279111182
-  m_fontColor: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 1}
+  m_fontColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2355,7 +2355,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.9
+  m_fontSize: 29.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6538,7 +6538,7 @@ GameObject:
   - component: {fileID: 1716226303}
   - component: {fileID: 1716226302}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasForText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6602,7 +6602,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -7630,13 +7630,13 @@ MonoBehaviour:
   fullTextStrings:
   - "Han pasado 221 d\xEDas, 16 horas y 35 minutos desde que recib\xED mi misi\xF3n\u2026
     Casi como ca\xEDda del cielo, lleg\xF3 a mi mente. Puedo verla con una nitidez
-    aterradora pero real\u2026 Y ese es el problema. Soy el \xFAnico que puede verla."
-  - "No me importa. Nada me detiene ni me detendr\xE1 jam\xE1s. Aunque tenga que
-    trasnochar d\xEDa tras d\xEDa, ellos no se lo llevar\xE1n. Ellos no me atrapar\xE1n.
-    Soy mejor que ellos, mejor que todos ellos."
+    aterradora pero real\u2026 Y ese es el problema. Soy el \xFAnico que puede verla.
+    No me importa. Nada me detiene ni me detendr\xE1 jam\xE1s. Aunque tenga que trasnochar
+    d\xEDa tras d\xEDa, ellos no se lo llevar\xE1n. Ellos no me atrapar\xE1n. Soy
+    mejor que ellos, mejor que todos ellos."
   - " 221 d\xEDas. 16 horas. 36\_minutos."
   - . . . . . .
-  typingSpeed: 0.08
+  typingSpeed: 0.09
   fastTypingSpeed: 0.01
   typingAudioSource: {fileID: 0}
 --- !u!1 &2113092897
@@ -7807,8 +7807,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19658335, y: 0.27681473}
   m_AnchorMax: {x: 0.7923125, y: 0.7148519}
-  m_AnchoredPosition: {x: 29.711426, y: -4.083313}
-  m_SizeDelta: {x: 517.0171, y: 69.5345}
+  m_AnchoredPosition: {x: 10.672913, y: 22.8796}
+  m_SizeDelta: {x: -96.4445, y: 123.4603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121729829
 MonoBehaviour:
@@ -7857,14 +7857,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 150
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
