@@ -95,19 +95,25 @@ public class ComputerInteraction : MonoBehaviour
 
     public void ExitInteraction()
     {
+        DeselectAndClear();
         isInInteraction = false;
-
         playerMovement.canMove = true;// Reactivar los controles del jugador   
         cameraScript.canLook = true;  
         Cursor.lockState = CursorLockMode.Locked;  // Bloquear el mouse de nuevo
-        Cursor.visible = false;        
-        playerCam.enabled = true;       
+        Cursor.visible = false; 
+        if(playerCam != null)
+        {
+            playerCam.enabled = true;       
+        }       
         pcFocusCam.enabled = false;
-        crosshair.enabled = true;
-        DeselectAndClear();
+        if(crosshair != null)
+        {
+            crosshair.enabled = true;
+        }
     }
     public void DeselectAndClear()
     {
+        Debug.Log("lol");
         eventSystem.SetSelectedGameObject(null); // Deselecciona el objeto
         inputField.DeactivateInputField(); // Desactiva el InputField
         inputField.text = string.Empty; // Limpia el texto

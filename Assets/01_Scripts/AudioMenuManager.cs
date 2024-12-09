@@ -11,10 +11,7 @@ public class AudioMenuManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-          
             clickAudio.Play();
-           
-
         }
     }
 }

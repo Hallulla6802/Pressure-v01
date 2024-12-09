@@ -9,8 +9,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
     public AudioSource microndasSound;
     public TextoInteractuarScript textoInteractuarScript;
     public EventManager eventManager;
-  
-   
+    public Animator plate_Animator;
     private ObjectivesManager objMan;
     public AudioSource microwaveAudio;
     public GameObject microwaveLight;
@@ -36,7 +35,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
    
   
 
-    public void PrenderMicrondas()
+    public void ApagarMicroondas()
     {
         
         
@@ -48,7 +47,7 @@ public class Event_1_CollaiderMicrondas : MonoBehaviour
             eventManager.currentEvent = EventsToTrigger.None;
             textoInteractuarScript.CerrarTextoInteractuar();
         
-      
+            plate_Animator.speed = 0;
 
             objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         

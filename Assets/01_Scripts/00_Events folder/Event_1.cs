@@ -10,6 +10,7 @@ public class Event_1 : MonoBehaviour
     private BoxCollider event1collider;
     public GameObject microwaveLight;
     public EventManager eventManager;
+    public Animator plate_Animator;
 
     private void Awake()
     {
@@ -25,8 +26,7 @@ public class Event_1 : MonoBehaviour
             microwaveLight.SetActive(true);
             microndasSound.Play();
             event1collider.enabled = false;
-                
-            
+            plate_Animator.SetTrigger("Spin");
         }
     }
 

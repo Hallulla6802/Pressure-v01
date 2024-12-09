@@ -73,6 +73,7 @@ public class EnemyRunBehiavor : MonoBehaviour
 
     private void FollowPlayer()
     {
+        sombraAudio.Play();
         // Calcula la distancia al jugador
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
@@ -102,7 +103,7 @@ public class EnemyRunBehiavor : MonoBehaviour
         yield return new WaitForSeconds(destroyDelay);  // Espera antes de destruir
 
         Destroy(gameObject);
-        sombraAudio.Play();
+        //sombraAudio.Play();
     }
 
     private void MoveInDiversionDirection()
@@ -115,6 +116,6 @@ public class EnemyRunBehiavor : MonoBehaviour
     {
         // Si choca con otro objeto, se destruye inmediatamente
         Destroy(gameObject);
-        sombraAudio.Play();
+        //sombraAudio.Play();
     }
 }

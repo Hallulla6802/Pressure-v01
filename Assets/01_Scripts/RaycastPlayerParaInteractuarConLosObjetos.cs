@@ -231,7 +231,7 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
             event1collaidermicrondas = hit.collider.GetComponentInParent<Event_1_CollaiderMicrondas>();
             if (event1collaidermicrondas != null)
             {
-                event1collaidermicrondas.PrenderMicrondas();
+                event1collaidermicrondas.ApagarMicroondas();
                 
             }
         }

@@ -39,7 +39,7 @@ public class MecanographicScript : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Return))
             {
                 CheckText();
-                
+                playerInputText.ActivateInputField();
             }
         }
     }
