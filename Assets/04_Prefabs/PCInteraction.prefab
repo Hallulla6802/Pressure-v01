@@ -294,6 +294,7 @@ MonoBehaviour:
   minimumMecanoAmount: 3
   currentAmount: 0
   maximumMecanoAmout: 5
+  computerInteraction: {fileID: 0}
 --- !u!1 &225249092703570030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,12 +2220,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3802433339651503015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 433faa8b758afed4f9295b193c697276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PixelationFactor: 0.9
+  _PixelationFactor: 1
   _ColorEmulationMode: 2
   _FullscreenColorDepth: {x: 256, y: 256, z: 256}
   _FullscreenDitherDepth: {x: 32, y: 32, z: 32}
@@ -2242,7 +2243,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3802433339651503015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1a4c69f7a9d3ea43907b5765229dc85, type: 3}
   m_Name: 
@@ -3856,21 +3857,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780f57c4048c0c744aa971e4524fe3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoInteractuarScript: {fileID: 0}
   eventManager: {fileID: 0}
   eventSystem: {fileID: 0}
   Butonllamado: {fileID: 0}
-  player: {fileID: 0}
-  interactionDistance: 6
   playerMovement: {fileID: 0}
   cameraScript: {fileID: 0}
   playerCam: {fileID: 0}
   pcFocusCam: {fileID: 781282182204009591}
   isInInteraction: 0
   inputField: {fileID: 4845077065893377558}
-  isTriggerMessage: 0
   pcOutline: {fileID: 2914829931118136782}
   crosshair: {fileID: 0}
+  objectText: 
+  playerAnimator: {fileID: 0}
   sonidoClick: {fileID: 0}
 --- !u!114 &6643187579729999463
 MonoBehaviour:

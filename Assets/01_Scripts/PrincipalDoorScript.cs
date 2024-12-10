@@ -44,10 +44,15 @@ public class PrincipalDoorScript : MonoBehaviour
     {
         doorAnimator.Play(openAnimationName);  // Reproduce la animaci�n de apertura
         isDoorOpen = true;
-        Invoke("CloseDoor", closeDelay);  // Programar el cierre de la puerta despu�s del retraso
+
+        if(eventmanager.currentEvent != EventsToTrigger.Event2) // Condicion al Evento 2 para que no programe un cierre de puerta si esta el vagabundo.
+        {
+            Invoke("CloseDoor", closeDelay);  // Programar el cierre de la puerta despu�s del retraso
+        }
+
         if (eventmanager.currentEvent == EventsToTrigger.Event2)
         {
-            event2collaiderscript.InteractuarConLaPuertaParaResolverElEvento2();
+            event2collaiderscript.InteractuarConLaPuertaParaNPC();
         }
     }
 
