@@ -44,6 +44,47 @@ MonoBehaviour:
   opacity:
     overrideState: 0
     value: 1
+--- !u!114 &-7420251337103067150
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ccac7a7b193e24b838948044c40846, type: 3}
+  m_Name: RetroPostProcessEffect
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  UsesFixedResolution:
+    overrideState: 1
+    value: 1
+  PixelScale:
+    overrideState: 0
+    value: 4
+  FixedVerticalResolution:
+    overrideState: 1
+    value: 256
+  ColorDepth:
+    overrideState: 1
+    value: 0.5
+  DitherPattern:
+    overrideState: 1
+    value: {fileID: 2800000, guid: 33e4517dca3a2274ba1532dd85e3c541, type: 3}
+    defaultState: 0
+  DitherPatternScale:
+    overrideState: 1
+    value: 1
+  DitherThreshold:
+    overrideState: 1
+    value: 0.2
+  DitherIntensity:
+    overrideState: 1
+    value: 0.01
 --- !u!114 &-2254879793056524892
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1372,6 +1413,7 @@ MonoBehaviour:
   - {fileID: -8190076083470515372}
   - {fileID: -2254879793056524892}
   - {fileID: 2944425714973859034}
+  - {fileID: -7420251337103067150}
 --- !u!114 &2643170093071971247
 MonoBehaviour:
   m_ObjectHideFlags: 3
