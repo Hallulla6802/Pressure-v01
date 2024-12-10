@@ -16,6 +16,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
     public ObjectivesManager objMan;
     public EventManager eventManager;
     public PrincipalDoorScript doorScript;
+    public PlayerMovement playerMove;
     [Space]
     //Variables para el dialogo del NPC
     public string[] dialogesList;
@@ -34,7 +35,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         npcpanel.SetActive(false);
 
         
-
+        playerMove = FindObjectOfType<PlayerMovement>();
         eventManager = FindObjectOfType<EventManager>();
         objMan = FindObjectOfType<ObjectivesManager>();
     }
@@ -51,6 +52,8 @@ public class Event_2_CollaiderDoor : MonoBehaviour
     {
         knocksound.Stop();
         StartDialoge();
+
+        playerMove.canMove = false;
 
         npcpanel.SetActive(true);
 
@@ -130,6 +133,8 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     public void EventoResuelto()
     {
+        playerMove.canMove = true;
+
         NPCgameobject.SetActive(false);
         eventManager.currentEvent = EventsToTrigger.None;
         objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;

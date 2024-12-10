@@ -778,6 +778,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 310582660}
   m_SourcePrefab: {fileID: 100100000, guid: 19b19780252dc3546b9140c794f129f1, type: 3}
+--- !u!1 &106818377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106818378}
+  m_Layer: 0
+  m_Name: TransformFocus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &106818378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106818377}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.75, z: 0.128}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1897076479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &112703786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1825,7 +1856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &175786516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2241,7 +2272,7 @@ GameObject:
   - component: {fileID: 228091618}
   - component: {fileID: 228091619}
   m_Layer: 0
-  m_Name: PivotDoor(PuertaPrincipal)
+  m_Name: PuertaPrincipal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2277,13 +2308,13 @@ Transform:
   m_GameObject: {fileID: 228091613}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000002846122}
-  m_LocalPosition: {x: 9.910125, y: -0.059843063, z: -22.946571}
+  m_LocalPosition: {x: 15.950055, y: -0.9012679, z: -15.315564}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1891791533}
   - {fileID: 334016242}
-  m_Father: {fileID: 1644924382}
+  m_Father: {fileID: 1863282245}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!114 &228091617
 MonoBehaviour:
@@ -2305,11 +2336,13 @@ MonoBehaviour:
   objMan: {fileID: 0}
   eventManager: {fileID: 0}
   doorScript: {fileID: 228091618}
+  playerMove: {fileID: 0}
   dialogesList:
   - Buenas noches
   - "\xBFUsted posee algun tipo de comida que le sobre?"
   - "\xBFNo? Bueno"
   - Espero que tenga buena noche
+  - Y.. que no le pase nada
   dialogText: {fileID: 1326722660}
   typingSpeed: 0.5
 --- !u!114 &228091618
@@ -13112,8 +13145,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.8270874, y: 6.1170044}
-  m_SizeDelta: {x: -112.6667, y: -161.3354}
+  m_AnchoredPosition: {x: -5.8270874, y: -17.208084}
+  m_SizeDelta: {x: -112.6667, y: -114.6852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326722660
 MonoBehaviour:
@@ -13137,8 +13170,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Insert Text to display
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 108f7e5f1d079b243abe01707490da02, type: 2}
-  m_sharedMaterial: {fileID: -3858914531322329581, guid: 108f7e5f1d079b243abe01707490da02, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9fb72713462bd34a99acbf23a40dd74, type: 2}
+  m_sharedMaterial: {fileID: -4406428672775297824, guid: a9fb72713462bd34a99acbf23a40dd74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13162,13 +13195,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 1
   m_fontSizeMax: 150
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
@@ -13887,8 +13920,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -451, y: 121.18854}
-  m_SizeDelta: {x: -691.8992, y: -138.0252}
+  m_AnchoredPosition: {x: -417.61273, y: 125.95813}
+  m_SizeDelta: {x: -625.1246, y: -128.486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1421386567
 MonoBehaviour:
@@ -13937,7 +13970,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.5
+  m_fontSize: 60.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15621,7 +15654,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 228091616}
   - {fileID: 2047962081}
   - {fileID: 1017165503}
   - {fileID: 2119757328}
@@ -17140,6 +17172,7 @@ Transform:
   - {fileID: 2117729967}
   - {fileID: 1573883650}
   - {fileID: 146859157}
+  - {fileID: 228091616}
   - {fileID: 957984215}
   - {fileID: 1005669996}
   - {fileID: 1617581047}
@@ -17670,7 +17703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 27fb88f63d7970b42ae85f2219772a04, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.49
+      value: -9.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 27fb88f63d7970b42ae85f2219772a04, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17782,6 +17815,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27fb88f63d7970b42ae85f2219772a04, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1420571739}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27fb88f63d7970b42ae85f2219772a04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 106818378}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27fb88f63d7970b42ae85f2219772a04, type: 3}
       insertIndex: -1
@@ -18094,6 +18130,14 @@ PrefabInstance:
     - target: {fileID: 2568409351456352873, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705191990843377127, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
+      propertyPath: antialiasingMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705191990843377127, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2705191990843377127, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
       propertyPath: m_AfterStackBundles.Array.size
@@ -19840,6 +19884,10 @@ PrefabInstance:
     - target: {fileID: 6990096000377388063, guid: 62a355f09270a064c8c239f9d15e869d, type: 3}
       propertyPath: m_Name
       value: PPVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810486202692605526, guid: 62a355f09270a064c8c239f9d15e869d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
