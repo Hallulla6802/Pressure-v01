@@ -7,7 +7,8 @@ public class Event_3_Object : MonoBehaviour
 {
     public GameObject lightsToTurnOn;
     public GameObject redDot;
-    
+    public Material M_lightbulb;
+    public Material M_bulb;
     public TextoInteractuarScript textoInteractuarScript;
     public EventManager eventManager;
     //[SerializeField]private BoxCollider objectCollider;
@@ -42,17 +43,22 @@ public class Event_3_Object : MonoBehaviour
 
         botonSonido.Play();
         lightsToTurnOn.SetActive(true);
+        EnableEmission(M_bulb, new Color(1.6f, 1.4f, 1f));
+        EnableEmission(M_lightbulb, new Color(1.6f, 1.3f, 1f));
         redDot.SetActive(false);
         
         eventManager.currentEvent = EventsToTrigger.None;
         textoInteractuarScript.CerrarTextoInteractuar();
       
         objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
-      
 
   }
-  
-
-
-
+  void EnableEmission(Material material, Color emissionColor)
+    {
+        if (material.HasProperty("_EmissionColor"))
+        {
+            material.SetColor("_EmissionColor", emissionColor);
+            material.EnableKeyword("_EMISSION");
+        }
+    }
 }

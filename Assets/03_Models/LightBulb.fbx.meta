@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0027aa52683fe024080481c0aace2381
+guid: bb5e94a909351c045b66d1cada670237
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Sofa_base
-    second: {fileID: 2100000, guid: a0c74976393fbd741860087040ec7c3c, type: 2}
+      name: m_lightbulb
+    second: {fileID: 2100000, guid: b90f1846e90ace14f9bf4a6fa6404110, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_sofa_legs
-    second: {fileID: 2100000, guid: 51b4e9701727a354685504f27a513560, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_sofa_pillows
-    second: {fileID: 2100000, guid: 4b651ba42fb89a94a966f41482b9ac1d, type: 2}
+      name: m_lightbulbBulb
+    second: {fileID: 2100000, guid: 9f7541a6528a14d4099c615f2ac7d13f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -47,10 +42,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -105,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 100
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

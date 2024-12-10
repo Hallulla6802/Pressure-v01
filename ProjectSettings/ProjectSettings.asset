@@ -162,7 +162,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.EverWakeStudios.Pressure-v01
+    Standalone: com.EverWakeStudios.ParanoiC-v1
   buildNumber:
     Standalone: 0
     VisionOS: 0

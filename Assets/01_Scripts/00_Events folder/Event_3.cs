@@ -11,6 +11,8 @@ public class Event_3 : MonoBehaviour
     public bool lightsFixed;
     public GameObject pcScreen;
     private BoxCollider event3Collider;
+    public Material m_LightBulb;
+    public Material m_Bulb;
 
     public AudioSource lucesapangadnoseAudio;
 
@@ -45,11 +47,22 @@ public class Event_3 : MonoBehaviour
             lucesapangadnoseAudio.Play();
             pcScreen.SetActive(false);
             lightempty.SetActive(false);
-            redDotForOutside.SetActive(true);
-            
-
+            DisableEmission(m_Bulb);
+            DisableEmission(m_LightBulb);                   
             lightsFixed = false;
             event3Collider.enabled = false;
+        }
+    }
+    void DisableEmission(Material material)
+    {
+        // Verifica si el material tiene un shader con emisión
+        if (material.HasProperty("_EmissionColor"))
+        {
+            // Apaga la emisión configurando el color a negro
+            material.SetColor("_EmissionColor", Color.black);
+            
+            // Asegúrate de desactivar la palabra clave de emisión
+            material.DisableKeyword("_EMISSION");
         }
     }
 }
