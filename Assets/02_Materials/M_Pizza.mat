@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: vecteezy_corner-top-spider-web-halloween_28153133
-  m_Shader: {fileID: 4800000, guid: 1f53b2e079258874d987bc2948630b78, type: 3}
+  m_Name: M_Pizza
+  m_Shader: {fileID: 4800000, guid: 63a90426d42b698448966291201d6716, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -16,10 +16,8 @@ Material:
   - _SOURCE_SPECULARALPHA
   - _TRIPLANARSPACEPROJECTION_OBJECTSPACE
   m_InvalidKeywords:
-  - _ALPHATEST_ON
   - _ENABLETRIPLANARPROJECTION_ON
   - _USEAOFROMMAINPROPERTIES_ON
-  - _USEBASECOLORALPHA_ON
   - _USEEMISSIONFROMMAINPROPERTIES_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,10 +30,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _CutoutMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -60,7 +54,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cf463b18082575241b958286afa0fdaa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 55cdbbc28830ef648848476cbd673e26, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -104,14 +98,13 @@ Material:
     - _EnableDetailMask: 0
     - _EnableTriplanarProjection: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _IntensityMask: 1
     - _InvertABaseColor: 0
-    - _InvertCutout: 0
     - _InvertMask: 0
     - _Metallic: 0
-    - _Mode: 1
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Saturation: 0
@@ -125,7 +118,6 @@ Material:
     - _TriplanarSpaceProjection: 0
     - _UVSec: 0
     - _UseAoFromMainProperties: 1
-    - _UseBaseColorAlpha: 1
     - _UseEmissionFromMainProperties: 1
     - _VisualizeMask: 0
     - _ZTest: 4
@@ -135,8 +127,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 0}
     - _DetailSpecularColor: {r: 1, g: 1, b: 1, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _GlobalXYTilingXYZWOffsetXY: {r: 1, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
-    - _TriplanarXYTilingXYZWOffsetXY1: {r: 1, g: 1, b: 0, a: 0}
+    - _TriplanarXYTilingXYZWOffsetXY: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

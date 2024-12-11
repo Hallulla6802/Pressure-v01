@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static EventManager;
 using TMPro;
+using UnityEngine.UI;
 
 public class Event_2_CollaiderDoor : MonoBehaviour
 {
@@ -17,6 +18,13 @@ public class Event_2_CollaiderDoor : MonoBehaviour
     public EventManager eventManager;
     public PrincipalDoorScript doorScript;
     public PlayerMovement playerMove;
+    public Transform playerTransform;
+    public CameraScript cameraScript;
+    public Transform cameraTransform;
+    public Animator playerAnimator;
+    public BoxCollider doorCollider;
+    public Image crosshair;
+    public GameObject spriteNextLine;
     [Space]
     //Variables para el dialogo del NPC
     public string[] dialogesList;
@@ -27,7 +35,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
     public float typingSpeed = 0.5f;
 
     private bool isTyping = false;
-    private Coroutine typíngCoroutine;
+    private Coroutine typingCoroutine;
 
     private void Awake()
     {
@@ -38,6 +46,11 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         playerMove = FindObjectOfType<PlayerMovement>();
         eventManager = FindObjectOfType<EventManager>();
         objMan = FindObjectOfType<ObjectivesManager>();
+
+        if (spriteNextLine != null)
+        {
+            spriteNextLine.SetActive(false);
+        }
     }
 
     private void Update()
@@ -50,15 +63,23 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     public void InteractuarConLaPuertaParaNPC()
     {
+        Vector3 playerModelTargetLocation = new Vector3(NPCgameobject.transform.position.x, playerTransform.transform.position.y, NPCgameobject.transform.position.z);
         knocksound.Stop();
         StartDialoge();
-
+        if(playerAnimator.GetBool("IsMoving"))
+        {
+            playerAnimator.SetBool("IsMoving", false);
+        }
         playerMove.canMove = false;
+        playerTransform.LookAt(playerModelTargetLocation);
+        cameraTransform.rotation =  Quaternion.Euler(0f, 180f, 0f);
+        cameraScript.canLook = false;
+        doorCollider.enabled = false;
+        crosshair.enabled = false;
 
         npcpanel.SetActive(true);
-
-        objOutline.enabled = false;
         isTrigger = false;
+
     }
 
     #region DIALOGE SECTION
@@ -86,7 +107,13 @@ public class Event_2_CollaiderDoor : MonoBehaviour
             }
             else
             {
-                dialogText.text = dialogesList[currentLineIndex];
+                if (spriteNextLine != null)
+                {
+                    spriteNextLine.SetActive(false);
+                }
+
+                string currentLine = dialogesList[currentLineIndex];
+                typingCoroutine = StartCoroutine(TypeLine(currentLine)); // Inicia la corrutina.
                 currentLineIndex++;
             }
             
@@ -109,17 +136,26 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         }
 
         isTyping = false;
+
+        if (spriteNextLine != null)
+        {
+            spriteNextLine.SetActive(true);
+        }
     }
 
     private void CompleteTyping()
     {
-        if (typíngCoroutine != null)
+        if (typingCoroutine != null)
         {
-            StopCoroutine(typíngCoroutine);
+            StopCoroutine(typingCoroutine);
         }
         dialogText.text = dialogesList[currentLineIndex - 1]; //Muestra el texto completo.
         isTyping = false;
 
+        if (spriteNextLine != null)
+        {
+            spriteNextLine.SetActive(true);
+        }
     }
 
     #endregion
@@ -133,11 +169,17 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     public void EventoResuelto()
     {
+        StartCoroutine(DisableNPCGameObject());
         playerMove.canMove = true;
-
-        NPCgameobject.SetActive(false);
+        cameraScript.canLook = true;
+        doorCollider.enabled = true;
+        crosshair.enabled = true;
         eventManager.currentEvent = EventsToTrigger.None;
         objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
     }
-  
+    IEnumerator DisableNPCGameObject()
+    {
+        yield return new WaitForSeconds(0.5f);
+        NPCgameobject.SetActive(false);
+    }
 }

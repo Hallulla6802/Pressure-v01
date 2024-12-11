@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9407b5395d218c4eb041f8991a7d43b
+guid: 4051242efd3ce41469ae171741179732
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_lamp
-    second: {fileID: 2100000, guid: 595fbb4e9cb0c9f43bf030c58f8f00ca, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_metal
-    second: {fileID: 2100000, guid: 750f7d7b19c2ad24c99a4c006da8dcea, type: 2}
+      name: m_trash2
+    second: {fileID: 2100000, guid: 1497c2456c898e646b613318fcd420a0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -42,10 +37,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 70
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -100,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.7
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
