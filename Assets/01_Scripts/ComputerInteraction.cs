@@ -69,7 +69,7 @@ public class ComputerInteraction : MonoBehaviour
         {
             if (eventManager.currentEvent != EventsToTrigger.None || eventManager.currentEvent != EventsToTrigger.Final12)
             {
-                ExitInteraction();
+                FixPcBug(); //No encontre que ocasionaba el bug del pc, entonces hice que cada update se hiciera casi todo lo del ExitInteraction. Se que es una solución un poco "Meh", pero por lo visto funciona.
             }
         }
 
@@ -125,5 +125,17 @@ public class ComputerInteraction : MonoBehaviour
         eventSystem.SetSelectedGameObject(null); // Deselecciona el objeto
         inputField.DeactivateInputField(); // Desactiva el InputField
         inputField.text = string.Empty; // Limpia el texto
+    }
+
+    public void FixPcBug()
+    {
+        DeselectAndClear();
+        isInInteraction = false;
+         
+       
+        Cursor.lockState = CursorLockMode.Locked;  // Bloquear el mouse de nuevo
+        Cursor.visible = false;
+      
+       
     }
 }

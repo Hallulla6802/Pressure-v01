@@ -7,6 +7,11 @@ using UnityEngine.UI;
 
 public class Event_2_CollaiderDoor : MonoBehaviour
 {
+    public PlayerMovement playerMove;
+    public CameraScript cameraScript;
+    public Camera playerCamera;
+    public Camera doorCamera;
+
     public bool isTrigger;
 
     public GameObject npcpanel;
@@ -17,9 +22,9 @@ public class Event_2_CollaiderDoor : MonoBehaviour
     public ObjectivesManager objMan;
     public EventManager eventManager;
     public PrincipalDoorScript doorScript;
-    public PlayerMovement playerMove;
+    
     public Transform playerTransform;
-    public CameraScript cameraScript;
+   
     public Transform cameraTransform;
     public Animator playerAnimator;
     public BoxCollider doorCollider;
@@ -63,7 +68,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     public void InteractuarConLaPuertaParaNPC()
     {
-        Vector3 playerModelTargetLocation = new Vector3(NPCgameobject.transform.position.x, playerTransform.transform.position.y, NPCgameobject.transform.position.z);
+        //Vector3 playerModelTargetLocation = new Vector3(NPCgameobject.transform.position.x, playerTransform.transform.position.y, NPCgameobject.transform.position.z);
         knocksound.Stop();
         StartDialoge();
         if(playerAnimator.GetBool("IsMoving"))
@@ -71,9 +76,11 @@ public class Event_2_CollaiderDoor : MonoBehaviour
             playerAnimator.SetBool("IsMoving", false);
         }
         playerMove.canMove = false;
-        playerTransform.LookAt(playerModelTargetLocation);
-        cameraTransform.rotation =  Quaternion.Euler(0f, 180f, 0f);
+        //playerTransform.LookAt(playerModelTargetLocation);
+        //cameraTransform.rotation =  Quaternion.Euler(0f, 180f, 0f);
         cameraScript.canLook = false;
+        playerCamera.enabled = false;
+        doorCamera.enabled = true;
         doorCollider.enabled = false;
         crosshair.enabled = false;
 
@@ -172,6 +179,8 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         StartCoroutine(DisableNPCGameObject());
         playerMove.canMove = true;
         cameraScript.canLook = true;
+        doorCamera.enabled = false;
+        playerCamera.enabled = true;
         doorCollider.enabled = true;
         crosshair.enabled = true;
         eventManager.currentEvent = EventsToTrigger.None;
