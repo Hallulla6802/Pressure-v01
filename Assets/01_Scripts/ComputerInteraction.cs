@@ -43,7 +43,7 @@ public class ComputerInteraction : MonoBehaviour
 
 
             
-            if (Input.GetKeyDown(KeyCode.E) && !isInInteraction )  // Usamos la tecla E para interactuar
+            if (!isInInteraction)  
             {
                 if (eventManager.currentEvent == EventsToTrigger.None || eventManager.currentEvent == EventsToTrigger.Final12)
                 {
@@ -55,7 +55,7 @@ public class ComputerInteraction : MonoBehaviour
             
                 else
                 {
-
+                ExitInteraction();
                 }
             }
 
@@ -65,7 +65,15 @@ public class ComputerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (isInInteraction && Input.GetMouseButtonDown(0))
+        if (!isInInteraction)
+        {
+            if (eventManager.currentEvent != EventsToTrigger.None || eventManager.currentEvent != EventsToTrigger.Final12)
+            {
+                ExitInteraction();
+            }
+        }
+
+            if (isInInteraction && Input.GetMouseButtonDown(0))
         {
             sonidoClick.Play();
         }
@@ -113,7 +121,7 @@ public class ComputerInteraction : MonoBehaviour
     }
     public void DeselectAndClear()
     {
-        Debug.Log("lol");
+        //Debug.Log("lol");
         eventSystem.SetSelectedGameObject(null); // Deselecciona el objeto
         inputField.DeactivateInputField(); // Desactiva el InputField
         inputField.text = string.Empty; // Limpia el texto

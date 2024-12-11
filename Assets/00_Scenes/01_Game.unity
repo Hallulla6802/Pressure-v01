@@ -2619,7 +2619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventManager: {fileID: 0}
-  objOutline: {fileID: 0}
+  objOutline: {fileID: 1891791535}
   lastCutsceneCollider: {fileID: 1908565479}
   objectText: Cerrar Puerta Principal
 --- !u!1 &247370762
