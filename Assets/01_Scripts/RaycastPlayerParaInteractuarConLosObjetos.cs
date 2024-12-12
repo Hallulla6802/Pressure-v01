@@ -128,10 +128,12 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
         if (!isLookingAtHandle)
         {
             DoorScript target = hit.collider.GetComponentInParent<DoorScript>();
-            if(target != null)
+            if (target != null)
             {
-                textoInteractuarScript.AbrirTextoInteractuar(target.proptText);
-            }     
+                string localizedText = target.GetLocalizedPropText();  // Get localized text for the door
+                textoInteractuarScript.AbrirTextoInteractuar(localizedText); // Pass the localized text to your UI script
+            }
+
             CrossHair.sprite = crosshairopen;
             isLookingAtHandle = true;
         }

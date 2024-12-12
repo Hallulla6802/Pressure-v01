@@ -1,15 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
+using UnityEngine.Localization.Tables;
 
 public class DoorScript : MonoBehaviour
 {
-    public Animator doorAnimator;  // El componente Animator de la puerta
-    public string openAnimationName = "DoorOpen";  // Nombre de la animación de apertura
-    public string closeAnimationName = "DoorClose"; // Nombre de la animación de cierre
-    public float closeDelay = 2f;  // Tiempo de retraso para que la puerta se cierre automáticamente
-    public bool isDoorOpen = false;  // Estado de la puerta (abierta o cerrada)
-    public string proptText;
+    public Animator doorAnimator;
+    public string openAnimationName = "DoorOpen";
+    public string closeAnimationName = "DoorClose";
+    public float closeDelay = 2f;
+    public bool isDoorOpen = false;
+
+    public string localizationKey = "";  // Localization key
+    private LocalizedString currentLocalizedText;  // Store the localized string
 
     private void Start()
     {
@@ -17,9 +20,23 @@ public class DoorScript : MonoBehaviour
         {
             doorAnimator = GetComponent<Animator>();
         }
+
+        // Initialize the localized string using the key
+        currentLocalizedText = new LocalizedString();
+        currentLocalizedText.TableReference = "Table1"; // Name of your table (e.g., "Main")
+        currentLocalizedText.TableEntryReference = localizationKey;  // Localization key
     }
 
-    // Función para interactuar con la manilla de la puerta
+    // Function to refresh localized text when language is switched
+    private void RefreshLocalizedText()
+    {
+        currentLocalizedText = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = localizationKey
+        };
+    }
+
     public void InteractWithHandle()
     {
         if (!isDoorOpen)
@@ -28,22 +45,25 @@ public class DoorScript : MonoBehaviour
         }
     }
 
-    // Función para abrir la puerta
     private void OpenDoor()
     {
-        doorAnimator.Play(openAnimationName);  // Reproduce la animación de apertura
+        doorAnimator.Play(openAnimationName);
         isDoorOpen = true;
-        Invoke("CloseDoor", closeDelay);  // Programar el cierre de la puerta después del retraso
-        
+        Invoke("CloseDoor", closeDelay);
     }
 
-    // Función para cerrar la puerta
     private void CloseDoor()
     {
         if (isDoorOpen)
         {
-            doorAnimator.Play(closeAnimationName);  // Reproduce la animación de cierre
+            doorAnimator.Play(closeAnimationName);
             isDoorOpen = false;
         }
+    }
+
+    
+    public string GetLocalizedPropText()
+    {
+        return currentLocalizedText.GetLocalizedString();
     }
 }

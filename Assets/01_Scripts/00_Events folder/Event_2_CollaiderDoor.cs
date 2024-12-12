@@ -4,6 +4,7 @@ using UnityEngine;
 using static EventManager;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Localization;
 
 public class Event_2_CollaiderDoor : MonoBehaviour
 {
@@ -16,27 +17,32 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     public GameObject npcpanel;
     public GameObject NPCgameobject;
+
     [Space]
+
     public AudioSource knocksound;
     public Outline objOutline;
     public ObjectivesManager objMan;
     public EventManager eventManager;
     public PrincipalDoorScript doorScript;
-    
+
     public Transform playerTransform;
-   
     public Transform cameraTransform;
     public Animator playerAnimator;
     public BoxCollider doorCollider;
     public Image crosshair;
     public GameObject spriteNextLine;
+
     [Space]
-    //Variables para el dialogo del NPC
-    public string[] dialogesList;
+
+    // Variables for the NPC dialog
+    public LocalizedString[] localizedDialogList;
     public TextMeshProUGUI dialogText;
 
     private int currentLineIndex = 0;
+
     [Space]
+
     public float typingSpeed = 0.5f;
 
     private bool isTyping = false;
@@ -44,10 +50,8 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     private void Awake()
     {
-
         npcpanel.SetActive(false);
 
-        
         playerMove = FindObjectOfType<PlayerMovement>();
         eventManager = FindObjectOfType<EventManager>();
         objMan = FindObjectOfType<ObjectivesManager>();
@@ -60,7 +64,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     private void Update()
     {
-        if(npcpanel.activeSelf && Input.GetMouseButtonDown(0))
+        if (npcpanel.activeSelf && Input.GetMouseButtonDown(0))
         {
             ShowDialogLine();
         }
@@ -68,16 +72,13 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     public void InteractuarConLaPuertaParaNPC()
     {
-        //Vector3 playerModelTargetLocation = new Vector3(NPCgameobject.transform.position.x, playerTransform.transform.position.y, NPCgameobject.transform.position.z);
         knocksound.Stop();
-        StartDialoge();
-        if(playerAnimator.GetBool("IsMoving"))
+        StartDialog();
+        if (playerAnimator.GetBool("IsMoving"))
         {
             playerAnimator.SetBool("IsMoving", false);
         }
         playerMove.canMove = false;
-        //playerTransform.LookAt(playerModelTargetLocation);
-        //cameraTransform.rotation =  Quaternion.Euler(0f, 180f, 0f);
         cameraScript.canLook = false;
         playerCamera.enabled = false;
         doorCamera.enabled = true;
@@ -86,14 +87,13 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
         npcpanel.SetActive(true);
         isTrigger = false;
-
     }
 
-    #region DIALOGE SECTION
+    #region DIALOG SECTION
 
-    public void StartDialoge()
+    public void StartDialog()
     {
-        if(dialogesList.Length > 0)
+        if (localizedDialogList.Length > 0)
         {
             currentLineIndex = 0;
             ShowDialogLine();
@@ -106,9 +106,9 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     public void ShowDialogLine()
     {
-        if (currentLineIndex < dialogesList.Length)
+        if (currentLineIndex < localizedDialogList.Length)
         {
-            if(isTyping)
+            if (isTyping)
             {
                 CompleteTyping();
             }
@@ -119,11 +119,10 @@ public class Event_2_CollaiderDoor : MonoBehaviour
                     spriteNextLine.SetActive(false);
                 }
 
-                string currentLine = dialogesList[currentLineIndex];
-                typingCoroutine = StartCoroutine(TypeLine(currentLine)); // Inicia la corrutina.
+                LocalizedString currentLine = localizedDialogList[currentLineIndex];
+                typingCoroutine = StartCoroutine(TypeLocalizedLine(currentLine)); // Start typing coroutine
                 currentLineIndex++;
             }
-            
         }
         else
         {
@@ -131,12 +130,18 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         }
     }
 
-    private IEnumerator TypeLine(string line)
+    private IEnumerator TypeLocalizedLine(LocalizedString line)
     {
         isTyping = true;
         dialogText.text = "";
 
-        foreach (char letter in line.ToCharArray())
+        // Search localized text
+        var asyncOperation = line.GetLocalizedStringAsync();
+        yield return asyncOperation;
+
+        string localizedText = asyncOperation.Result;
+
+        foreach (char letter in localizedText.ToCharArray())
         {
             dialogText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
@@ -156,7 +161,12 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         {
             StopCoroutine(typingCoroutine);
         }
-        dialogText.text = dialogesList[currentLineIndex - 1]; //Muestra el texto completo.
+        var currentLine = localizedDialogList[currentLineIndex - 1];
+        currentLine.GetLocalizedStringAsync().Completed += handle =>
+        {
+            dialogText.text = handle.Result; // Show full text
+        };
+
         isTyping = false;
 
         if (spriteNextLine != null)
@@ -186,6 +196,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         eventManager.currentEvent = EventsToTrigger.None;
         objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
     }
+
     IEnumerator DisableNPCGameObject()
     {
         yield return new WaitForSeconds(0.5f);

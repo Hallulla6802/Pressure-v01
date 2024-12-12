@@ -194,6 +194,10 @@ MonoBehaviour:
     m_Localized: Salir del PC.
     m_Metadata:
       m_Items: []
+  - m_Id: 59209344569344
+    m_Localized: Vagabundo
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
