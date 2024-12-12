@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class ObjectivesManager : MonoBehaviour
 {
@@ -17,16 +19,36 @@ public class ObjectivesManager : MonoBehaviour
         FixTheRadio,
         CloseTheDoor,
         InvestigateSteps,
-        InvestigateFigth,
+        InvestigateFight,
         UploadProject
     }
 
     public TextMeshProUGUI textForObjectives;
     public GameObject BeeperToHide;
     public GameObject animatedArm;
+
     [Space]
+
     public ObjectiveStates currentStates;
     public bool canSeeObj = true;
+
+    [Space]
+    [Header("Localization strings")]
+    [Space]
+
+    //Variables for localization
+    public LocalizedString goToThePCKey;
+    public LocalizedString workingOnPCKey;
+    public LocalizedString investigateMicrowaveKey;
+    public LocalizedString investigateDoorKnockingKey;
+    public LocalizedString fixTheLightsKey;
+    public LocalizedString turnOffTheWaterKey;
+    public LocalizedString turnOffTheTVKey;
+    public LocalizedString fixTheRadioKey;
+    public LocalizedString closeTheDoorKey;
+    public LocalizedString investigateStepsKey;
+    public LocalizedString investigateFigthKey;
+    public LocalizedString uploadProjectKey;
 
     private void Start()
     {
@@ -35,85 +57,13 @@ public class ObjectivesManager : MonoBehaviour
         BeeperToHide.SetActive(false);
         animatedArm.SetActive(true);
         
+        UpdateActiveText();
+
     }
 
     private void Update()
     {
-        switch (currentStates)
-        {
-            case ObjectiveStates.GoToThePC:
-
-                textForObjectives.text = "Ve a tu habitacion para trabajar.";
-
-                break;
-
-            case ObjectiveStates.WorkingOnPC:
-
-                textForObjectives.text = "Sigue trabajando en el computador.";
-
-                break;
-
-            case ObjectiveStates.InvestigateMicrowave:
-
-                textForObjectives.text = "Apaga el microondas en la cocina.";
-
-                break;
-
-            case ObjectiveStates.InvestigateDoorKnocking:
-
-                textForObjectives.text = "Revisa quien esta tocando la puerta en la entrada.";
-
-                break;
-
-            case ObjectiveStates.FixTheLights:
-
-                textForObjectives.text = "Arregla las luces afuera de el hogar.";
-
-                break;
-
-            case ObjectiveStates.TurnOffTheWater:
-
-                textForObjectives.text = "Cierra el grifo de agua en el baño.";
-
-                break;
-
-            case ObjectiveStates.TurnOffTheTV:
-
-                textForObjectives.text = "Apaga el Televisor en la sala de estar.";
-
-                break;
-
-            case ObjectiveStates.FixTheRadio:
-
-                textForObjectives.text = "Arregla la radio, nos concentraremos mejor.";
-
-                break;
-
-            case ObjectiveStates.CloseTheDoor:
-
-                textForObjectives.text = "Investiga quien abrio la puerta.";
-        
-                break;
-
-            case ObjectiveStates.InvestigateSteps:
-
-                textForObjectives.text = "Investiga Los Pasos.";
-        
-                break;
-
-            case ObjectiveStates.InvestigateFigth:
-
-                textForObjectives.text = "Investiga la discusión.";
-
-                break;
-
-            case ObjectiveStates.UploadProject:
-
-                textForObjectives.text = "Sube el Projecto.";
-        
-                break;
-        }
-
+        UpdateActiveText();
 
         if (Input.GetKeyDown(KeyCode.Q) & BeeperToHide.activeSelf == true)
         {
@@ -128,6 +78,72 @@ public class ObjectivesManager : MonoBehaviour
                 animatedArm.SetActive(false);
             }
         }
+    }
+
+    private void UpdateActiveText()
+    {
+        LocalizedString localizedKey = null;
+
+        switch (currentStates)
+        {
+            case ObjectiveStates.GoToThePC:
+                localizedKey = goToThePCKey;
+                break;
+            case ObjectiveStates.WorkingOnPC:
+                localizedKey = workingOnPCKey;
+                break;
+            case ObjectiveStates.InvestigateMicrowave:
+                localizedKey = investigateMicrowaveKey;
+                break;
+            case ObjectiveStates.InvestigateDoorKnocking:
+                localizedKey = investigateDoorKnockingKey;
+                break;
+            case ObjectiveStates.FixTheLights:
+                localizedKey = fixTheLightsKey;
+                break;
+            case ObjectiveStates.TurnOffTheWater:
+                localizedKey = turnOffTheWaterKey;
+                break;
+            case ObjectiveStates.TurnOffTheTV:
+                localizedKey = turnOffTheTVKey;
+                break;
+            case ObjectiveStates.FixTheRadio:
+                localizedKey = fixTheRadioKey;
+                break;
+            case ObjectiveStates.CloseTheDoor:
+                localizedKey = closeTheDoorKey;
+                break;
+            case ObjectiveStates.InvestigateSteps:
+                localizedKey = investigateStepsKey;
+                break;
+            case ObjectiveStates.InvestigateFight:
+                localizedKey = investigateFigthKey;
+                break;
+            case ObjectiveStates.UploadProject:
+                localizedKey = uploadProjectKey;
+                break;
+        }
+
+        if (localizedKey != null)
+        {
+            localizedKey.GetLocalizedStringAsync().Completed += handle =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    textForObjectives.text = handle.Result;
+                }
+                else
+                {
+                    Debug.LogError($"Failed to fetch localized text for key: {localizedKey}");
+                }
+            };
+        }
+    }
+
+    public void ChangeObjective(ObjectiveStates newObjective)
+    {
+        currentStates = newObjective;
+        UpdateActiveText();
     }
 
 }

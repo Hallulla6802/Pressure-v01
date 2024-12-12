@@ -602,7 +602,7 @@ public class EventManager : MonoBehaviour
             {
                 //Debug.Log("Se gatilla el evento6 Radio Fix");
                 currentEvent = EventsToTrigger.Event7;
-                objMan.currentStates = ObjectivesManager.ObjectiveStates.InvestigateFigth;
+                objMan.currentStates = ObjectivesManager.ObjectiveStates.InvestigateFight;
                 eventTrigged7 = true;
             }
 

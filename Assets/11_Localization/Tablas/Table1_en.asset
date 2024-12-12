@@ -1,0 +1,215 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Table1_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 53ce2af5b447c4545b82d1a2d36ca3d5, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Menu Screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Settings Screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: General Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: SFX Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: 221 days, 16 hours and 35 minutes have passed since I recieved my
+      mission... Almost like it has falled from the sky directly into my mind. I
+      can see it with a terrifying clear view but it feels real... And that is the
+      problem. I am the only one who can see it. But I don't care. No one can stop
+      me or will stop me ever. Even if I don't sleep every single night, they will
+      not take it away. They will not catch me. I am better than them, better than
+      everyone else.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: 221 days. 16 hours. 36 minutes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Copy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: Write...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Enter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Correct!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Try again!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Upload Project
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Go to your room to work.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Continue working on your PC.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Turn off the microwave in the kitchen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Check who is knocking on the main door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Fix the lights outside the main door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: Close the water faucet in the bathroom.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Turn off the TV in the living room.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Fix the radio. We'll concentrate better.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Investigate who opened the door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: Check the steps.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Check the discussion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Good night. I apologize for the inconvenience...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: Dude, You got some food around for this homeless man?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: No? Are you sure?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Well, I apologize once again.. There has not been a single generous
+      person around this place.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: I hope nothing happens to you. Have a great night.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: Open bedroom door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Open bathroom door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: Open Kitchen door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Open backyard door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Open main door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: 'CodeEX
+
+
+      This is a new invention for programmers, it has
+      artificial intelligence where the user only completes words given and auto-completes
+      the code while it''s doing so. This gives more productivity to the user while
+      programing. At the start the program will give you programming words to later
+      give out random letters to check the type of project you want to complete.
+
+
+      Steps
+      to use the program:
+
+      1. Check the word you have to copy.
+
+      2. Copy
+      the word into the imput field.
+
+      3. Press "Enter" and the program will
+      give you feedback.
+
+      4. R E P E A T.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44009887322112
+    m_Localized: Exit the PC.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

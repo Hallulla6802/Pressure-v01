@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Table1_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 53ce2af5b447c4545b82d1a2d36ca3d5, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Jugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "T\xEDtulo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Pantalla Principal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Pantalla de opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Volumen General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Volumen M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Volumen Efectos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "Han pasado 221 d\xEDas, 16 horas y 35 minutos desde que recib\xED
+      mi misi\xF3n\u2026 Casi como ca\xEDda del cielo, lleg\xF3 a mi mente. Puedo
+      verla con una nitidez aterradora pero real\u2026 Y ese es el problema. Soy
+      el \xFAnico que puede verla. No me importa. Nada me detiene ni me detendr\xE1
+      jam\xE1s. Aunque tenga que trasnochar d\xEDa tras d\xEDa, ellos no se lo llevar\xE1n.
+      Ellos no me atrapar\xE1n. Soy mejor que ellos, mejor que todos ellos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: " 221 d\xEDas. 16 horas. 36\_minutos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Copia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: Escribe..
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Intro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: "\xA1Correcto!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: "\xA1Intenta otra vez!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Subir Proyecto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Ve a tu habitacion para trabajar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Sigue trabajando en el computador.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Apaga el microondas en la cocina.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Revisa quien esta tocando la puerta en la entrada.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Arregla las luces afuera de el hogar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "Cierra el grifo de agua en el ba\xF1o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Apaga el Televisor en la sala de estar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Arregla la radio, nos concentraremos mejor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Investiga quien abrio la puerta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: Investiga Los Pasos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: "Investiga la discusi\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Buenas noches. Disculpe la molestia...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: "Oiga \xBFTiene algo de comida que le sobre por ahi? "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: "\xBFNo? \xBFSeguro?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Bueno, disculpe la molestia... No hay mucha gente generosa por estos
+      barrios.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Espero que no le pase nada. Buena noche.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: Abrir Puerta Habitacion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: "Abrir Puerta Ba\xF1o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: Abrir Puerta Cocina.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Abrir Puerta Patio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Abrir Puerta Principal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: "CodeEX\n\nUna nueva invencion en el idioma de la programacion,
+      con inteligencia artificial el usuario solo completa palabras las cuales van
+      auto-completando el codigo, aumentando la productividad, al principio el algoritmo
+      tirara letras ramdom para saber el tipo de proyecto que quiere auto-completar.\n\nPasos
+      para usar el programa: \n1. Mirar lo que hay que copiar.\n2. Copiar los caracteres/oracion
+      correspondiente\n3. Apretar \"Intro\" y se dira si esta correcto o no. \n4.
+      R E P E T I R. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44009887322112
+    m_Localized: Salir del PC.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
