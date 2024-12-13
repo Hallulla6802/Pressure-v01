@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using static EventManager;
 
 public class PrincipalDoorScript : MonoBehaviour
@@ -13,7 +15,17 @@ public class PrincipalDoorScript : MonoBehaviour
     public Event_2_CollaiderDoor event2collaiderscript;
     public Event_9_Door event9door;
     public EventManager eventmanager;
-    public string proptText;
+
+    //public string proptText;
+    [Space]
+    public string localizationKeyEvent9;
+    private LocalizedString currentLocalizationEvent9;
+
+    [Space]
+    public string localizationKeyPrincipalDoorName;
+    private LocalizedString currentLocalizationPrincipalDoor;
+    
+
 
     private void Awake()
     {
@@ -28,6 +40,38 @@ public class PrincipalDoorScript : MonoBehaviour
         {
             doorAnimator = GetComponent<Animator>();
         }
+
+        currentLocalizationEvent9 = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = localizationKeyEvent9
+        };
+
+        currentLocalizationPrincipalDoor = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = localizationKeyPrincipalDoorName
+        };
+        
+    }
+
+    public void RefreshLocalizedTextEvent9()
+    {
+        currentLocalizationEvent9 = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = localizationKeyEvent9
+        };
+
+    }
+
+    public void RefreshLocalizedTextPrincipalDoor()
+    {
+        currentLocalizationPrincipalDoor = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = localizationKeyPrincipalDoorName
+        };
     }
 
     // Funci�n para interactuar con la manilla de la puerta

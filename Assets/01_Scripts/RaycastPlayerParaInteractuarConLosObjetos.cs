@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using UnityEngine;
 using UnityEngine.UI;
 using static EventManager;
@@ -157,13 +159,15 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
             {
                 if (eventmanager.currentEvent == EventsToTrigger.Event9)
                 {
-                    textoInteractuarScript.AbrirTextoInteractuar("Cerrar puerta principal");
-                  
+                    // Lógica de la key de localización para el Evento 9
+                    string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("Table1", target.localizationKeyEvent9);
+                    textoInteractuarScript.AbrirTextoInteractuar(localizedText);
                 }
                 else
                 {
-                    textoInteractuarScript.AbrirTextoInteractuar("Abrir puerta principal");
-                    
+                    // Situación ordinaria de "Abrir puerta principal" con localización fija
+                    string openText = LocalizationSettings.StringDatabase.GetLocalizedString("Table1", target.localizationKeyPrincipalDoorName);
+                    textoInteractuarScript.AbrirTextoInteractuar(openText);
                 }
             }
             CrossHair.sprite = crosshairopen;
@@ -177,19 +181,16 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
             {
                 if (eventmanager.currentEvent == EventsToTrigger.Event9)
                 {
-                    
                     principalDoorScript.CloseDoorEvent9();
-                   
                 }
                 else
                 {
-                   
                     principalDoorScript.InteractWithHandle();
                 }
-                
             }
         }
     }
+
 
     private void InteraccionPC(RaycastHit hit)
     {
@@ -214,12 +215,7 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
         if (Input.GetKeyDown(interactionKey))
         {
-           
                 computerInteracion.TrabajarEnPC();
-               
-
-
-            
         }
     }
 

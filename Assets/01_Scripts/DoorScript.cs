@@ -23,7 +23,7 @@ public class DoorScript : MonoBehaviour
 
         // Initialize the localized string using the key
         currentLocalizedText = new LocalizedString();
-        currentLocalizedText.TableReference = "Table1"; // Name of your table (e.g., "Main")
+        currentLocalizedText.TableReference = "Table1";
         currentLocalizedText.TableEntryReference = localizationKey;  // Localization key
     }
 

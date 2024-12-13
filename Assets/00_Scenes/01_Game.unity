@@ -3441,7 +3441,8 @@ MonoBehaviour:
   event2collaiderscript: {fileID: 0}
   event9door: {fileID: 0}
   eventmanager: {fileID: 0}
-  proptText: Abrir Puerta Principal
+  localizationKeyEvent9: A050
+  localizationKeyPrincipalDoorName: A039
 --- !u!114 &228091619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3457,7 +3458,8 @@ MonoBehaviour:
   eventManager: {fileID: 0}
   objOutline: {fileID: 1891791535}
   lastCutsceneCollider: {fileID: 1908565479}
-  objectText: Cerrar Puerta Principal
+  objectText: 
+  localizationKeyforEvent9: 
 --- !u!1001 &237002498
 PrefabInstance:
   m_ObjectHideFlags: 0

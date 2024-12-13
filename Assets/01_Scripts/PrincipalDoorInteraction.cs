@@ -48,11 +48,11 @@ public class PrincipalDoorInteraction : MonoBehaviour
                     {
                         if (eventmanager.currentEvent == EventManager.EventsToTrigger.Event9)
                         {
-                            textoInteractuarScript.AbrirTextoInteractuar("Cerrar puerta principal");
+                            textoInteractuarScript.AbrirTextoInteractuar("");
                         }
                         else
                         {
-                            textoInteractuarScript.AbrirTextoInteractuar("Abrir puerta principal");
+                            textoInteractuarScript.AbrirTextoInteractuar("");
                         }
                         
                     }                                    
