@@ -214,6 +214,42 @@ MonoBehaviour:
     m_Localized: Homeless guy
     m_Metadata:
       m_Items: []
+  - m_Id: 77579796303872
+    m_Localized: "ParanoiC \nBy Everwake Studio\n\nProgrammers:\n- Frango Gallegos\n-
+      Cesar Jara\n- Esperanza Valverde\n\n3D Artists:\n- Dante Bravo\n- Josefina
+      Soto\n- Esperanza Valverde\n\nSound Designer:\n- Diego Muena\n\nExternal Assets
+      Used:\n- Retro 3D Shader Pack for Unity By LeakyFingers on ITCH.IO.\n- Logo
+      Design ByPatricia Pereira.\n\nWe hope you enjoy the game :)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88006605361152
+    m_Localized: Work on the PC.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88337313648640
+    m_Localized: Turn off the microwave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88462740115456
+    m_Localized: Turn on the generator.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88523070984192
+    m_Localized: Turn off water faucet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88586824404992
+    m_Localized: Turn off the TV.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88633397956608
+    m_Localized: Turn off the radio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88816068284416
+    m_Localized: Close principal door.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

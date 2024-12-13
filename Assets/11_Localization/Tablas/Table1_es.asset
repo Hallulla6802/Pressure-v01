@@ -198,6 +198,42 @@ MonoBehaviour:
     m_Localized: Vagabundo
     m_Metadata:
       m_Items: []
+  - m_Id: 77579796303872
+    m_Localized: "ParanoiC\npor Everwake Studio\n\nProgramadores: \n- Esperanza Valverde\n-
+      Cesar Jara\n- Franco Gallegos\n\nArtitas 3D:\n- Dante Bravo\n- Josefina Soto\n-
+      Esperanza Valverde\n\nSonidista: \nDiego Muena\n\nAssets usados:\n- Retro 3D
+      Shader Pack for Unity por LeakyFingers on ITCH.IO.\n- Logo dise\xF1ado por
+      Patricia Pereira.\n\nDisfruta el juego :)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88006605361152
+    m_Localized: Trabajar en el computador.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88337313648640
+    m_Localized: Apagar el microondas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88462740115456
+    m_Localized: Prender el generador.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88523070984192
+    m_Localized: Cerrar lavamanos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88586824404992
+    m_Localized: Apagar la television.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88633397956608
+    m_Localized: Apagar la radio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88816068284416
+    m_Localized: Cerrar puerta principal.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
