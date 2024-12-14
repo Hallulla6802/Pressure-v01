@@ -14,6 +14,8 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
     private Outline lastOutline = null;
     public KeyCode interactionKey = KeyCode.E;  // La tecla que usaremos para interactuar
     public EventManager eventmanager;
+
+    [Space]
     //Scripts de los colliders
     public ComputerInteraction computerInteracion;
     private Event_1_CollaiderMicrondas event1collaidermicrondas;
@@ -21,7 +23,7 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
     private Event_4_Sink event4sink;
     private Event_5_TV event5tv;
     private Event_6_RadioTrigger event6radiotrigger;
-
+    [Space]
     private TextoInteractuarScript textoInteractuarScript;
     private DoorScript doorController;
     private PrincipalDoorScript principalDoorScript;
@@ -31,12 +33,42 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
     public Image CrossHair;
     public Sprite crosshairclossed, crosshairopen;
     public Camera playerCamera;  // La c�mara del jugador
+
+    [Space]
+    [Header("LOCALIZATION KEYS")]
+    [Space]
+    public string pclocalizedKey;
+    private LocalizedString currentpcKey;
+
+    public string microwaveLocalizedKey;
+    private LocalizedString currentMicrowaveKey;
+
+    public string generatorLocalizatedKey;
+    private LocalizedString currentGeneratorKey;
+
+    public string faucetLocalizedKey;
+    private LocalizedString currentFaucetKey;
+
+    public string TvLocalizedKey;
+    private LocalizedString currentTvKey;
+
+    public string radioLocalizedKey;
+    private LocalizedString currentRadioKey;
     void Start()
     {
         eventmanager = FindObjectOfType<EventManager>();
         textoInteractuarScript = FindObjectOfType<TextoInteractuarScript>();
         outline = gameObject.GetComponent<Outline>();
         computerInteracion = FindObjectOfType<ComputerInteraction>();
+
+        //Loc functions
+
+        RefreshTextPC();
+        RefreshTextMicrowave();
+        RefreshTextGenerator();
+        RefreshTextFaucet();
+        RefreshTextTV();
+        RefreshTextRadio();
     }
     private void Update()
     {
@@ -191,6 +223,64 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
         }
     }
 
+    #region LOCALIZATION FUNCTIONS
+
+    public void RefreshTextPC()
+    {
+        currentpcKey = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = pclocalizedKey
+        };
+    }
+
+    public void RefreshTextMicrowave()
+    {
+        currentMicrowaveKey = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = microwaveLocalizedKey
+        };
+    }
+
+    public void RefreshTextGenerator()
+    {
+        currentGeneratorKey = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = generatorLocalizatedKey
+        };
+    }
+
+    public void RefreshTextFaucet()
+    {
+        currentFaucetKey = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = faucetLocalizedKey
+        };
+    }
+
+    public void RefreshTextTV()
+    {
+        currentTvKey = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = TvLocalizedKey
+        };
+    }
+
+    public void RefreshTextRadio()
+    {
+        currentRadioKey = new LocalizedString
+        {
+            TableReference = "Table1",
+            TableEntryReference = radioLocalizedKey
+        };
+    }
+
+    #endregion
+
 
     private void InteraccionPC(RaycastHit hit)
     {
@@ -199,7 +289,11 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
             if (eventmanager.currentEvent == EventsToTrigger.None || eventmanager.currentEvent == EventsToTrigger.Final12)
             {
                 ActualizarOutline(outlinePC);
-                textoInteractuarScript.AbrirTextoInteractuar("Trabajar en el computador");
+
+                //Localized change text
+                string localizedPCkey = LocalizationSettings.StringDatabase.GetLocalizedString("Table1", pclocalizedKey);
+                textoInteractuarScript.AbrirTextoInteractuar(localizedPCkey);
+
                 CrossHair.sprite = crosshairopen;
             }
           
@@ -210,9 +304,6 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
             ActualizarOutline(null);
         }
 
-        
-
-
         if (Input.GetKeyDown(interactionKey))
         {
                 computerInteracion.TrabajarEnPC();
@@ -221,7 +312,10 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
     private void ManejarInteraccionMicrondas(RaycastHit hit)
     {
-        textoInteractuarScript.AbrirTextoInteractuar("Apagar Microondas");
+        //Localization change text
+        string localizedMicrowaveKey = LocalizationSettings.StringDatabase.GetLocalizedString("Table1", microwaveLocalizedKey);
+        textoInteractuarScript.AbrirTextoInteractuar(localizedMicrowaveKey);
+
         CrossHair.sprite = crosshairopen;
 
         if (Input.GetKeyDown(interactionKey))
@@ -237,7 +331,10 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
     private void InteraccionGenerador(RaycastHit hit)
     {
-        textoInteractuarScript.AbrirTextoInteractuar("Prender el generador");
+        //Localization change text
+        string localizedGeneratorKey = LocalizationSettings.StringDatabase.GetLocalizedString("Table1", generatorLocalizatedKey);
+        textoInteractuarScript.AbrirTextoInteractuar(localizedGeneratorKey);
+
         CrossHair.sprite = crosshairopen;
 
         if (Input.GetKeyDown(interactionKey))
@@ -251,7 +348,10 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
     }
     private void InteraccionLavamanos(RaycastHit hit)
     {
-        textoInteractuarScript.AbrirTextoInteractuar("Cerrar lavamanos");
+        //Localization change text
+        string localizedFaucetKey = LocalizationSettings.StringDatabase.GetLocalizedString("Table1", faucetLocalizedKey);
+        textoInteractuarScript.AbrirTextoInteractuar(localizedFaucetKey);
+
         CrossHair.sprite = crosshairopen;
 
         if (Input.GetKeyDown(interactionKey))
@@ -267,7 +367,10 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
     private void ApagarLaTele(RaycastHit hit)
     {
-        textoInteractuarScript.AbrirTextoInteractuar("Apagar la televisión");
+        //Localization change text
+        string localizedTVKey = LocalizationSettings.StringDatabase.GetLocalizedString("Table1", TvLocalizedKey);
+        textoInteractuarScript.AbrirTextoInteractuar(localizedTVKey);
+
         CrossHair.sprite = crosshairopen;
 
         if (Input.GetKeyDown(interactionKey))
@@ -283,7 +386,10 @@ public class RaycastPlayerParaInteractuarConLosObjetos : MonoBehaviour
 
     private void ApagarLaRadio(RaycastHit hit)
     {
-        textoInteractuarScript.AbrirTextoInteractuar("Apagar la radio");
+        //Localization change text
+        string localizedRadioKey = LocalizationSettings.StringDatabase.GetLocalizedString("Table1", radioLocalizedKey);
+        textoInteractuarScript.AbrirTextoInteractuar(localizedRadioKey);
+
         CrossHair.sprite = crosshairopen;
 
         if (Input.GetKeyDown(interactionKey))

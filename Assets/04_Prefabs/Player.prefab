@@ -3193,6 +3193,12 @@ MonoBehaviour:
   crosshairclossed: {fileID: 21300000, guid: bf6849a743eb8334880667cf8c8f5a8a, type: 3}
   crosshairopen: {fileID: 21300000, guid: de4818ff7ab34b0498890f3c580c3724, type: 3}
   playerCamera: {fileID: 7252222535509312373}
+  pclocalizedKey: A044
+  microwaveLocalizedKey: A045
+  generatorLocalizatedKey: A046
+  faucetLocalizedKey: A047
+  TvLocalizedKey: A048
+  radioLocalizedKey: A049
 --- !u!1 &6826932744201326542
 GameObject:
   m_ObjectHideFlags: 0
