@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using TMPro;
 using System.Collections.Generic;
 
 public class RenderTextureUIInteraction : MonoBehaviour
@@ -12,64 +10,57 @@ public class RenderTextureUIInteraction : MonoBehaviour
     public RenderTexture renderTexture;
 
     private GameObject currentHoveredObject;
+    private bool isDragging = false;
+
     void Update()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+        if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject == gameObject)
         {
+            // Convertir coordenadas del mouse a coordenadas del RenderTexture
             Vector2 textureCoord = hit.textureCoord;
             Vector2 renderTextureCoord = new Vector2(textureCoord.x * renderTexture.width, textureCoord.y * renderTexture.height);
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(uiCanvas.GetComponent<RectTransform>(), renderTextureCoord, uiCamera, out Vector2 localPoint);
 
+            // Preparar PointerEventData
             PointerEventData pointerData = new PointerEventData(EventSystem.current)
             {
                 position = renderTextureCoord,
-                button = PointerEventData.InputButton.Left,
+                button = PointerEventData.InputButton.Left
             };
 
             List<RaycastResult> results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(pointerData, results);
 
-            RaycastResult? validResult = null;
-            foreach (var result in results)
+            if (results.Count > 0)
             {
-                if (result.gameObject.GetComponent<Graphic>() != null && result.gameObject.GetComponent<Graphic>().raycastTarget)
-                {
-                    validResult = result;
-                    break;
-                }
-            }
+                GameObject hoveredObject = results[0].gameObject;
 
-            if (validResult.HasValue)
-            {
-                GameObject hoveredObject = validResult.Value.gameObject;
-
+                // Handle PointerEnter/Exit
                 if (currentHoveredObject != hoveredObject)
                 {
                     if (currentHoveredObject != null)
-                    {
                         ExecuteEvents.Execute(currentHoveredObject, pointerData, ExecuteEvents.pointerExitHandler);
-                    }
+
                     ExecuteEvents.Execute(hoveredObject, pointerData, ExecuteEvents.pointerEnterHandler);
                     currentHoveredObject = hoveredObject;
                 }
 
+                // Handle Drag events
                 if (Input.GetMouseButtonDown(0))
                 {
-                    ExecuteEvents.Execute(hoveredObject, pointerData, ExecuteEvents.pointerDownHandler);
+                    isDragging = true;
+                    ExecuteEvents.Execute(hoveredObject, pointerData, ExecuteEvents.beginDragHandler);
                 }
 
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0) && isDragging)
                 {
                     ExecuteEvents.Execute(hoveredObject, pointerData, ExecuteEvents.dragHandler);
                 }
 
-                if (Input.GetMouseButtonUp(0))
+                if (Input.GetMouseButtonUp(0) && isDragging)
                 {
-                    ExecuteEvents.Execute(hoveredObject, pointerData, ExecuteEvents.pointerUpHandler);
-                    ExecuteEvents.Execute(hoveredObject, pointerData, ExecuteEvents.pointerClickHandler);
+                    isDragging = false;
+                    ExecuteEvents.Execute(hoveredObject, pointerData, ExecuteEvents.endDragHandler);
                 }
             }
             else
@@ -88,6 +79,12 @@ public class RenderTextureUIInteraction : MonoBehaviour
                 PointerEventData pointerData = new PointerEventData(EventSystem.current);
                 ExecuteEvents.Execute(currentHoveredObject, pointerData, ExecuteEvents.pointerExitHandler);
                 currentHoveredObject = null;
+            }
+
+            // Reset drag state if mouse is not on the RenderTexture
+            if (isDragging && Input.GetMouseButtonUp(0))
+            {
+                isDragging = false;
             }
         }
     }

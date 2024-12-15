@@ -80,7 +80,7 @@ public class Evento_10 : MonoBehaviour
         
         
             GameObject shadowEvent9 = Instantiate(shadowPrefab, pos9.transform.position, pos9.transform.rotation);
-            ChangeAnimationInstancedOBJ(shadowEvent9, "IdleBall");
+            ChangeAnimationInstancedOBJ(shadowEvent9, "PuertaDeEntradaPose");
     }
 
     void SetLayerRecursively(GameObject obj, int newLayer)

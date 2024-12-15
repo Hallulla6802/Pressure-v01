@@ -9,6 +9,10 @@ public class ChangeSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("01_Game");
     }
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("00_Menu");
+    }
 
     public void ExitGame()
     {
