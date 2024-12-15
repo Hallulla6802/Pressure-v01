@@ -216,10 +216,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 77579796303872
     m_Localized: "ParanoiC \nBy Everwake Studio\n\nProgrammers:\n- Frango Gallegos\n-
-      Cesar Jara\n- Esperanza Valverde\n\n3D Artists:\n- Dante Bravo\n- Josefina
-      Soto\n- Esperanza Valverde\n\nSound Designer:\n- Diego Muena\n\nExternal Assets
-      Used:\n- Retro 3D Shader Pack for Unity By LeakyFingers on ITCH.IO.\n- Logo
-      Design By Patricia Pereira.\n\nWe hope you enjoy the game :)"
+      Cesar Jara\n- Esperanza Valverde\n\n3D Artists and Texturing:\n- Dante Bravo\n-
+      Josefina Soto\n- Esperanza Valverde\n\nSound Designer:\n- Diego Muena\n\nExternal
+      Assets Used:\n- Retro 3D Shader Pack for Unity By LeakyFingers on ITCH.IO.\n-
+      Logo Design By Patricia Pereira.\n\nWe hope you enjoy the game :)"
     m_Metadata:
       m_Items: []
   - m_Id: 88006605361152
@@ -248,6 +248,55 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 88816068284416
     m_Localized: Close principal door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1137863231229952
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1138161706291200
+    m_Localized: '- Move around
+
+      - Use Beeper
+
+      - Interact
+
+      - Pause
+      Menu
+
+      - Look around
+
+      - Next dialog'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1138851690270720
+    m_Localized: 'WARNING: PHOTOSENSITIVITY/EPILEPSY SEIZURES/JUMPSCARES/ FLASHING
+      LIGHTS'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1140963472003072
+    m_Localized: Controls screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1141843441176576
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1142785347637248
+    m_Localized: 10/05/2002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1146165986021376
+    m_Localized: 'This game contains flashing lights, loud noises, and jumpscares.
+      If you have epilepsy or have photosensitivity issues, you may reduce risk of
+      photosensitive epileptic seizures by taking the following precautions: sit
+      farther from the screen, use a smaller screen, play in a well-lit room, do
+      not play when you are drowsy or fatigued.
+
+
+
+      Please proceed to play the
+      game with your own caution.'
     m_Metadata:
       m_Items: []
   references:

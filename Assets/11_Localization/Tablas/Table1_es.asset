@@ -200,10 +200,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 77579796303872
     m_Localized: "ParanoiC\npor Everwake Studio\n\nProgramadores: \n- Esperanza Valverde\n-
-      Cesar Jara\n- Franco Gallegos\n\nArtitas 3D:\n- Dante Bravo\n- Josefina Soto\n-
-      Esperanza Valverde\n\nSonidista: \nDiego Muena\n\nAssets usados:\n- Retro 3D
-      Shader Pack for Unity por LeakyFingers on ITCH.IO.\n- Logo dise\xF1ado por
-      Patricia Pereira.\n\nDisfruta el juego :)"
+      Cesar Jara\n- Franco Gallegos\n\nArtistas 3D y Texturizado:\n- Dante Bravo\n-
+      Josefina Soto\n- Esperanza Valverde\n\nSonidista: \nDiego Muena\n\nAssets usados:\n-
+      Retro 3D Shader Pack for Unity por LeakyFingers on ITCH.IO.\n- Logo dise\xF1ado
+      por Patricia Pereira.\n\nDisfruta el juego :)"
     m_Metadata:
       m_Items: []
   - m_Id: 88006605361152
@@ -232,6 +232,51 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 88816068284416
     m_Localized: Cerrar puerta principal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1137863231229952
+    m_Localized: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1138161706291200
+    m_Localized: '- Moverte
+
+      - Usar Beeper
+
+      - Interactuar
+
+      - Menu
+      Pausa
+
+      - Mirar
+
+      - Siguente Dialogo'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1138851690270720
+    m_Localized: "PRECAUCI\xD3N: FOTOSENSIBILIDAD/ATAQUES DE EPILEPSIA/SUSTOS/LUCES
+      PARPADEANTES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1140963472003072
+    m_Localized: Pantalla de controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1141843441176576
+    m_Localized: Creditos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1142785347637248
+    m_Localized: 05/10/2002
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1146165986021376
+    m_Localized: "Este juego contiene luces parpadeantes, sonidos fuertes y sustos.
+      Si posees epilepsia o problemas de fotosensibilidad, recomendamos que reduzcas
+      el riesgo de algun ataque de epilepsia: sentandote mas lejos de la pantalla,
+      usando una pantalla mas peque\xF1a, jugando en una habitacion mas iluminada
+      o sin jugar mientras estes fatigado o mareado.\n\nProcede a jugar este juego
+      a tu propia precauci\xF3n."
     m_Metadata:
       m_Items: []
   references:
