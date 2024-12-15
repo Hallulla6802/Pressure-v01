@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class ClockScript : MonoBehaviour
 {
-    public TextMeshProUGUI clockText;
+    public TextMeshProUGUI pcClockText;
+    public TextMeshProUGUI beeperClockText;
     public bool frezzeTime = false;
 
     public float timeInMinutes = 600; // Empieza en 8:00 AM (8 * 60)
@@ -38,6 +39,7 @@ public class ClockScript : MonoBehaviour
         if (hours == 0) hours = 12; // Asegura que 00:00 sea 12:00 AM
 
         // Actualiza el texto del reloj en formato "HH:MM AM/PM"
-        clockText.text = string.Format("{0:00}:{1:00} {2}", hours, minutes, period);
+        pcClockText.text = string.Format("{0:00}:{1:00} {2}", hours, minutes, period);
+        beeperClockText.text = string.Format("{0:00}:{1:00} {2}", hours, minutes, period);
     }
 }
