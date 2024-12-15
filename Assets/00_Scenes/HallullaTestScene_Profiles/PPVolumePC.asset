@@ -68,7 +68,7 @@ MonoBehaviour:
     value: 4
   FixedVerticalResolution:
     overrideState: 1
-    value: 720
+    value: 640
   ColorDepth:
     overrideState: 1
     value: 0.5

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RaycastShot : MonoBehaviour
 {
-    public Camera playerCamera;  // Referencia a la cámara en primera persona
+    public Camera playerCamera;  // Referencia a la cï¿½mara en primera persona
     public float rayDistance = 100f;  // Distancia del raycast
     public LayerMask enemyLayer;  // Capas que el raycast puede afectar (opcional)
 
@@ -25,7 +25,7 @@ public class RaycastShot : MonoBehaviour
     }
     void ShootRay()
     {
-        // Crear el raycast desde el centro de la pantalla (cámara)
+        // Crear el raycast desde el centro de la pantalla (cï¿½mara)
         Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
 
@@ -33,30 +33,26 @@ public class RaycastShot : MonoBehaviour
         if (Physics.Raycast(ray, out hit, rayDistance, enemyLayer))
         {
             // Verifica si el objeto colisionado es un enemigo (puedes comprobar por tag o script)
-            if (hit.collider.CompareTag("ShadowEvent7"))  // Asegúrate de que el enemigo tenga el tag "Enemy"
+            if (hit.collider.CompareTag("ShadowEvent7"))  // Asegï¿½rate de que el enemigo tenga el tag "Enemy"
             {
+                sombraAudio.Play();
                 hit.collider.gameObject.SetActive(false);
-                sombraAudio.Play();
-
-
             }
         }
         if (Physics.Raycast(ray, out hit, rayDistance, enemyLayer))
         {
             // Verifica si el objeto colisionado es un enemigo (puedes comprobar por tag o script)
-            if (hit.collider.CompareTag("ShadowEvent10"))  // Asegúrate de que el enemigo tenga el tag "Enemy"
+            if (hit.collider.CompareTag("ShadowEvent10"))  // Asegï¿½rate de que el enemigo tenga el tag "Enemy"
             {
-                Destroy(hit.collider.gameObject);
                 sombraAudio.Play();
-
-
+                Destroy(hit.collider.gameObject);
             }
         }
 
         if (Physics.Raycast(ray, out hit, rayDistance, enemyLayer))
         {
             // Verifica si el objeto colisionado es un enemigo (puedes comprobar por tag o script)
-            if (hit.collider.CompareTag("ShadowRunner"))  // Asegúrate de que el enemigo tenga el tag "Enemy"
+            if (hit.collider.CompareTag("ShadowRunner"))  // Asegï¿½rate de que el enemigo tenga el tag "Enemy"
             {
                 EnemyRunBehiavor enemyScript = hit.collider.GetComponent<EnemyRunBehiavor>();
 

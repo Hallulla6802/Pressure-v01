@@ -38,8 +38,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ShadowArmature|StandingNextToSofa (1)
-      takeName: ShadowArmature|StandingNextToSofa
+      name: backyard_pose
+      takeName: backyard_pose
       internalID: 8690886524858952852
       firstFrame: 0
       lastFrame: 14
@@ -67,11 +67,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShadowArmature|IdleBall
-      takeName: ShadowArmature|IdleBall
+      name: IdleBall
+      takeName: IdleBall
       internalID: 8451497899342587914
       firstFrame: 0
-      lastFrame: 0
+      lastFrame: 14
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -96,8 +96,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShadowArmature|IdleShadow
-      takeName: ShadowArmature|IdleShadow
+      name: IdleShadow
+      takeName: IdleShadow
       internalID: 5842210473377263806
       firstFrame: 0
       lastFrame: 15
@@ -125,11 +125,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShadowArmature|LightsOffPose
-      takeName: ShadowArmature|LightsOffPose
+      name: LightsOffPose
+      takeName: LightsOffPose
       internalID: 7976239693675014925
       firstFrame: 0
-      lastFrame: 0
+      lastFrame: 14
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -154,11 +154,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShadowArmature|MirrorPose
-      takeName: ShadowArmature|MirrorPose
+      name: MirrorPose
+      takeName: MirrorPose
       internalID: -2789845777867055312
       firstFrame: 0
-      lastFrame: 0
+      lastFrame: 14
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -183,11 +183,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShadowArmature|PuertaDeEntradaPose
-      takeName: ShadowArmature|PuertaDeEntradaPose
+      name: PuertaDeEntradaPose
+      takeName: PuertaDeEntradaPose
       internalID: 3954892660259818117
       firstFrame: 0
-      lastFrame: 0
+      lastFrame: 14
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -212,8 +212,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShadowArmature|Running
-      takeName: ShadowArmature|Running
+      name: Running
+      takeName: Running
       internalID: -3058531901211095799
       firstFrame: 0
       lastFrame: 15
@@ -241,11 +241,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShadowArmature|StandingNextToSofa
-      takeName: ShadowArmature|StandingNextToSofa
+      name: StandingNextToSofa
+      takeName: StandingNextToSofa
       internalID: 478986324822772802
       firstFrame: 0
-      lastFrame: 0
+      lastFrame: 14
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

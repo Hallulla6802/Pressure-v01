@@ -11,7 +11,7 @@ public class EnemyRunBehiavor : MonoBehaviour
     public Transform player;              // Referencia al jugador
     public bool isFollowing = false;       // Estado de seguimiento
     public bool hasStoppedFollowing = false; // Para que el desv�o solo ocurra una vez
-
+    public Animator enemyAnimator;
     public Vector3 diversionDirection;     // Direcci�n de desv�o calculada
     public bool isCurving = false;
     public AudioSource sombraAudio;
@@ -36,6 +36,7 @@ public class EnemyRunBehiavor : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         initialY = transform.position.y;
         AudioSource[] audioSources = GetComponentsInChildren<AudioSource>();
+        enemyAnimator = GetComponentInChildren<Animator>();
         foreach (AudioSource audioSource in audioSources)
         {
             if (audioSource.gameObject.name == "SonidoPisadasCorriendo")
@@ -46,12 +47,11 @@ public class EnemyRunBehiavor : MonoBehaviour
 
         }
     }
-
         private void Update()
-
         {
         if (isFollowing && !hasStoppedFollowing)
         {
+            enemyAnimator.SetTrigger("Running");
             if (!footstepSound.isPlaying)
             {
                 footstepSound.Play(); // Activa el sonido si est� siguiendo y el sonido no se est� reproduciendo

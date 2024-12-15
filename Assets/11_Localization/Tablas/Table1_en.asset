@@ -73,7 +73,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 13
-    m_Localized: Copy
+    m_Localized: 'Copy:'
     m_Metadata:
       m_Items: []
   - m_Id: 14

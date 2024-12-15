@@ -19,16 +19,30 @@ public class Evento_10 : MonoBehaviour
     {
         
        
-            Instantiate(shadowKitchenRunnerPrefab, pos1.transform.position, pos1.transform.rotation);
-        
+            GameObject shadowEvent1 = Instantiate(shadowKitchenRunnerPrefab, pos1.transform.position, pos1.transform.rotation);
+            Animator animator = shadowEvent1.GetComponentInChildren<Animator>();
+
+            if(animator != null)
+            {
+                animator.Play("RunningInstant");
+            }
+
     }
 
     public void ShadowEvent2()
     {
         
         
-            Instantiate(shadowPrefab, pos2.transform.position, pos2.transform.rotation);
-        
+            GameObject shadowEvent2 = Instantiate(shadowPrefab, pos2.transform.position, pos2.transform.rotation);
+            // Acceder al Animator del objeto instanciado.
+            Animator animator = shadowEvent2.GetComponentInChildren<Animator>();
+
+            // Activar la animaciÃ³n si tiene un trigger o un estado predeterminado.
+            if (animator != null)
+            {
+            // Puedes usar un trigger si lo configuraste en el Animator Controller.
+            animator.Play("StandingNextToSofa");
+            }
     }
 
     public void ShadowEvent3()
@@ -42,17 +56,17 @@ public class Evento_10 : MonoBehaviour
     {
 
 
-        GameObject instance = Instantiate(shadowMirror, pos4.transform.position, pos4.transform.rotation);
+        GameObject shadowEvent4 = Instantiate(shadowMirror, pos4.transform.position, pos4.transform.rotation);
         // La sombra del evento 10 que se activa en el evento 4, instancia la sombra cuando apaga la llave
         // Asegurarte de asignar la capa "pp" al objeto instanciado
-        int ppLayer = LayerMask.NameToLayer("pp"); // Obtener el índice de la capa "pp"
+        int ppLayer = LayerMask.NameToLayer("MirrorReflection"); // Obtener el ï¿½ndice de la capa "pp"
         if (ppLayer != -1) // Verificar que la capa exista
         {
-            SetLayerRecursively(instance, ppLayer);
+            SetLayerRecursively(shadowEvent4, ppLayer);
         }
         else
         {
-            Debug.LogWarning("La capa 'pp' no existe. Asegúrate de que esté definida en Unity.");
+            Debug.LogWarning("La capa 'MirrorReflection' no existe. Asegï¿½rate de que estï¿½ definida en Unity.");
         }
 
     }
@@ -61,7 +75,7 @@ public class Evento_10 : MonoBehaviour
         
         
             Instantiate(shadowKitchenRunnerPrefab, pos5.transform.position, pos5.transform.rotation);
-        
+
     }
 
     public void ShadowEvent6()
