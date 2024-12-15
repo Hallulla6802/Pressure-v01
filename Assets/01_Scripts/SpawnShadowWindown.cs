@@ -40,7 +40,8 @@ public class SpawnShadowWindown : MonoBehaviour
 
         // Crear el enemigo en la posici�n del spawn elegido
         GameObject enemy = Instantiate(enemyShadowPrefab, selectedSpawn.position, Quaternion.identity);
-
+        Animator animator = enemy.GetComponentInChildren<Animator>();
+        animator.Play("RunningInstant");
         // Asignar la direcci�n de movimiento del enemigo
         ShadowWindownMovement shadowWindownMovent = enemy.GetComponent<ShadowWindownMovement>();
 
@@ -51,6 +52,7 @@ public class SpawnShadowWindown : MonoBehaviour
         else
         {
             shadowWindownMovent.direction = Vector3.back; // Hacia +
+            enemy.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
 }

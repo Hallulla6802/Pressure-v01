@@ -51,6 +51,7 @@ public class Event_3 : MonoBehaviour
             DisableEmission(m_LightBulb);                   
             lightsFixed = false;
             event3Collider.enabled = false;
+            redDotForOutside.SetActive(true);
         }
     }
     void DisableEmission(Material material)

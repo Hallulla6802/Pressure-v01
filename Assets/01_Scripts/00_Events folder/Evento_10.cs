@@ -20,12 +20,7 @@ public class Evento_10 : MonoBehaviour
         
        
             GameObject shadowEvent1 = Instantiate(shadowKitchenRunnerPrefab, pos1.transform.position, pos1.transform.rotation);
-            Animator animator = shadowEvent1.GetComponentInChildren<Animator>();
-
-            if(animator != null)
-            {
-                animator.Play("RunningInstant");
-            }
+            ChangeAnimationInstancedOBJ(shadowEvent1, "RunningInstant");
 
     }
 
@@ -35,21 +30,15 @@ public class Evento_10 : MonoBehaviour
         
             GameObject shadowEvent2 = Instantiate(shadowPrefab, pos2.transform.position, pos2.transform.rotation);
             // Acceder al Animator del objeto instanciado.
-            Animator animator = shadowEvent2.GetComponentInChildren<Animator>();
-
-            // Activar la animación si tiene un trigger o un estado predeterminado.
-            if (animator != null)
-            {
-            // Puedes usar un trigger si lo configuraste en el Animator Controller.
-            animator.Play("StandingNextToSofa");
-            }
+            ChangeAnimationInstancedOBJ(shadowEvent2, "StandingNextToSofa");
     }
 
     public void ShadowEvent3()
     {
        
         
-            Instantiate(shadowPrefab, pos3.transform.position, pos3.transform.rotation);
+            GameObject shadowEvent3 = Instantiate(shadowPrefab, pos3.transform.position, pos3.transform.rotation);
+            ChangeAnimationInstancedOBJ(shadowEvent3, "LightOff");
         
     }
     public void ShadowEvent4()
@@ -59,31 +48,30 @@ public class Evento_10 : MonoBehaviour
         GameObject shadowEvent4 = Instantiate(shadowMirror, pos4.transform.position, pos4.transform.rotation);
         // La sombra del evento 10 que se activa en el evento 4, instancia la sombra cuando apaga la llave
         // Asegurarte de asignar la capa "pp" al objeto instanciado
-        int ppLayer = LayerMask.NameToLayer("MirrorReflection"); // Obtener el �ndice de la capa "pp"
-        if (ppLayer != -1) // Verificar que la capa exista
+        int mirrorLayer = LayerMask.NameToLayer("MirrorReflection"); // Obtener el �ndice de la capa "pp"
+        if (mirrorLayer != -1) // Verificar que la capa exista
         {
-            SetLayerRecursively(shadowEvent4, ppLayer);
+            SetLayerRecursively(shadowEvent4, mirrorLayer);
         }
         else
         {
             Debug.LogWarning("La capa 'MirrorReflection' no existe. Aseg�rate de que est� definida en Unity.");
         }
-
+        ChangeAnimationInstancedOBJ(shadowEvent4,"MirrorPose");
     }
     public void ShadowEvent5()
     {
         
         
-            Instantiate(shadowKitchenRunnerPrefab, pos5.transform.position, pos5.transform.rotation);
-
+            GameObject shadowEvent5 = Instantiate(shadowKitchenRunnerPrefab, pos5.transform.position, pos5.transform.rotation);
     }
 
     public void ShadowEvent6()
     {
         
         
-            Instantiate(shadowPrefab, pos6.transform.position, pos6.transform.rotation);
-        
+            GameObject shadowEvent6 = Instantiate(shadowPrefab, pos6.transform.position, pos6.transform.rotation);
+            ChangeAnimationInstancedOBJ(shadowEvent6, "BackYardPose");
     }
  
 
@@ -91,8 +79,8 @@ public class Evento_10 : MonoBehaviour
     {
         
         
-            Instantiate(shadowPrefab, pos9.transform.position, pos9.transform.rotation);
-        
+            GameObject shadowEvent9 = Instantiate(shadowPrefab, pos9.transform.position, pos9.transform.rotation);
+            ChangeAnimationInstancedOBJ(shadowEvent9, "IdleBall");
     }
 
     void SetLayerRecursively(GameObject obj, int newLayer)
@@ -106,5 +94,14 @@ public class Evento_10 : MonoBehaviour
             if (child == null) continue;
             SetLayerRecursively(child.gameObject, newLayer);
         }
+    }
+    void ChangeAnimationInstancedOBJ(GameObject instanced, string animName)
+    {
+        Animator animator = instanced.GetComponentInChildren<Animator>();
+
+            if(animator != null)
+            {
+                animator.Play(animName);
+            }
     }
 }

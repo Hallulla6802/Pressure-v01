@@ -5,11 +5,11 @@ using UnityEngine;
 public class ShadowWindownMovement : MonoBehaviour
 {
     public Vector3 direction; // Direcci�n a la que se mover� el enemigo
-    public float speed = 2.5f;  // Velocidad de movimiento
+    public float speed = 5f;  // Velocidad de movimiento
 
     public  void Start()
     {
-        StartCoroutine(DestroyAfterTime(6f)); // 10 segundos
+        StartCoroutine(DestroyAfterTime(3f)); // 10 segundos
     }
 
     void Update()

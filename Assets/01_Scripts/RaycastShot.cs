@@ -36,7 +36,16 @@ public class RaycastShot : MonoBehaviour
             if (hit.collider.CompareTag("ShadowEvent7"))  // Aseg�rate de que el enemigo tenga el tag "Enemy"
             {
                 sombraAudio.Play();
-                hit.collider.gameObject.SetActive(false);
+                Transform currentTransform = hit.transform;
+
+                // Recorre la jerarquía hacia arriba y destruye todos los padres
+                while (currentTransform.parent != null)
+                {
+                    Transform parentTransform = currentTransform.parent; // Obtén el padre
+                    parentTransform.gameObject.SetActive(false); // Destruye el objeto padre
+                    Debug.Log("Padre destruido: " + parentTransform.name);
+                    currentTransform = parentTransform; // Avanza al siguiente nivel
+                }
             }
         }
         if (Physics.Raycast(ray, out hit, rayDistance, enemyLayer))
@@ -45,7 +54,7 @@ public class RaycastShot : MonoBehaviour
             if (hit.collider.CompareTag("ShadowEvent10"))  // Aseg�rate de que el enemigo tenga el tag "Enemy"
             {
                 sombraAudio.Play();
-                Destroy(hit.collider.gameObject);
+                Destroy(hit.transform.parent.gameObject);
             }
         }
 
