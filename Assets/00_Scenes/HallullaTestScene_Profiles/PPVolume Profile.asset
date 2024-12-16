@@ -85,6 +85,34 @@ MonoBehaviour:
   DitherIntensity:
     overrideState: 1
     value: 0.01
+--- !u!114 &-5872543492044096498
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
+  m_Name: Grain
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  colored:
+    overrideState: 0
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 0.5
+  size:
+    overrideState: 1
+    value: 1
+  lumContrib:
+    overrideState: 0
+    value: 0.8
 --- !u!114 &-2254879793056524892
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1414,6 +1442,7 @@ MonoBehaviour:
   - {fileID: -2254879793056524892}
   - {fileID: 2944425714973859034}
   - {fileID: -7420251337103067150}
+  - {fileID: -5872543492044096498}
 --- !u!114 &2643170093071971247
 MonoBehaviour:
   m_ObjectHideFlags: 3
