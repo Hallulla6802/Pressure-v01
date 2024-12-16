@@ -36,6 +36,9 @@ public class Event_2_CollaiderDoor : MonoBehaviour
     [Space]
 
     // Variables for the NPC dialog
+    [Space]
+    [Header("NPC")]
+    [Space]
     public LocalizedString[] localizedDialogList;
     public TextMeshProUGUI dialogText;
 
@@ -43,10 +46,14 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     [Space]
 
-    public float typingSpeed = 0.5f;
-
+    public float typingSpeed = 0.05f;  // Speed of typing
     private bool isTyping = false;
     private Coroutine typingCoroutine;
+
+    [Space]
+    public AudioSource[] typingSounds; // Array of typing sounds
+    public float soundInterval = 0.1f; // Interval between sound plays
+    private Coroutine soundCoroutine; // Coroutine to manage sound playback
 
     private void Awake()
     {
@@ -106,23 +113,20 @@ public class Event_2_CollaiderDoor : MonoBehaviour
 
     public void ShowDialogLine()
     {
-        if (currentLineIndex < localizedDialogList.Length)
+        if (isTyping)
         {
-            if (isTyping)
+            CompleteTyping();
+        }
+        else if (currentLineIndex < localizedDialogList.Length)
+        {
+            if (spriteNextLine != null)
             {
-                CompleteTyping();
+                spriteNextLine.SetActive(false);
             }
-            else
-            {
-                if (spriteNextLine != null)
-                {
-                    spriteNextLine.SetActive(false);
-                }
 
-                LocalizedString currentLine = localizedDialogList[currentLineIndex];
-                typingCoroutine = StartCoroutine(TypeLocalizedLine(currentLine)); // Start typing coroutine
-                currentLineIndex++;
-            }
+            LocalizedString currentLine = localizedDialogList[currentLineIndex];
+            typingCoroutine = StartCoroutine(TypeLocalizedLine(currentLine));
+            currentLineIndex++;
         }
         else
         {
@@ -130,16 +134,20 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         }
     }
 
+    // Typing out the localized dialog line and playing random sounds continuously
     private IEnumerator TypeLocalizedLine(LocalizedString line)
     {
         isTyping = true;
         dialogText.text = "";
 
-        // Search localized text
+        // Fetch localized text
         var asyncOperation = line.GetLocalizedStringAsync();
         yield return asyncOperation;
 
         string localizedText = asyncOperation.Result;
+
+        // Start playing sounds while typing
+        soundCoroutine = StartCoroutine(PlayTypingSoundContinuous());
 
         foreach (char letter in localizedText.ToCharArray())
         {
@@ -148,10 +156,41 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         }
 
         isTyping = false;
+        StopCoroutine(soundCoroutine); // Stop the sound coroutine once typing is complete
 
         if (spriteNextLine != null)
         {
             spriteNextLine.SetActive(true);
+        }
+    }
+
+    // Continuously play a typing sound at intervals
+    private IEnumerator PlayTypingSoundContinuous()
+    {
+        while (isTyping)
+        {
+            PlayRandomTypingSound();
+            yield return new WaitForSeconds(soundInterval);
+        }
+    }
+
+    // Play a random typing sound
+    private void PlayRandomTypingSound()
+    {
+        if (typingSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, typingSounds.Length);
+            AudioSource randomSound = typingSounds[randomIndex];
+
+            // Play the selected sound
+            if (!randomSound.isPlaying) // Only play if it's not already playing
+            {
+                randomSound.PlayOneShot(randomSound.clip);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No typing sounds available!");
         }
     }
 
@@ -174,6 +213,12 @@ public class Event_2_CollaiderDoor : MonoBehaviour
             spriteNextLine.SetActive(true);
         }
     }
+
+    #endregion
+
+    #region SOUNDS DIALOG
+
+    
 
     #endregion
 
@@ -203,3 +248,5 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         NPCgameobject.SetActive(false);
     }
 }
+
+

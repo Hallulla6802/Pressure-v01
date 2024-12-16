@@ -34,6 +34,8 @@ public class Event_3_Object : MonoBehaviour
     
 
         objMan = FindObjectOfType<ObjectivesManager>();
+
+
     }
 
 
