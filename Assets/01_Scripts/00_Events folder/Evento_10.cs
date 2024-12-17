@@ -10,6 +10,7 @@ public class Evento_10 : MonoBehaviour
     public GameObject pos1;
     public GameObject pos2;
     public GameObject pos3;
+    public GameObject pos35;
     public GameObject pos4;
     public GameObject pos5;
     public GameObject pos6;
@@ -39,6 +40,8 @@ public class Evento_10 : MonoBehaviour
         
             GameObject shadowEvent3 = Instantiate(shadowPrefab, pos3.transform.position, pos3.transform.rotation);
             ChangeAnimationInstancedOBJ(shadowEvent3, "LightOff");
+            GameObject shadowEvent35 = Instantiate(shadowPrefab, pos35.transform.position, pos35.transform.rotation);
+            ChangeAnimationInstancedOBJ(shadowEvent35, "IdleBall");
         
     }
     public void ShadowEvent4()

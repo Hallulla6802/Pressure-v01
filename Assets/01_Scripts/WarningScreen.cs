@@ -21,6 +21,8 @@ public class WarningScreen : MonoBehaviour
     {
         StartCoroutine(FadeOut());
         pcClick.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;  // Liberar el mouse para la UI
+        Cursor.visible = true;
     }
 
     private IEnumerator FadeOut()

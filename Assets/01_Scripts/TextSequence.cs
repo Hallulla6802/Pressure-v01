@@ -10,7 +10,7 @@ public class TextSequence : MonoBehaviour
     public List<string> localizationKeys; // Keys for localized strings
     public float typingSpeed = 0.05f;
     public float fastTypingSpeed = 0.01f; // New variable for faster typing speed
-
+    public Animator bs_Animator;
     private ChangeSceneManager changeSceneMan;
     private int currentTextIndex = 0;
     private bool isTyping = false;
@@ -113,8 +113,7 @@ public class TextSequence : MonoBehaviour
     void SkipToLastText()
     {
         Debug.Log("Space pressed");
-
-        changeSceneMan.GoToGame();
+        bs_Animator.Play("GameFadeOut");
 
         if (typingAudioSource != null && typingAudioSource.isPlaying)
         {

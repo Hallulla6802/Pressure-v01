@@ -11,7 +11,7 @@ public class LastCutscene : MonoBehaviour
     public ObjectivesManager objectivesManager;
 
     [Space]
-    public GameObject blackScreen;
+    public Animator blackScreen;
 
     [Space]
     public AudioSource noise;
@@ -24,21 +24,13 @@ public class LastCutscene : MonoBehaviour
 
     public ChangeSceneManager changeScene;
 
-
-    private void Start()
-    {
-        blackScreen.SetActive(false);
-    }
-
-   
-
     public void EndGameFunction()
     {
         playerMovement.canMove = false;
         cameraScript.canLook = false;
         objectivesManager.canSeeObj = false;
 
-        blackScreen.SetActive(true);
+        blackScreen.Play("FinishGame");
 
         noise.Stop();
         fanAudio.Stop();
