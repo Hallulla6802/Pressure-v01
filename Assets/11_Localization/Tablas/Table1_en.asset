@@ -299,6 +299,31 @@ MonoBehaviour:
       game with your own caution.'
     m_Metadata:
       m_Items: []
+  - m_Id: 1780627518214144
+    m_Localized: 'Press "Left Click" to continue.
+
+      Hold "Left click" to speed
+      up the text.
+
+      Press "Space" to skip the text entirely.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1780752185511936
+    m_Localized: Continue game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1780895228055552
+    m_Localized: Return to menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1780997808148480
+    m_Localized: Quit game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1781255367774208
+    m_Localized: Restart game
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

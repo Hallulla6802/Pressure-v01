@@ -181,7 +181,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 40
-    m_Localized: "CodeEX\n\nUna nueva invencion en el idioma de la programacion,
+    m_Localized: "CodeEX\n\nUna nueva invenci\xF3rn en el idioma de la programacion,
       con inteligencia artificial el usuario solo completa palabras las cuales van
       auto-completando el codigo, aumentando la productividad, al principio el algoritmo
       tirara letras ramdom para saber el tipo de proyecto que quiere auto-completar.\n\nPasos
@@ -200,7 +200,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 77579796303872
     m_Localized: "ParanoiC\npor Everwake Studio\n\nProgramadores: \n- Esperanza Valverde\n-
-      Cesar Jara\n- Franco Gallegos\n\nArtistas 3D y Texturizado:\n- Dante Bravo\n-
+      C\xE9sar Jara\n- Franco Gallegos\n\nArtistas 3D y Texturizado:\n- Dante Bravo\n-
       Josefina Soto\n- Esperanza Valverde\n\nSonidista: \nDiego Muena\n\nAssets usados:\n-
       Retro 3D Shader Pack for Unity por LeakyFingers on ITCH.IO.\n- Logo dise\xF1ado
       por Patricia Pereira.\n\nDisfruta el juego :)"
@@ -239,18 +239,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1138161706291200
-    m_Localized: '- Moverte
-
-      - Usar Beeper
-
-      - Interactuar
-
-      - Menu
-      Pausa
-
-      - Mirar
-
-      - Siguente Dialogo'
+    m_Localized: "- Moverte\n- Usar Beeper\n- Interactuar\n- Men\xFA de Pausa\n-
+      Mirar\n- Siguente Dialogo"
     m_Metadata:
       m_Items: []
   - m_Id: 1138851690270720
@@ -277,6 +267,32 @@ MonoBehaviour:
       usando una pantalla mas peque\xF1a, jugando en una habitacion mas iluminada
       o sin jugar mientras estes fatigado o mareado.\n\nProcede a jugar este juego
       a tu propia precauci\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1780627518214144
+    m_Localized: 'Preciona el "Click izquierdo" para continuar.
+
+      Mantiene el
+      "Click izquierdo" para acelerar el texto.
+
+      Preciona "Espacio" para saltar
+      el texto.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1780752185511936
+    m_Localized: Renaudar juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1780895228055552
+    m_Localized: "Volver al men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1780997808148480
+    m_Localized: Salir del juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1781255367774208
+    m_Localized: Reiniciar juego
     m_Metadata:
       m_Items: []
   references:
