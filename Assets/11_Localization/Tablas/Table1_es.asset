@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 24
-    m_Localized: "Cierra el grifo de agua en el ba\xF1o."
+    m_Localized: "Cierra el grifo del lavamanos en el ba\xF1o."
     m_Metadata:
       m_Items: []
   - m_Id: 25
@@ -280,7 +280,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1780752185511936
-    m_Localized: Renaudar juego
+    m_Localized: Reanudar juego
     m_Metadata:
       m_Items: []
   - m_Id: 1780895228055552
