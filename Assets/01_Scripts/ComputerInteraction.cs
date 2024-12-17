@@ -133,8 +133,7 @@ public class ComputerInteraction : MonoBehaviour
         isInInteraction = false;
          
        
-        Cursor.lockState = CursorLockMode.Locked;  // Bloquear el mouse de nuevo
-        Cursor.visible = false;
+        
       
        
     }
