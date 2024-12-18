@@ -15,6 +15,8 @@ public class PrincipalDoorScript : MonoBehaviour
     private bool isDoorOpen = false;  // Estado de la puerta (abierta o cerrada)
     [Space]
     public AudioSource closeDoorSound;
+    public AudioSource openDoorSound;
+    [Space]
     public Animator doorAnimator;  // El componente Animator de la puerta
     public Event_2_CollaiderDoor event2collaiderscript;
     public Event_9_Door event9door;
@@ -90,6 +92,7 @@ public class PrincipalDoorScript : MonoBehaviour
     // Funci�n para abrir la puerta
     private void OpenDoor()
     {
+        openDoorSound.Play();
         doorAnimator.Play(openAnimationName);  // Reproduce la animaci�n de apertura
         isDoorOpen = true;
 
@@ -136,6 +139,7 @@ public class PrincipalDoorScript : MonoBehaviour
     {
         if (!isDoorOpen)
         {
+            openDoorSound.Play();
             doorAnimator.Play(openAnimationName);  // Reproduce la animaci�n de apertura
             isDoorOpen = true;
         }
