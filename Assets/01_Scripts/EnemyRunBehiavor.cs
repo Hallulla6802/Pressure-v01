@@ -51,8 +51,8 @@ public class EnemyRunBehiavor : MonoBehaviour
         {
         if (isFollowing && !hasStoppedFollowing)
         {
-            sombraAudio.Play();
             enemyAnimator.SetTrigger("Running");
+            sombraAudio.Play();
             if (!footstepSound.isPlaying)
             {
                 footstepSound.Play(); // Activa el sonido si est� siguiendo y el sonido no se est� reproduciendo
