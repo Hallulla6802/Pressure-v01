@@ -52,20 +52,33 @@ public class EnemyRunBehiavor : MonoBehaviour
         if (isFollowing && !hasStoppedFollowing)
         {
             enemyAnimator.SetTrigger("Running");
-            sombraAudio.Play();
+            
             if (!footstepSound.isPlaying)
             {
                 footstepSound.Play(); // Activa el sonido si est� siguiendo y el sonido no se est� reproduciendo
             }
+            if (!sombraAudio.isPlaying)
+            {
+                sombraAudio.Play(); // Activa el sonido de la sombra solo si no está reproduciéndose
+            }
+
             FollowPlayer();
         }
         else if (isCurving)
         {
             MoveInDiversionDirection();
         }
-        else if (footstepSound.isPlaying)
+        else
         {
-            footstepSound.Stop(); // Detiene el sonido si no est� siguiendo o est� en desv�o
+            if (footstepSound.isPlaying)
+            {
+                footstepSound.Stop(); // Detiene el sonido de pisadas si no está siguiendo o está en desvío
+            }
+
+            if (sombraAudio.isPlaying)
+            {
+                sombraAudio.Stop(); // Detiene el sonido de la sombra si no está siguiendo
+            }
         }
 
         transform.position = new Vector3(transform.position.x, initialY, transform.position.z);
@@ -75,6 +88,7 @@ public class EnemyRunBehiavor : MonoBehaviour
     private void FollowPlayer()
     {
         
+
         // Calcula la distancia al jugador
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
@@ -115,8 +129,8 @@ public class EnemyRunBehiavor : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Si choca con otro objeto, se destruye inmediatamente
+        sombraAudio.Stop();
         Destroy(gameObject);
-        //sombraAudio.Play();
+        
     }
 }
