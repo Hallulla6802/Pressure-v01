@@ -51,6 +51,7 @@ public class EnemyRunBehiavor : MonoBehaviour
         {
         if (isFollowing && !hasStoppedFollowing)
         {
+            sombraAudio.Play();
             enemyAnimator.SetTrigger("Running");
             if (!footstepSound.isPlaying)
             {
@@ -73,7 +74,7 @@ public class EnemyRunBehiavor : MonoBehaviour
 
     private void FollowPlayer()
     {
-        sombraAudio.Play();
+        
         // Calcula la distancia al jugador
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
