@@ -6,6 +6,7 @@ using static EventManager;
 public class Event_4_Sink : MonoBehaviour
 {
     public AudioSource waterSound;
+    public AudioSource waterStop;
 
     public Evento_10 evento_10;
     public EventManager eventManager;
@@ -28,12 +29,14 @@ public class Event_4_Sink : MonoBehaviour
     public void CerrarLavamanos()
     {
         
-            waterSound.Stop();
-            evento_10.ShadowEvent4();
-            eventManager.currentEvent = EventsToTrigger.None;
-            textoInteractuarScript.CerrarTextoInteractuar();
+        waterSound.Stop();
+        waterStop.Play();
 
-            objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
+        evento_10.ShadowEvent4();
+        eventManager.currentEvent = EventsToTrigger.None;
+        textoInteractuarScript.CerrarTextoInteractuar();
+
+        objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
         
     }
 

@@ -7,16 +7,20 @@ using static EventManager;
 
 public class PrincipalDoorScript : MonoBehaviour
 {
-    public Animator doorAnimator;  // El componente Animator de la puerta
+    
     public string openAnimationName = "DoorOpen";  // Nombre de la animaci�n de apertura
     public string closeAnimationName = "DoorClose"; // Nombre de la animaci�n de cierre
     public float closeDelay = 2f;  // Tiempo de retraso para que la puerta se cierre autom�ticamente
+
     private bool isDoorOpen = false;  // Estado de la puerta (abierta o cerrada)
+    [Space]
+    public AudioSource closeDoorSound;
+    public Animator doorAnimator;  // El componente Animator de la puerta
     public Event_2_CollaiderDoor event2collaiderscript;
     public Event_9_Door event9door;
     public EventManager eventmanager;
 
-    //public string proptText;
+    [Header("LOCALIZATION SETTINGS")]
     [Space]
     public string localizationKeyEvent9;
     private LocalizedString currentLocalizationEvent9;
@@ -105,6 +109,7 @@ public class PrincipalDoorScript : MonoBehaviour
     {
         if (isDoorOpen)
         {
+            closeDoorSound.Play();
             doorAnimator.Play(closeAnimationName);  // Reproduce la animaci�n de cierre
             isDoorOpen = false;
         }
@@ -118,6 +123,7 @@ public class PrincipalDoorScript : MonoBehaviour
         {
             if (isDoorOpen)
             {
+                closeDoorSound.Play();
                 doorAnimator.Play(closeAnimationName);  // Reproduce la animaci�n de cierre
                 isDoorOpen = false;
                 event9door.CerrarPuertaEvent9();

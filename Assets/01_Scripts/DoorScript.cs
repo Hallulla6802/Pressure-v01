@@ -10,7 +10,10 @@ public class DoorScript : MonoBehaviour
     public string closeAnimationName = "DoorClose";
     public float closeDelay = 2f;
     public bool isDoorOpen = false;
+    public AudioSource closingDoorSound;
 
+    [Space]
+    [Header("LOCALIZATION SETTINGS")]
     public string localizationKey = "";  // Localization key
     private LocalizedString currentLocalizedText;  // Store the localized string
 
@@ -56,6 +59,7 @@ public class DoorScript : MonoBehaviour
     {
         if (isDoorOpen)
         {
+            closingDoorSound.Play();
             doorAnimator.Play(closeAnimationName);
             isDoorOpen = false;
         }
