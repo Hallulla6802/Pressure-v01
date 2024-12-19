@@ -29367,6 +29367,10 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 7273811361942468430}
+    - target: {fileID: 8796440584807215837, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
+      propertyPath: AhoraPuedesLlamarAlMenu
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9026462718382631588, guid: 82c9ddc00f0173f4b897b763e164efe0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
