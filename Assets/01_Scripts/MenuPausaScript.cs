@@ -25,11 +25,7 @@ public class MenuPausaScript : MonoBehaviour
         JuegoReanulado();
         panelMenu.SetActive(false);
         ResumeAudio();
-        if (computerInteraction.isInInteraction == true)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+       
     }
 
     private void Update()
@@ -43,7 +39,11 @@ public class MenuPausaScript : MonoBehaviour
             }
             else
             {
-                AbrirMenu(); 
+                if (computerInteraction.isInInteraction == false && computerInteraction.AhoraPuedesLlamarAlMenu == true)
+                {
+                    AbrirMenu(); 
+                }
+                    
             }
         }
     }

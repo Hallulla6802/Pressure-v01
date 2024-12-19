@@ -12,6 +12,7 @@ public class ComputerInteraction : MonoBehaviour
     [SerializeField] EventManager eventManager;
     [SerializeField] EventSystem eventSystem;
     public Button Butonllamado;
+    public MenuPausaScript menuPausaScript;
  
     public PlayerMovement playerMovement;
     public CameraScript cameraScript;
@@ -25,8 +26,10 @@ public class ComputerInteraction : MonoBehaviour
     public string objectText;
     public Animator playerAnimator;
     public AudioSource sonidoClick;
+    public bool AhoraPuedesLlamarAlMenu = true;
     private void Awake()
     {
+        AhoraPuedesLlamarAlMenu = true;
         GameObject clickObject = GameObject.Find("Click Mouse");
 
         if (clickObject != null)
@@ -77,6 +80,14 @@ public class ComputerInteraction : MonoBehaviour
         {
             sonidoClick.Play();
         }
+
+        if (isInInteraction)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ExitInteraction();
+            }
+        }
     }
 
 
@@ -88,7 +99,8 @@ public class ComputerInteraction : MonoBehaviour
     public void EnterInteraction()
     {
         isInInteraction = true;
-        if(playerAnimator.GetBool("IsMoving"))
+        AhoraPuedesLlamarAlMenu = false;
+        if (playerAnimator.GetBool("IsMoving"))
         {
             playerAnimator.SetBool("IsMoving", false);
         }
@@ -118,6 +130,15 @@ public class ComputerInteraction : MonoBehaviour
         {
             crosshair.enabled = true;
         }
+
+        StartCoroutine(HabilitarMenuTrasDelay(0.1f));
+        
+    }
+
+    public IEnumerator HabilitarMenuTrasDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        AhoraPuedesLlamarAlMenu = true; // Desbloquea el menú después del retraso
     }
     public void DeselectAndClear()
     {
