@@ -26,10 +26,9 @@ public class ComputerInteraction : MonoBehaviour
     public string objectText;
     public Animator playerAnimator;
     public AudioSource sonidoClick;
-    public bool AhoraPuedesLlamarAlMenu = true;
     private void Awake()
     {
-        AhoraPuedesLlamarAlMenu = true;
+        menuPausaScript.AhoraPuedesLlamarAlMenu = true;
         GameObject clickObject = GameObject.Find("Click Mouse");
 
         if (clickObject != null)
@@ -83,7 +82,7 @@ public class ComputerInteraction : MonoBehaviour
 
         if (isInInteraction)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && isInInteraction)
             {
                 ExitInteraction();
             }
@@ -99,10 +98,10 @@ public class ComputerInteraction : MonoBehaviour
     public void EnterInteraction()
     {
         isInInteraction = true;
-        AhoraPuedesLlamarAlMenu = false;
+        menuPausaScript.AhoraPuedesLlamarAlMenu = false;
         if (playerAnimator.GetBool("IsMoving"))
         {
-            playerAnimator.SetBool("IsMoving", false);
+            playerAnimator.SetBool("IsMoving", false); 
         }
         playerMovement.canMove = false;  // Aquí puedes desactivar los controles del jugador, si fuera necesario
         cameraScript.canLook = false;
@@ -117,7 +116,7 @@ public class ComputerInteraction : MonoBehaviour
     {
         DeselectAndClear();
         isInInteraction = false;
-        playerMovement.canMove = true;// Reactivar los controles del jugador   
+        playerMovement.canMove = true; // Reactivar los controles del jugador   
         cameraScript.canLook = true;  
         Cursor.lockState = CursorLockMode.Locked;  // Bloquear el mouse de nuevo
         Cursor.visible = false; 
@@ -129,16 +128,18 @@ public class ComputerInteraction : MonoBehaviour
         if(crosshair != null)
         {
             crosshair.enabled = true;
+        }   
+        if(gameObject.activeInHierarchy)
+        {
+            StartCoroutine(HabilitarMenuTrasDelay(0.1f));
         }
-
-        StartCoroutine(HabilitarMenuTrasDelay(0.1f));
-        
     }
 
     public IEnumerator HabilitarMenuTrasDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        AhoraPuedesLlamarAlMenu = true; // Desbloquea el menú después del retraso
+        menuPausaScript.AhoraPuedesLlamarAlMenu = true; // Desbloquea el menú después del retraso
+        yield return null;
     }
     public void DeselectAndClear()
     {

@@ -6,8 +6,7 @@ public class Event_3 : MonoBehaviour
 {
     public GameObject lightempty;
     public GameObject redDotForOutside;
- 
-
+    public ComputerInteraction computerInteraction;
     public bool lightsFixed;
     public GameObject pcScreen;
     private BoxCollider event3Collider;
@@ -46,6 +45,7 @@ public class Event_3 : MonoBehaviour
         {
             lucesapangadnoseAudio.Play();
             pcScreen.SetActive(false);
+            StartCoroutine(computerInteraction.HabilitarMenuTrasDelay(0.1f));
             lightempty.SetActive(false);
             DisableEmission(m_Bulb);
             DisableEmission(m_LightBulb);                   

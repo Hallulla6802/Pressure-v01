@@ -5,13 +5,13 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 public class MenuPausaScript : MonoBehaviour
 {
-    public AudioMixer audioMixer; 
+    public AudioMixer audioMixer;
     private float originalVolume;
     public GameObject panelMenu;
     public bool isPausa;
     public MonoBehaviour cameraScript;
     public ComputerInteraction computerInteraction;
-
+    public bool AhoraPuedesLlamarAlMenu = true;
 
     void Start()
     {
@@ -39,7 +39,7 @@ public class MenuPausaScript : MonoBehaviour
             }
             else
             {
-                if (computerInteraction.isInInteraction == false && computerInteraction.AhoraPuedesLlamarAlMenu == true)
+                if (computerInteraction.isInInteraction == false && AhoraPuedesLlamarAlMenu == true || AhoraPuedesLlamarAlMenu == true) 
                 {
                     AbrirMenu(); 
                 }

@@ -41,6 +41,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
     [Space]
     public LocalizedString[] localizedDialogList;
     public TextMeshProUGUI dialogText;
+    public MenuPausaScript menuPausaScript;
 
     private int currentLineIndex = 0;
 
@@ -85,6 +86,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         {
             playerAnimator.SetBool("IsMoving", false);
         }
+        menuPausaScript.AhoraPuedesLlamarAlMenu = true;
         playerMove.canMove = false;
         cameraScript.canLook = false;
         playerCamera.enabled = false;
@@ -238,6 +240,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         playerCamera.enabled = true;
         doorCollider.enabled = true;
         crosshair.enabled = true;
+        menuPausaScript.AhoraPuedesLlamarAlMenu = true;
         eventManager.currentEvent = EventsToTrigger.None;
         objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
     }
