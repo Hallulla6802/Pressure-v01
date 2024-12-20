@@ -11,7 +11,6 @@ public class TextSequence : MonoBehaviour
     public float typingSpeed = 0.05f;
     public float fastTypingSpeed = 0.01f; // New variable for faster typing speed
     public Animator bs_Animator;
-    private ChangeSceneManager changeSceneMan;
     private int currentTextIndex = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
@@ -20,7 +19,6 @@ public class TextSequence : MonoBehaviour
 
     public void StartContextScreen()
     {
-        changeSceneMan = FindObjectOfType<ChangeSceneManager>();
 
         if (localizationKeys.Count == 0)
         {
@@ -106,7 +104,7 @@ public class TextSequence : MonoBehaviour
         else
         {
             Debug.Log("No more texts to show.");
-            changeSceneMan.GoToGame();
+            bs_Animator.Play("GameFadeOut");
         }
     }
 

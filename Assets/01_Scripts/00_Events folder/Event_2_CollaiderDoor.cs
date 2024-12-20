@@ -86,7 +86,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         {
             playerAnimator.SetBool("IsMoving", false);
         }
-        menuPausaScript.AhoraPuedesLlamarAlMenu = true;
+        menuPausaScript.AhoraPuedesLlamarAlMenu = false;
         playerMove.canMove = false;
         cameraScript.canLook = false;
         playerCamera.enabled = false;
@@ -240,7 +240,7 @@ public class Event_2_CollaiderDoor : MonoBehaviour
         playerCamera.enabled = true;
         doorCollider.enabled = true;
         crosshair.enabled = true;
-        menuPausaScript.AhoraPuedesLlamarAlMenu = true;
+        StartCoroutine(menuPausaScript.HabilitarMenuTrasDelay(.1f));
         eventManager.currentEvent = EventsToTrigger.None;
         objMan.currentStates = ObjectivesManager.ObjectiveStates.GoToThePC;
     }

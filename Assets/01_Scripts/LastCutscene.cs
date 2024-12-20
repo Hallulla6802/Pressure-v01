@@ -9,6 +9,7 @@ public class LastCutscene : MonoBehaviour
     public PlayerMovement playerMovement;
     public CameraScript cameraScript;
     public ObjectivesManager objectivesManager;
+    public ComputerInteraction computerInteraction;
 
     [Space]
     public Animator blackScreen;
@@ -17,6 +18,7 @@ public class LastCutscene : MonoBehaviour
     public AudioSource noise;
     public AudioSource bodythumpNoise;
     public AudioSource fanAudio;
+    public AudioSource mouseClick;
 
     [Space]
     public Button UploadProjectButton;
@@ -34,9 +36,10 @@ public class LastCutscene : MonoBehaviour
 
         noise.Stop();
         fanAudio.Stop();
-
+        mouseClick.mute = true;
         bodythumpNoise.Play();
-
+        Cursor.lockState = CursorLockMode.Locked; 
+        Cursor.visible = false;
         StartCoroutine(ChangeScene());
     }
 

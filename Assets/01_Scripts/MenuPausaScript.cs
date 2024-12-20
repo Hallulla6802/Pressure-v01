@@ -34,8 +34,7 @@ public class MenuPausaScript : MonoBehaviour
         {
             if (isPausa)
             {
-                //CerrarMenu();
-                
+                CerrarMenu(); 
             }
             else
             {
@@ -115,5 +114,12 @@ public class MenuPausaScript : MonoBehaviour
     {
       
         audioMixer.SetFloat("MasterVolume", originalVolume);
+    }
+
+     public IEnumerator HabilitarMenuTrasDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        AhoraPuedesLlamarAlMenu = true; // Desbloquea el menú después del retraso
+        yield return null;
     }
 }

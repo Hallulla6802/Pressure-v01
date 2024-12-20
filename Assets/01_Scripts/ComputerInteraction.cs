@@ -131,16 +131,11 @@ public class ComputerInteraction : MonoBehaviour
         }   
         if(gameObject.activeInHierarchy)
         {
-            StartCoroutine(HabilitarMenuTrasDelay(0.1f));
+            StartCoroutine(menuPausaScript.HabilitarMenuTrasDelay(0.1f));
         }
     }
 
-    public IEnumerator HabilitarMenuTrasDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        menuPausaScript.AhoraPuedesLlamarAlMenu = true; // Desbloquea el menú después del retraso
-        yield return null;
-    }
+   
     public void DeselectAndClear()
     {
         //Debug.Log("lol");

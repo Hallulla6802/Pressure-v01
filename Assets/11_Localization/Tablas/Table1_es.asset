@@ -181,7 +181,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 40
-    m_Localized: "CodeEX\n\nUna nueva invenci\xF3rn en el idioma de la programacion,
+    m_Localized: "CodeEX\n\nUna nueva invenci\xF3n en el idioma de la programacion,
       con inteligencia artificial el usuario solo completa palabras las cuales van
       auto-completando el codigo, aumentando la productividad, al principio el algoritmo
       tirara letras ramdom para saber el tipo de proyecto que quiere auto-completar.\n\nPasos
